@@ -112,19 +112,38 @@
     <a href="/ideas/">Ideas Lab</a>
     <a href="/about/">Meet Viraj</a>
     <a href="/about/#contact">Contact</a>
+    <a class="nav-sub" href="/subscribe/">Subscribe</a>
   </nav>
   <span class="live"><i></i>LIVE · <time id="utc">--:--</time> UTC</span>
 </header>
 `;
   }
 
-  const foot = year => `
+  const subForm = (id) => `<form class="sub-form" name="newsletter" method="POST" action="/subscribed/" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="newsletter">
+    <p class="hp"><label>Leave empty <input name="bot-field"></label></p>
+    <label class="sr" for="${id}">Email address</label>
+    <input id="${id}" type="email" name="email" required placeholder="you@example.com" autocomplete="email">
+    <button class="btn" type="submit">Subscribe</button>
+  </form>`;
+
+  const subBand = () => `
+<section class="sub-band wrap" aria-labelledby="sub-h">
+  <div>
+    <p class="kicker">The newroboscience letter</p>
+    <h2 id="sub-h">New research, in your inbox every other morning</h2>
+    <p>Every other day at about 10 AM New York time: the newest posts from ${BRAND}, fresh papers from around the world, and new open ideas from ${AUTHOR}. Free, and you can unsubscribe anytime.</p>
+  </div>
+  ${subForm("sub-email-band")}
+</section>`;
+
+  const foot = year => subBand() + `
 <footer class="foot">
   <div>
     <p class="foot-brand">${BRAND}</p>
     <p>Written and curated by <a href="/about/">${AUTHOR}</a>. Every transmission credits the scientists and sources behind the research it covers.</p>
   </div>
-  <div class="foot-links"><a href="mailto:${EMAIL}">${EMAIL}</a><a href="/live/">Live Research Radar</a><a href="/ideas/">Ideas Lab</a><a href="/about/#contact">Contact</a><a href="/feed.xml">RSS feed</a><a href="/about/">About</a><a href="/#log">All transmissions</a></div>
+  <div class="foot-links"><a href="mailto:${EMAIL}">${EMAIL}</a><a href="/live/">Live Research Radar</a><a href="/ideas/">Ideas Lab</a><a href="/about/#contact">Contact</a><a href="/subscribe/">Newsletter</a><a href="/feed.xml">RSS feed</a><a href="/about/">About</a><a href="/#log">All transmissions</a></div>
   <p class="foot-copy">© ${year} ${AUTHOR}. Cover art is generated uniquely for each post; photos are credited to their owners.</p>
 </footer>
 <script src="/assets/app.js" defer></script>
@@ -355,6 +374,37 @@
 </main>` + foot(year);
   }
 
+  function simplePage(path, title, desc, kicker, h1, html, year) {
+    return head(`${title} | ${BRAND}`, desc, path) + `
+<main id="main" class="wrap-narrow about">
+  <p class="kicker">${kicker}</p>
+  <h1>${h1}</h1>
+  ${html}
+</main>` + foot(year);
+  }
+
+  function renderSubPages(year) {
+    const out = {};
+    out["subscribe/index.html"] = simplePage("/subscribe/", "Subscribe to the newsletter", `Get the newroboscience newsletter by ${AUTHOR}: new research in robotics, aerospace and biotech, every other morning.`, "Newsletter", "Get new research in your inbox",
+      `<p class="post-dek">Every other day at about 10 AM New York time, ${AUTHOR} sends a short email with the newest ${BRAND} posts, a handful of freshly published papers from around the world, and new concepts from the Ideas Lab.</p>
+  <div class="prose"><ul><li>Free, no spam, roughly 3 to 4 emails a week.</li><li>Your email is used only to send this newsletter and is never sold or shared.</li><li>Unsubscribe anytime with one click from any email, or on the <a href="/unsubscribe/">unsubscribe page</a>.</li></ul></div>
+  ${subForm("sub-email-page")}`, year);
+    out["subscribed/index.html"] = simplePage("/subscribed/", "You're subscribed", "Thanks for subscribing.", "Newsletter", "You're on the list",
+      `<p class="post-dek">Thanks for subscribing. Your first newsletter will arrive with the next issue, about 10 AM New York time. If it doesn't show up, check your spam or promotions folder and mark it as safe.</p><a class="btn" href="/">Back to the observatory</a>`, year);
+    out["unsubscribe/index.html"] = simplePage("/unsubscribe/", "Unsubscribe", "Unsubscribe from the newroboscience newsletter.", "Newsletter", "Unsubscribe",
+      `<p class="post-dek">Sorry to see you go. Enter the email address you subscribed with and you'll be removed before the next issue.</p>
+  <form class="sub-form" name="unsubscribe" method="POST" action="/unsubscribed/" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="unsubscribe">
+    <p class="hp"><label>Leave empty <input name="bot-field"></label></p>
+    <label class="sr" for="unsub-email">Email address</label>
+    <input id="unsub-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email">
+    <button class="btn ghost" type="submit">Unsubscribe</button>
+  </form>`, year);
+    out["unsubscribed/index.html"] = simplePage("/unsubscribed/", "Unsubscribed", "You have been unsubscribed.", "Newsletter", "You're unsubscribed",
+      `<p class="post-dek">You won't receive any more newsletters. Changed your mind? You can <a href="/subscribe/">subscribe again</a> anytime.</p>`, year);
+    return out;
+  }
+
   function build(stored, assets) {
     if (!Array.isArray(stored) || !stored.length) throw new Error("no posts");
     const seen = new Set();
@@ -372,6 +422,7 @@
     out["about/index.html"] = renderAbout(posts, ideas, prof, year);
     out["ideas/index.html"] = renderIdeas(ideas, year);
     out["live/index.html"] = renderLive(year);
+    Object.assign(out, renderSubPages(year));
     for (const p of posts) {
       out[`posts/${p.slug}/index.html`] = renderPost(p, posts, year);
       out[`covers/${p.slug}.svg`] = coverSvg(p);
@@ -383,7 +434,7 @@
 <pubDate>${rfcDate(p.date)}</pubDate>
 <dc:creator>${AUTHOR}</dc:creator><category>${FIELDS[p.field].name}</category><description>${esc(p.dek)}</description></item>`).join("")}
 </channel></rss>`;
-    const urls = [["/", posts[0].date], ["/about/", posts[0].date], ["/ideas/", posts[0].date], ["/live/", posts[0].date]].concat(posts.map(p => [p.url, p.date]));
+    const urls = [["/", posts[0].date], ["/about/", posts[0].date], ["/ideas/", posts[0].date], ["/live/", posts[0].date], ["/subscribe/", posts[0].date]].concat(posts.map(p => [p.url, p.date]));
     out["sitemap.xml"] = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map(([u, d]) => `<url><loc>${SITE}${u}</loc><lastmod>${d}</lastmod></url>`).join("")}</urlset>`;
     out["robots.txt"] = `User-agent: *\nAllow: /\nDisallow: /_source/\nSitemap: ${SITE}/sitemap.xml\n`;
     out["404.html"] = head(`Signal lost | ${BRAND}`, "Page not found.", "/404") + `<main id="main" class="wrap-narrow about"><p class="kicker">Error 404</p><h1>Signal lost</h1><p class="post-dek">That page drifted out of range.</p><a class="btn" href="/">Return to the observatory</a></main>` + foot(year);
