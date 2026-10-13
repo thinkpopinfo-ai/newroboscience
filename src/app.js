@@ -1,7 +1,9 @@
 // newroboscience — orbital signal map, filters, reading progress, live clock
 (() => {
   const clock = document.getElementById("utc");
-  const tick = () => { if (clock) clock.textContent = new Date().toISOString().slice(11, 19); };
+  let fmt;
+  try { fmt = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", hour: "numeric", minute: "2-digit", second: "2-digit", hour12: true }); } catch (e) { fmt = null; }
+  const tick = () => { if (clock) clock.textContent = fmt ? fmt.format(new Date()) : new Date().toLocaleTimeString(); };
   tick(); setInterval(tick, 1000);
 
   // Reading progress

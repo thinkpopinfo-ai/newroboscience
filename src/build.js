@@ -116,7 +116,7 @@
     <a href="/about/#contact">Contact</a>
     <a class="nav-sub" href="/subscribe/">Subscribe</a>
   </nav>
-  <span class="live"><i></i>LIVE · <time id="utc">--:--</time> UTC</span>
+  <span class="live"><i></i>LIVE · <time id="utc">--:--</time> <span class="tz-l">New York</span><span class="tz-s">NY</span></span>
 </header>
 `;
   }
