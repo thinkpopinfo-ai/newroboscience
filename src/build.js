@@ -72,6 +72,7 @@
     return P.join("");
   }
 
+  let ASSET_V = "1";
   function head(title, desc, path, extraLd, ogType = "website", ogImage) {
     const url = SITE + path;
     const ld = [
@@ -100,7 +101,7 @@
 <link rel="alternate" type="application/rss+xml" title="${BRAND} by ${AUTHOR}" href="/feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/style.css?v=${ASSET_V}">
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
 </head>
 <body>
@@ -122,9 +123,11 @@
 
   const subForm = (id) => `<form class="sub-form" name="newsletter" method="POST" action="/subscribed/" data-netlify="true" netlify-honeypot="bot-field">
     <input type="hidden" name="form-name" value="newsletter">
-    <p class="hp"><label>Leave empty <input name="bot-field"></label></p>
+    <p class="hp" hidden style="display:none" aria-hidden="true"><label>Do not fill this in <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+    <label class="sr" for="${id}-name">Your name</label>
+    <input id="${id}-name" type="text" name="name" placeholder="Enter name" autocomplete="name" maxlength="80">
     <label class="sr" for="${id}">Email address</label>
-    <input id="${id}" type="email" name="email" required placeholder="you@example.com" autocomplete="email">
+    <input id="${id}" type="email" name="email" required placeholder="Enter email" autocomplete="email">
     <button class="btn" type="submit">Subscribe</button>
   </form>`;
 
@@ -147,7 +150,7 @@
   <div class="foot-links"><a href="mailto:${EMAIL}">${EMAIL}</a><a href="/live/">Live Research Radar</a><a href="/ideas/">Ideas Lab</a><a href="/about/#contact">Contact</a><a href="/subscribe/">Newsletter</a><a href="/feed.xml">RSS feed</a><a href="/about/">About</a><a href="/#log">All transmissions</a></div>
   <p class="foot-copy">© ${year} ${AUTHOR}. Cover art is generated uniquely for each post; photos are credited to their owners.</p>
 </footer>
-<script src="/assets/app.js" defer></script>
+<script src="/assets/app.js?v=${ASSET_V}" defer></script>
 </body></html>`;
 
   const art = (p, w, h) => p.image
@@ -396,7 +399,7 @@
       `<p class="post-dek">Sorry to see you go. Enter the email address you subscribed with and you'll be removed before the next issue.</p>
   <form class="sub-form" name="unsubscribe" method="POST" action="/unsubscribed/" data-netlify="true" netlify-honeypot="bot-field">
     <input type="hidden" name="form-name" value="unsubscribe">
-    <p class="hp"><label>Leave empty <input name="bot-field"></label></p>
+    <p class="hp" hidden style="display:none" aria-hidden="true"><label>Do not fill this in <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
     <label class="sr" for="unsub-email">Email address</label>
     <input id="unsub-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email">
     <button class="btn ghost" type="submit">Unsubscribe</button>
@@ -407,6 +410,7 @@
   }
 
   function build(stored, assets) {
+    { let h = 2166136261; for (const ch of assets.style + assets.app) { h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619); } ASSET_V = (h >>> 0).toString(36); }
     if (!Array.isArray(stored) || !stored.length) throw new Error("no posts");
     const seen = new Set();
     const posts = stored.map((p, i) => {
