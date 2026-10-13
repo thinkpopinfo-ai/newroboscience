@@ -7,7 +7,7 @@
   const ROLE = "Research and Development Engineer";
   const EMAIL = "virajgajera5@gmail.com";
   const PLACE = "New York, USA";
-  const ORCID = ""; // e.g. "https://orcid.org/0000-0000-0000-0000"
+  const ORCID = "https://orcid.org/0009-0003-5123-7729";
   const BRAND = "newroboscience";
   const TAGLINE = "Signals from the frontier of robotics, aerospace and biotech";
   const FIELDS = {
