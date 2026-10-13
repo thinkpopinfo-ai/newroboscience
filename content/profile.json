@@ -1,0 +1,28 @@
+{
+  "headline": "Research and Development Engineer working at the intersection of multiphysics simulation, aerospace propulsion, biomedical engineering and intelligent manufacturing.",
+  "intro": [
+    "Viraj Gajera is a Research and Development Engineer based in New York. His work sits where mechanical engineering meets computation: building physics-based and data-driven models that explain how complex systems behave, fail and can be made better.",
+    "His research spans an unusually wide arc, from fluid-structure interaction in the human brain's shunt systems, to combustion instability, thermal protection and retro-propulsive landing for reusable heavy-lift rockets, to physics-informed prognostics for additively manufactured rocket nozzles. Alongside that, he works on autonomous quality intelligence for manufacturing, closed-loop neuroadaptive wearables and self-healing polymer composites.",
+    "The common thread is a single question: how do we model a system well enough to predict what it will do next, and then design it to be safer, smarter and more resilient? newroboscience is where he shares that way of thinking, translating frontier research in robotics, aerospace and biotech into clear explainers and open ideas for others to build on."
+  ],
+  "focus": [
+    ["Computational multiphysics", "Coupled fluid, thermal, structural and combustion modelling for extreme environments."],
+    ["Aerospace propulsion and reusability", "Staged-combustion engines, thermal protection systems, retro-propulsive landing and cryogenic propellant management."],
+    ["Physics-informed prognostics", "Bayesian calibration, sparse-sensor observability and uncertainty quantification for fatigue and failure prediction."],
+    ["Biomedical engineering", "Fluid-structure interaction analysis of neurosurgical devices and patient risk."],
+    ["Intelligent and autonomous manufacturing", "Autonomous quality intelligence, real-time damage detection and self-healing materials."],
+    ["Human-centred neurotechnology", "Wearable biofeedback and closed-loop neuroadaptive systems."]
+  ],
+  "education": [
+    ["Master of Science in Mechanical Engineering", "New York, USA"],
+    ["Bachelor of Technology", "Nirma University, Ahmedabad, India"]
+  ],
+  "research": [
+    {"title": "Fluid-Structure Interaction Analysis of the Risk of Subdural Hematoma Associated with Ventriculoperitoneal Shunt Placement to Mitigate Normal Pressure Hydrocephalus", "area": "Biomedical engineering", "doi": ""},
+    {"title": "Computational Multiphysics Modeling of Instability Staged Combustion Propulsion, Radiative Convective Ablative/TPS Interfacial Heat Transfer, Supersonic Retro Propulsive Landing Dynamics for Reusable Heavy Lift Architectures and Subcooled Liquid Management in High Pressure Rocket Engine and Booster Return Trajectories", "area": "Aerospace propulsion", "doi": "10.21203/rs.3.rs-11332943/v1"},
+    {"title": "Physics-Informed Prognostics of Fatigue Failure in Additively Manufactured Rocket-Nozzle Cooling Channels: Sparse-Sensor Observability, Bayesian Calibration, and Uncertainty Quantification", "area": "Aerospace reliability", "doi": "10.21203/rs.3.rs-11269947/v1"},
+    {"title": "Autonomous Quality Intelligence (AQI)", "area": "Intelligent manufacturing", "doi": "10.21203/rs.3.rs-9467279/v1"},
+    {"title": "Closed Loop Neuroadaptive Systems for Neuroplastic Modulation: A Multimodal Analysis of Wearable Biofeedback and Meditation Induced State Transitions", "area": "Neurotechnology", "doi": "10.5281/zenodo.19502369"},
+    {"title": "Self-Healing Polymer Composites for Smart Manufacturing: Real-Time Damage Detection and Autonomous Repair", "area": "Advanced materials", "doi": "10.5281/zenodo.19597240"}
+  ]
+}

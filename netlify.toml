@@ -1,0 +1,8 @@
+[build]
+  command = "node src/build.js"
+  publish = "dist"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=600"

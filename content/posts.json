@@ -1,0 +1,72 @@
+[
+  {
+    "slug": "starship-flight-14-reaches-orbit",
+    "field": "aerospace",
+    "date": "2026-10-13",
+    "title": "Starship Finally Reaches Orbit: What Flight 14 Proved, and What It Didn't",
+    "dek": "SpaceX's giant rocket made it to Earth orbit for the first time on September 28, 2026, deployed a batch of next-generation satellites, then cut its mission short.",
+    "tags": ["Starship", "SpaceX", "Reusable rockets", "Starlink"],
+    "body": [
+      ["p", "For years, Starship test flights have followed suborbital paths, arcing most of the way around the planet before coming down in the ocean. On September 28, 2026, that changed. SpaceX's 14th Starship test flight lifted off from Starbase in Boca Chica, Texas, and reached Earth orbit for the first time."],
+      ["h2", "What happened on the flight"],
+      ["p", "Once in orbit, the upper stage released 26 of SpaceX's next-generation Starlink V3 satellites, a real payload rather than the dummy hardware used on earlier tests. That matters: Starship's whole business case rests on carrying heavy, useful cargo to orbit cheaply."],
+      ["p", "The flight did not go entirely to plan. The mission had been scheduled to last roughly ten hours, but SpaceX ended it after about three, following an earlier engine issue. Starship came down in the Pacific north of Hawaii, then tipped over and burst into flames at the surface, which is how these ocean splashdowns typically end."],
+      ["h2", "Why reaching orbit is such a big step"],
+      ["p", "A suborbital hop can test engines, heat shields and re-entry. Orbit is a different game. A vehicle in orbit has to prove it can relight its engines reliably to come home, because there is no ballistic path that brings it back on its own. That is exactly the capability a cut-short mission leaves partly unproven, and it is the one regulators and future crews will care most about."],
+      ["h2", "The bigger picture"],
+      ["p", "Starship is meant to eventually carry crew and cargo to Earth orbit, the Moon and Mars. Every flight now is less about spectacle and more about data: how the engines behave over long coasts, how the heat shield survives repeated use, and how quickly the next vehicle can fly."],
+      ["take", "The headline is 'first orbit,' but the real test is the next one. A rocket that can reach orbit, do a full-length mission, and land on schedule again and again is what changes spaceflight economics. Flight 14 moved the needle; Flight 15 has to show it wasn't a one-off."]
+    ],
+    "credit": "Flight conducted by SpaceX. Reporting from ABC News, LiveNOW from FOX and OneIndia.",
+    "sources": [
+      ["ABC News: Starship splashes down after first orbital flight test", "https://abcnews.com/video/136824936/"],
+      ["LiveNOW from FOX: SpaceX Starship splashes down near Hawaii", "https://www.livenowfox.com/video/fmc-aytye9735bl4oeuj"],
+      ["OneIndia: Starship ends mission early after 3-hour flight", "https://www.oneindia.com/videos/starship-splashes-down-in-pacific-after-3hour-flight-spacex-ends-mission-early-4326498.html"]
+    ]
+  },
+  {
+    "slug": "robotics-sim-to-real-2026",
+    "field": "robotics",
+    "date": "2026-10-13",
+    "title": "From Simulation to the Real World: Robotics' Big 2026 Conference Season",
+    "dek": "IROS 2026 just wrapped in Pittsburgh with nearly 5,000 submissions, and the dominant theme of the year is teaching robots in virtual worlds so they work in ours.",
+    "tags": ["IROS 2026", "ICRA 2026", "Sim-to-real", "Robot learning"],
+    "body": [
+      ["p", "Robotics research runs on two flagship conferences. ICRA 2026 took place in Vienna from June 1 to 5. IROS 2026, the other giant, ran in Pittsburgh from September 27 to October 1. The scale tells its own story: IROS received 4,947 paper submissions this year and accepted 1,585 of them, an acceptance rate of about 36%."],
+      ["h2", "The theme of the year: sim-to-real"],
+      ["p", "Training a robot in the physical world is slow, expensive and occasionally destructive. Training it in simulation is fast and cheap, but robots trained that way often fail when they meet real friction, lighting and clutter. Closing that 'sim-to-real gap' is one of the field's central problems."],
+      ["p", "At ICRA 2026, NVIDIA's research teams presented eight robotics papers aimed squarely at that gap. They covered coordinating several robot arms at once, navigation that adapts across different kinds of robots (a framework called COMPASS), precision grasping, and complex assembly tasks."],
+      ["h2", "What's coming next"],
+      ["p", "NVIDIA has said it plans to release its next-generation GR00T N2 robotics models by the end of 2026, aimed at stronger reasoning and learning from multiple kinds of input. Industrial partners such as ABB and KUKA are part of that ecosystem, which suggests these research ideas are heading toward factory floors, not just lab demos."],
+      ["take", "The most interesting shift isn't any single robot. It's that the bottleneck is moving from hardware to data. Whoever can generate the most realistic practice for robots, cheaply, wins. Watch for open simulation tools and shared datasets; they will decide who can compete."]
+    ],
+    "credit": "Research by NVIDIA Research and the IROS / ICRA author communities. Conference figures from OMRON SINIC X.",
+    "sources": [
+      ["OMRON SINIC X: IROS 2026 papers and acceptance statistics", "https://www.omron.com/sinicx/en/activity/researcher/masashihamaya/"],
+      ["Blockchain.News: NVIDIA pushes robotics from simulation to reality at ICRA 2026", "https://blockchain.news/news/nvidia-robotics-simulation-to-real-icra-2026"]
+    ]
+  },
+  {
+    "slug": "precision-gene-editing-2026",
+    "field": "biotech",
+    "date": "2026-10-13",
+    "title": "Precision Gene Editing Gets Sharper, and the Ethics Debate Gets Louder",
+    "dek": "Base editing in human embryos, AI-designed CRISPR proteins, and a renewed argument about where the line should be.",
+    "tags": ["CRISPR", "Base editing", "AI protein design", "Bioethics"],
+    "body": [
+      ["p", "Classic CRISPR works like molecular scissors: it cuts DNA and lets the cell repair the break, which can introduce errors. Newer tools are far more precise. Base editing, for example, changes a single DNA letter without cutting both strands. In 2026, these precision tools moved into some of the most sensitive territory in biology."],
+      ["h2", "Studying how human life begins"],
+      ["p", "In June 2026, Cambridge researchers reported in Nature that they had, for the first time, used base editing to study gene function in human embryos, revealing the role of a master gene in early development. The goal is understanding, not pregnancy: knowing which genes steer the first days of development could eventually help explain infertility and early miscarriage."],
+      ["p", "Around the same time, US scientists at Columbia University reported editing early human embryos, not intended for pregnancy, with unprecedented accuracy. Scientific American noted that the work revived worries about future uses, eight years after the gene-edited babies scandal in China."],
+      ["h2", "AI starts designing the editors themselves"],
+      ["p", "A study from Nobel laureate Jennifer Doudna's team, published in Science, described RNA-guided DNA-cutting enzymes designed with artificial intelligence. Their sequences differ substantially from anything found in nature, yet they match or beat natural versions in activity and bring new properties. It is an early sign that the toolkit for editing life is no longer limited to what evolution happened to produce."],
+      ["take", "Two trends are converging: editing is getting precise enough to study human development directly, and AI is generating new editing tools faster than we can catalogue them. That is great for medicine and a real test for oversight. The public conversation needs to keep pace with the lab."]
+    ],
+    "credit": "Research by teams at the University of Cambridge, Columbia University, and Jennifer Doudna's lab. Coverage via Scientific American and Science Media Centre Spain.",
+    "sources": [
+      ["University of Cambridge: First use of precision editing to study human embryo development", "https://www.cam.ac.uk/subjects/developmental%20biology"],
+      ["Scientific American: Report of gene-edited human embryos sparks worries", "https://www.scientificamerican.com/author/laura-dattaro/"],
+      ["Science Media Centre Spain: AI-designed RNA-guided nucleases and embryo editing", "https://sciencemediacentre.es/en/centros-de-investigacion/ciberer?page=0"]
+    ]
+  }
+]

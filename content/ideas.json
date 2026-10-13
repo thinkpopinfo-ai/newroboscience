@@ -1,0 +1,53 @@
+[
+  {
+    "slug": "shunt-digital-twin",
+    "date": "2026-10-13",
+    "field": "biotech",
+    "title": "A Patient-Specific Digital Twin for Hydrocephalus Shunts",
+    "summary": "What if every ventriculoperitoneal shunt came with a simulation of the patient it was going into?",
+    "concept": [
+      "Shunts for normal pressure hydrocephalus are usually set using population-level guidance, yet the risk of over-drainage, and with it subdural hematoma, depends on each patient's anatomy, brain stiffness and posture.",
+      "The idea: build a lightweight fluid-structure interaction 'digital twin' from a patient's routine MRI. It would estimate how cerebrospinal fluid drainage reshapes the brain and stresses bridging veins at different valve settings, then suggest the setting with the lowest predicted risk.",
+      "Over time, outcomes from real patients would recalibrate the model, turning a one-off simulation into a learning system that gets safer with every case."
+    ],
+    "questions": [
+      "Which imaging features are the minimum needed to make the model personal enough to matter?",
+      "Can a reduced-order model run fast enough to be used during a clinic visit?",
+      "How should clinicians see uncertainty, so the tool supports their judgment instead of replacing it?"
+    ]
+  },
+  {
+    "slug": "self-reporting-rocket-hardware",
+    "date": "2026-10-13",
+    "field": "aerospace",
+    "title": "Self-Reporting Hardware for Reusable Rockets",
+    "summary": "Reusable boosters fly again and again. Their parts should be able to tell us how much life they have left.",
+    "concept": [
+      "Today, deciding whether a returned booster can fly again relies heavily on inspection. Additively manufactured parts, such as nozzle cooling channels, make this harder because their internal geometry is difficult to inspect.",
+      "The idea: design each critical part together with its own sparse sensor layout and a physics-informed prognostic model. During every flight, a handful of strain and temperature readings update a Bayesian estimate of accumulated fatigue damage, with honest uncertainty bands.",
+      "The result would be a 'remaining flights' gauge for each component, so refurbishment decisions are driven by evidence rather than conservative fixed limits."
+    ],
+    "questions": [
+      "Where should a small number of sensors go to make internal damage observable?",
+      "How can flight data from one vehicle improve predictions for the whole fleet?",
+      "What level of confidence should be required before extending a part's certified life?"
+    ]
+  },
+  {
+    "slug": "factories-that-heal-and-learn",
+    "date": "2026-10-13",
+    "field": "robotics",
+    "title": "Factories That Detect, Decide and Heal",
+    "summary": "Combining autonomous quality inspection with self-healing materials could close the loop from defect to repair.",
+    "concept": [
+      "Quality inspection and repair are usually separate steps: a defect is found, logged and fixed later, often by a person. Self-healing polymer composites raise a different possibility: parts that can repair some damage themselves when triggered.",
+      "The idea: connect an autonomous quality intelligence system directly to self-healing materials. When sensors or vision detect micro-damage, the system decides whether the damage is within the healable range, triggers the repair (for example with local heat), and then re-inspects to confirm it worked.",
+      "Every cycle becomes training data, teaching the factory which defects can be healed in place and which need a human expert."
+    ],
+    "questions": [
+      "Which damage types are reliably healable, and how do we verify the repair is structurally sound?",
+      "How should the decision logic balance speed, cost and safety?",
+      "What new standards would certify a part that has repaired itself?"
+    ]
+  }
+]
