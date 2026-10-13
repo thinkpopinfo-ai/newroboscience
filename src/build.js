@@ -84,6 +84,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="sJZBIUXRuYw5B9NfWr0sqYLYEgLSaDkHnseAfYERJiU">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
 <meta name="author" content="${AUTHOR}">
