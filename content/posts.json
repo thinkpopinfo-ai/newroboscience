@@ -68,5 +68,31 @@
       ["Scientific American: Report of gene-edited human embryos sparks worries", "https://www.scientificamerican.com/author/laura-dattaro/"],
       ["Science Media Centre Spain: AI-designed RNA-guided nucleases and embryo editing", "https://sciencemediacentre.es/en/centros-de-investigacion/ciberer?page=0"]
     ]
+  },
+  {
+    "slug": "mit-sando-drone-collision-free-planner",
+    "field": "robotics",
+    "date": "2026-10-14",
+    "title": "A Drone Planner That Promises Not to Crash, Even Around Things It Has Never Seen",
+    "dek": "MIT engineers built SANDO, a flight planner that keeps drones clear of moving obstacles in unmapped spaces by reasoning only about how fast those obstacles could possibly travel.",
+    "tags": ["Drones", "Motion planning", "Autonomous navigation", "Robot safety", "MIT"],
+    "body": [
+      ["p", "Flying a drone through an empty room is easy. Flying it through a collapsed building, a mine tunnel or a busy warehouse is not, because the robot has no map in advance and some of the obstacles are moving. Most planning software handles this in one of two ways: it assumes the world holds still, or it dodges moving things on a best-effort basis with no real promise that it will succeed. A team at MIT has published a planner that aims to close that gap with a formal safety guarantee."],
+      ["h2", "What the MIT team built"],
+      ["p", "The system is called SANDO, short for Safe AutoNomous trajectory planning for Dynamic unknOwn environments. It was developed by Kota Kondo, who recently completed his PhD in aeronautics and astronautics at MIT, together with Jesús Tordesillas of Comillas Pontifical University in Madrid, MIT graduate students Juan Rached, Lili Sun and Yixuan Jia, and senior author Jonathan How, who leads MIT's Aerospace Controls Laboratory. The work appears in IEEE Transactions on Robotics, and MIT announced it on October 7."],
+      ["p", "The key idea is that the planner does not try to predict exactly where a moving obstacle will go. It only needs an upper limit on how fast that obstacle can travel. As Kondo put it to MIT News, the planner only needs \"the top speed the obstacles could reach.\" From that limit, SANDO draws a sphere around each tracked obstacle that grows over time to cover every place it could possibly be."],
+      ["h2", "How it keeps the path clear"],
+      ["p", "Onboard, SANDO detects nearby obstacles, groups them and tracks them. It then builds what the researchers call a safety corridor: a chain of connected 3D regions that are guaranteed to be empty, not just now but at the moments the drone will pass through them. A separate heat-map planner marks crowded areas as hot spots and nudges the route toward quieter space. Inside that corridor, the software computes the fastest trajectory to the goal, and it keeps rebuilding both the corridor and the path as the flight unfolds. The math is simplified enough to run on the drone's own computer, so it can replan quickly."],
+      ["p", "In simulation, the MIT team reports that SANDO reached its goals faster than several leading planners and avoided collisions in every environment it was tested in. On real hardware, it avoided every moving obstacle across 12 test flights using only onboard sensors and computing. The code has been released publicly on GitHub."],
+      ["h2", "The fine print"],
+      ["p", "The guarantee is only as good as its assumption. If something moves faster than the speed limit the planner was given, it falls outside the safety bubble, a caveat New Atlas highlighted in its coverage. Twelve flights is also a modest test campaign. According to New Atlas, the team's next steps include reducing the computing load, connecting the planner to AI tools that accept plain-language instructions, and coordinating several drones at once. The research was funded in part by Singapore's Defense Science and Technology Agency."],
+      ["take", "What I like here is the shift from \"usually avoids crashes\" to a stated guarantee with clearly stated conditions. That is the kind of claim engineers and regulators can actually reason about. For search-and-rescue and inspection drones, I would watch how well the speed-limit assumption holds up around unpredictable things like people and debris, and whether the approach scales to swarms."]
+    ],
+    "credit": "Research by Kota Kondo, Juan Rached, Lili Sun, Yixuan Jia and Jonathan P. How (MIT Aerospace Controls Laboratory and LIDS) with Jesús Tordesillas (Comillas Pontifical University). Coverage via MIT News and New Atlas.",
+    "sources": [
+      ["MIT News: Planning system ensures a robot's flight path will remain collision-free", "https://news.mit.edu/2026/planning-system-ensures-robots-flight-path-will-remain-collision-free-1007"],
+      ["New Atlas: MIT's SANDO planner and obstacle prediction for drones", "https://newatlas.com/drones/mit-sando-planning-obstacle-prediction-collisions/"],
+      ["arXiv: SANDO: Safe Autonomous Trajectory Planning for Dynamic Unknown Environments", "https://arxiv.org/pdf/2604.07599"]
+    ]
   }
 ]
