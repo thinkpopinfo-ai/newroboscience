@@ -94,5 +94,32 @@
       ["New Atlas: MIT's SANDO planner and obstacle prediction for drones", "https://newatlas.com/drones/mit-sando-planning-obstacle-prediction-collisions/"],
       ["arXiv: SANDO: Safe Autonomous Trajectory Planning for Dynamic Unknown Environments", "https://arxiv.org/pdf/2604.07599"]
     ]
+  },
+  {
+    "slug": "perseverance-off-world-driving-record",
+    "field": "aerospace",
+    "date": "2026-10-15",
+    "title": "Perseverance Becomes the Farthest-Driving Vehicle on Another World",
+    "dek": "NASA's Perseverance rover has passed Opportunity's long-standing record for distance driven beyond Earth, largely by doing its own navigating across the Martian terrain.",
+    "tags": ["Mars", "Perseverance", "Rovers", "Autonomous navigation", "NASA JPL"],
+    "body": [
+      ["p", "For more than a decade, the record for the longest drive on any world other than Earth belonged to Opportunity, the hardy NASA rover that roamed Mars from 2004 to 2018. That record has now fallen. On October 11, 2026, the mission's 2,006th Martian day, NASA's Perseverance rover pushed its odometer to 28.10 miles (45.22 kilometers), edging past Opportunity's 28.06 miles (45.16 kilometers). NASA announced the milestone on October 12."],
+      ["h2", "A record set in a fraction of the time"],
+      ["p", "The striking part is not the small margin but the pace. Perseverance covered its distance in about five and a half years, while Opportunity needed almost 15 to build its total. Earlier in the mission, Perseverance had already passed the best distances ever driven on the Moon: the Soviet Lunokhod 2 rover's 24.2 miles (39 kilometers) in 1973 and the 22.2 miles (35.7 kilometers) covered by Apollo 17's astronauts in their lunar rover in 1972."],
+      ["p", "Steven Lee, who manages the Curiosity and Perseverance missions at NASA's Jet Propulsion Laboratory, noted that the original mission plan called for no more than 12.4 miles of driving. The rover has more than doubled that, and the team expects the total to keep growing."],
+      ["h2", "The rover that drives itself"],
+      ["p", "The main reason for the speed is autonomy. Perseverance uses a self-driving system called AutoNav. Engineers on Earth choose waypoints, and the rover fills in the route on its own: it photographs the ground as it rolls, builds a 3D map of hazards such as rocks and slopes, and steers around them without waiting for instructions. The team describes this as thinking while driving. On a good day the rover can cover up to 412 meters (1,351 feet)."],
+      ["p", "According to NASA, more than 90 percent of Perseverance's total distance was driven under AutoNav, compared with about 5 percent for Opportunity and its twin, Spirit. The rover processes about 600,000 measurement points each time it surveys the terrain ahead. Mark Maimone, deputy team chief for robotic operations, said newer software has made the rover a better driver than it was at landing, letting it steer less and roll more."],
+      ["h2", "Where it goes next"],
+      ["p", "The milestone arrives as Perseverance starts its first mission extension, approved by NASA to run from October 2026 to about the end of 2028 and focused on the rim of Jezero Crater. The rover is heading to a site called Idubi in an area nicknamed Lac de Charmes, just west of the rim, where scientists hope very old rocks preserve traces of ancient hot-water systems. After that it will travel south along the rim toward Rainbow Falls, a block of ancient crust about 100 meters wide that was pushed up by the impact that carved the crater. So far the rover has collected 29 rock and regolith samples. One practical obstacle remains: glare in the navigation cameras still forces it to stop by mid-afternoon when it is driving toward the Sun."],
+      ["take", "The headline is a distance record, but the real story is software. Opportunity was mostly driven step by step from Earth; Perseverance does most of its own route finding, and that is why it covered the same ground in roughly a third of the time. For future missions, every hour a rover spends waiting for instructions is an hour of science lost, so autonomy is a multiplier on everything else. Watch how the team handles the camera glare problem and whether these navigation lessons carry over to the next generation of lunar and Martian vehicles."]
+    ],
+    "credit": "Research and operations by NASA's Perseverance rover team at the Jet Propulsion Laboratory, including project manager Steven Lee and deputy robotic operations chief Mark Maimone. Coverage via NASA Science, EarthSky and Sci.News.",
+    "sources": [
+      ["NASA Science: NASA's Perseverance Sets Off-World Record for Total Distance Driven", "https://science.nasa.gov/blogs/perseverance-mars-rover/2026/10/12/nasas-perseverance-sets-off-world-record-for-total-distance-driven/"],
+      ["NASA Photojournal: Comparing Off-World Rover Driving Distances", "https://science.nasa.gov/photojournal/comparing-off-world-rover-driving-distances/"],
+      ["EarthSky: NASA's Perseverance rover on Mars sets off-world driving record", "https://earthsky.org/space/nasas-perseverance-rover-on-mars-sets-off-world-driving-record/"],
+      ["Sci.News: Perseverance Becomes Farthest-Traveling Vehicle on Another World", "https://www.sci.news/space/perseverance-farthest-traveling-rover-15127.html"]
+    ]
   }
 ]
