@@ -121,5 +121,32 @@
       ["EarthSky: NASA's Perseverance rover on Mars sets off-world driving record", "https://earthsky.org/space/nasas-perseverance-rover-on-mars-sets-off-world-driving-record/"],
       ["Sci.News: Perseverance Becomes Farthest-Traveling Vehicle on Another World", "https://www.sci.news/space/perseverance-farthest-traveling-rover-15127.html"]
     ]
+  },
+  {
+    "slug": "mit-in-vivo-car-nk-nanoparticles",
+    "field": "biotech",
+    "date": "2026-10-16",
+    "title": "Turning Immune Cells Into Cancer Hunters Without Ever Leaving the Body",
+    "dek": "MIT engineers used targeted lipid nanoparticles to reprogram natural killer cells inside mice, clearing tumors and healing an autoimmune liver disease without any lab-grown cells.",
+    "tags": ["CAR NK cells", "Lipid nanoparticles", "mRNA", "Immunotherapy", "Autoimmune disease"],
+    "body": [
+      ["p", "Engineered immune cells have become one of medicine's most powerful tools against blood cancers. In CAR T therapy, a patient's T cells are collected, given a cancer-recognizing receptor in a lab, multiplied and infused back. It works, but it is slow, costly and hard to scale. A team at MIT led by chemical engineer Daniel Anderson has now shown, in mice, a way to skip the lab entirely. Their study, published on October 13 in Nature Biotechnology, reprograms a different kind of immune cell, the natural killer (NK) cell, directly inside the body."],
+      ["h2", "A delivery package with an address label"],
+      ["p", "The approach relies on lipid nanoparticles, the same kind of tiny fat bubbles that carried mRNA in COVID-19 vaccines. Here the particles carry mRNA instructions for a chimeric antigen receptor, or CAR, the engineered sensor that tells an immune cell which target to attack. To make sure the cargo reaches the right cells, the researchers coated the particles with antibody fragments that latch onto receptors found on NK cells. Once inside, the NK cells read the mRNA and display the CAR."],
+      ["p", "The CAR can be swapped to aim at different targets. The team built versions that recognize CD19, a marker on B cells, and CD3, a marker on T cells. The work was led by postdoc Yuang Chen and graduate students Julia Monkovic and Haseeb Mughal, with Robert Langer among the co-authors."],
+      ["h2", "What happened in the mice"],
+      ["p", "According to MIT, about 80 percent of the targeted NK cells were reprogrammed after the particles were infused. In a model of aggressive melanoma, three of five treated mice went into complete remission. In mice given human immune systems and a T cell lymphoma, five injections eradicated the tumors, a result comparable to conventional CAR NK cells made outside the body. In a model of autoimmune hepatitis, where the body's own T cells attack the liver, a single injection destroyed the rogue T cells and the liver damage healed."],
+      ["p", "That last result points to a key advantage of NK cells. When CAR T cells are aimed at a marker that T cells themselves carry, they can end up attacking one another. NK cells avoid that problem, which makes them a natural fit for diseases driven by T cells. As Chen put it, NK cells can treat \"not only T cell cancer, but also T cell autoimmune diseases.\""],
+      ["h2", "Why it matters, and what is still unknown"],
+      ["p", "No CAR NK therapy has yet been approved by the FDA, partly because manufacturing these cells is so demanding. If an off-the-shelf infusion of nanoparticles could do the job, treatment could become faster and far cheaper. The researchers say they hope to apply the method to autoimmune conditions such as multiple sclerosis and rheumatoid arthritis."],
+      ["p", "Some perspective is needed. Every experiment so far was in mice, some groups were small, and the public summaries do not report long-term durability or detailed safety data. Because mRNA fades over time, how long the reprogrammed cells keep working in people is an open question."],
+      ["take", "Viraj's perspective: The most interesting shift here is from manufacturing cells to manufacturing a drug. Hospitals already know how to store and infuse a vial of nanoparticles; a personalized cell product needs its own supply chain for every patient. If this holds up, the bottleneck for cell therapy moves from the factory to the chemistry. What I will be watching: safety and dosing data, how long the effect lasts once the mRNA is gone, and whether the autoimmune results carry over to larger animals and, eventually, to a first human trial."]
+    ],
+    "credit": "Research by Yuang Chen, Julia Monkovic, Haseeb Mughal, Robert Langer, Daniel Anderson and colleagues at MIT's Department of Chemical Engineering, Koch Institute for Integrative Cancer Research and Institute for Medical Engineering and Science. Coverage via MIT News and AZoLifeSciences.",
+    "sources": [
+      ["Nature Biotechnology: In vivo engineering of CAR natural killer cells for immunotherapy using ligand-directed lipid nanoparticles", "https://www.nature.com/articles/s41587-026-03310-1"],
+      ["MIT News: Reprogrammed NK immune cells target cancer and autoimmune disorders", "https://news.mit.edu/2026/reprogrammed-nk-immune-cells-target-cancer-and-autoimmune-disorders-1013"],
+      ["AZoLifeSciences: Lipid Nanoparticles Reprogram NK Cells Internally to Eliminate Cancerous T Cells", "https://www.azolifesciences.com/news/20261014/Lipid-Nanoparticles-Reprogram-NK-Cells-Internally-to-Eliminate-Cancerous-T-Cells.aspx"]
+    ]
   }
 ]
