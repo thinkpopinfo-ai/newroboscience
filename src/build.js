@@ -75,6 +75,7 @@
   let ASSET_V = "1";
   function head(title, desc, path, extraLd, ogType = "website", ogImage) {
     const url = SITE + path;
+    if (desc.length > 158) { desc = desc.slice(0, 155).replace(/\s+\S*$/, "") + "…"; }
     const ld = [
       { "@context": "https://schema.org", "@type": "Person", "@id": SITE + "/#viraj", name: AUTHOR, url: SITE + "/about/", jobTitle: ROLE, alumniOf: [{ "@type": "CollegeOrUniversity", name: "Nirma University", address: "Ahmedabad, India" }], email: "mailto:" + EMAIL, address: { "@type": "PostalAddress", addressLocality: "New York", addressRegion: "NY", addressCountry: "US" }, ...(ORCID ? { sameAs: [ORCID], identifier: ORCID } : {}), knowsAbout: ["Robotics", "Aerospace engineering", "Biotechnology", "Science communication"] },
       { "@context": "https://schema.org", "@type": "WebSite", name: BRAND, url: SITE + "/", author: { "@id": SITE + "/#viraj" }, publisher: { "@id": SITE + "/#viraj" }, description: TAGLINE },
@@ -89,6 +90,7 @@
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
 <meta name="author" content="${AUTHOR}">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="${url}">
 <meta property="og:site_name" content="${BRAND}">
 <meta property="og:title" content="${esc(title)}">
@@ -443,6 +445,10 @@
     out["sitemap.xml"] = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map(([u, d]) => `<url><loc>${SITE}${u}</loc><lastmod>${d}</lastmod></url>`).join("")}</urlset>`;
     out["robots.txt"] = `User-agent: *\nAllow: /\nDisallow: /_source/\nSitemap: ${SITE}/sitemap.xml\n`;
     out["404.html"] = head(`Signal lost | ${BRAND}`, "Page not found.", "/404") + `<main id="main" class="wrap-narrow about"><p class="kicker">Error 404</p><h1>Signal lost</h1><p class="post-dek">That page drifted out of range.</p><a class="btn" href="/">Return to the observatory</a></main>` + foot(year);
+    // Utility pages (thank-you, unsubscribe, 404) add nothing to search: keep them out of Google's index
+    for (const k of ["subscribed/index.html", "unsubscribe/index.html", "unsubscribed/index.html", "404.html"]) {
+      out[k] = out[k].replace(/<meta name="robots" content="[^"]*">\n<link rel="canonical" href="[^"]*">/, '<meta name="robots" content="noindex, follow">');
+    }
     out["favicon.svg"] = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#05080f"/><ellipse cx="16" cy="16" rx="12" ry="5" fill="none" stroke="#5cd3ff" stroke-width="2" transform="rotate(-30 16 16)"/><circle cx="16" cy="16" r="4" fill="#ffb547"/><circle cx="26" cy="10" r="2" fill="#79f2b0"/></svg>`;
     out["netlify.toml"] = `[[headers]]\n  for = "/assets/*"\n  [headers.values]\n    Cache-Control = "public, max-age=3600"\n`;
     out["assets/style.css"] = assets.style;
