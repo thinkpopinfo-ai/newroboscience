@@ -148,5 +148,76 @@
       ["MIT News: Reprogrammed NK immune cells target cancer and autoimmune disorders", "https://news.mit.edu/2026/reprogrammed-nk-immune-cells-target-cancer-and-autoimmune-disorders-1013"],
       ["AZoLifeSciences: Lipid Nanoparticles Reprogram NK Cells Internally to Eliminate Cancerous T Cells", "https://www.azolifesciences.com/news/20261014/Lipid-Nanoparticles-Reprogram-NK-Cells-Internally-to-Eliminate-Cancerous-T-Cells.aspx"]
     ]
+  },
+  {
+    "slug": "tu-delft-monorace-ai-drone-beats-champions",
+    "field": "robotics",
+    "date": "2026-10-17",
+    "title": "One Camera, One Tiny Brain: The AI Drone That Outflew World Champion Pilots",
+    "dek": "TU Delft's MonoRace drone, steered by a small neural network and a single camera, beat every autonomous rival and three former human world champions at an international race in Abu Dhabi.",
+    "tags": [
+      "Drones",
+      "Drone racing",
+      "Reinforcement learning",
+      "Computer vision",
+      "TU Delft"
+    ],
+    "body": [
+      [
+        "p",
+        "Drone racing is one of the hardest tests you can set for a flying robot. Pilots thread tiny quadcopters through gates at highway speeds, reacting in fractions of a second. Machines have beaten champion humans before, but only on tracks built for them and with help from outside tracking systems. A team at Delft University of Technology in the Netherlands now reports a drone that did it on a course the robot's builders did not control, using only what it carried on board. The study appeared in Science Robotics on October 14."
+      ],
+      [
+        "h2",
+        "What the Delft team built"
+      ],
+      [
+        "p",
+        "The system, called MonoRace, comes from TU Delft's Micro Air Vehicle Lab (MAVLab). The paper's authors include Stavrow Bahnam, Robin Ferede, Christophe De Wagter and Guido de Croon, among other members of the group. Their drone has no GPS and no external cameras watching it. It relies on one forward-facing camera and an inertial measurement unit, the same kind of motion sensor found in phones. De Wagter told Popular Science the goal was to see \"how much intelligence we could extract from very limited resources.\""
+      ],
+      [
+        "p",
+        "A neural network reads the camera feed to spot the racing gates, and that estimate is blended with the motion sensor data so the drone knows where it is on the track. A second, very small network then sends commands straight to the four motors about 500 times per second, skipping the usual step of planning a path and then following it. That controller was trained with reinforcement learning, a trial-and-error method, entirely in simulation before it ever flew for real."
+      ],
+      [
+        "h2",
+        "How it did in Abu Dhabi"
+      ],
+      [
+        "p",
+        "The team entered MonoRace in a 2025 autonomous drone racing competition in Abu Dhabi, flying on a track and hardware supplied by the organizers. According to TU Delft, it reached speeds of up to 100 kilometers per hour (about 62 mph), beat all the other autonomous teams and posted faster runs than three former world champion human pilots. The researchers say it is the first AI-piloted drone to beat human pilots at an international race."
+      ],
+      [
+        "p",
+        "That matters because the best-known earlier result, the University of Zurich's Swift drone in 2022, beat humans on an indoor track it was designed and trained for. As Popular Science noted, Swift's performance suffered when conditions such as lighting changed."
+      ],
+      [
+        "h2",
+        "The fine print"
+      ],
+      [
+        "p",
+        "One camera is cheap and light, but at high speed its images become blurry and distorted, which is why the motion sensor is essential. The earlier preprint version of the work is open about other gaps: the drone has no way to avoid other drones, and a collision cost it in a multi-drone race. Its vision system also expects rectangular gates, and some fixes were tuned to this specific track and aircraft. Racing success has not yet carried over to larger robots in messier settings."
+      ],
+      [
+        "take",
+        "Viraj's perspective: The headline is the human win, but the deeper result is how little hardware it took. A single camera, a motion sensor and a network small enough to run on a flight-controller chip is a recipe that could suit inspection, delivery or search drones where weight and cost matter. What I would watch next is whether the Delft group can add obstacle and drone avoidance, and how well the approach generalizes beyond neat rectangular gates."
+      ]
+    ],
+    "credit": "Research by Stavrow Bahnam, Robin Ferede, Christophe De Wagter, Guido de Croon and colleagues at the Micro Air Vehicle Lab (MAVLab), Faculty of Aerospace Engineering, Delft University of Technology. Coverage via EurekAlert! (TU Delft release) and Popular Science.",
+    "sources": [
+      [
+        "EurekAlert! (TU Delft): The science behind the world's fastest autonomous racing drone",
+        "https://www.eurekalert.org/news-releases/1147237"
+      ],
+      [
+        "Popular Science: An AI-racing drone beat the best humans and set a world record",
+        "https://www.popsci.com/technology/fastest-ai-racing-drone/"
+      ],
+      [
+        "arXiv: MonoRace: Winning Champion-Level Drone Racing with Robust Monocular AI",
+        "https://www.arxiv.org/pdf/2601.15222"
+      ]
+    ]
   }
 ]
