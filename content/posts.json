@@ -219,5 +219,76 @@
         "https://www.arxiv.org/pdf/2601.15222"
       ]
     ]
+  },
+  {
+    "slug": "artemis-ii-orion-heat-shield-postflight-verdict",
+    "field": "aerospace",
+    "date": "2026-10-18",
+    "title": "Orion's Heat Shield Passes Its Crewed Test: NASA's Verdict on Artemis II",
+    "dek": "Six months after Artemis II splashed down, NASA's engineering analysis finds Orion's heat shield behaved as predicted, with about one-tenth the char damage seen after the uncrewed Artemis I flight.",
+    "tags": [
+      "Artemis II",
+      "Orion",
+      "Heat shield",
+      "NASA",
+      "Spacecraft reentry"
+    ],
+    "body": [
+      [
+        "p",
+        "When the uncrewed Artemis I capsule came home from the Moon in 2022, engineers found something they had not expected: chunks of the charred outer layer of Orion's heat shield had broken away. Fixing or working around that problem became one of the biggest questions hanging over Artemis II, the first flight to carry astronauts in Orion. On October 15, NASA published the results of its detailed post-flight engineering analysis, and the answer is reassuring. The shield, the agency says, performed as expected."
+      ],
+      [
+        "h2",
+        "What went wrong the first time"
+      ],
+      [
+        "p",
+        "Orion's heat shield is built from 186 blocks of Avcoat, an ablative material designed to char and slowly wear away as it absorbs reentry heat. In a December 2024 report, NASA explained that during Artemis I's reentry, gases formed inside the Avcoat could not escape fast enough because the material was not permeable enough. Pressure built up, the Avcoat cracked, and pieces of char broke off. That investigation drew on samples cut from the shield at NASA's Marshall Space Flight Center and arc jet tests at NASA's Ames Research Center that recreated the reentry heating."
+      ],
+      [
+        "p",
+        "Rather than rebuild the Artemis II shield, NASA changed the flight path. Engineers shortened the maximum downrange distance Orion would travel during reentry, which limits how long the shield sits in the temperature range where the Artemis I damage happened."
+      ],
+      [
+        "h2",
+        "What the new analysis found"
+      ],
+      [
+        "p",
+        "Artemis II carried four astronauts around the Moon and splashed down off San Diego on April 10, 2026. According to NASA, Orion hit the atmosphere at up to 39 times the speed of sound, outside temperatures topped 4,000°F, and the cabin stayed in the mid-70s. The capsule entered within 192 feet of its target point and landed 0.59 miles from where it was predicted to come down."
+      ],
+      [
+        "p",
+        "The headline number is char loss. NASA counted nine spots on the Artemis II shield, compared with 103 after Artemis I, roughly a tenfold reduction in cracking and missing char. The agency also reports that the seams between Avcoat blocks and the material around bolt fittings behaved consistently across both flights. The backshell, covered in about 1,300 ceramic tiles that protect the windows, vents, thrusters and hatch, showed no signs of overheating. Overall, the measured heating matched what pre-flight analysis and ground tests had predicted."
+      ],
+      [
+        "h2",
+        "What comes next"
+      ],
+      [
+        "p",
+        "The work is not finished. The shield moved to Marshall in Huntsville, Alabama, where engineers began cutting samples and taking X-ray scans in August. Laser scans of the surface are being compared with pre-flight measurements to see exactly how much material wore away. NASA says upgrades for Artemis III aim to make the Avcoat blocks uniformly permeable, tackling the root cause rather than just steering around it. Artemis III's heat shield is already attached to its crew module at Kennedy Space Center, and that mission is planned for next year in Earth orbit, ahead of a landing attempt NASA targets for Artemis IV in 2028."
+      ],
+      [
+        "take",
+        "Viraj's perspective: This is a good example of engineering margin earned the careful way. NASA did not claim the material problem was solved; it changed the operating conditions, predicted the outcome, and then checked the prediction against the hardware. A tenfold drop in char loss is encouraging, but the real test is the redesigned, more permeable Avcoat. Watch for the recession data from the laser scans and for how the new blocks perform on Artemis III and the faster lunar returns that follow."
+      ]
+    ],
+    "credit": "Research and post-flight analysis by NASA engineering teams, including work at NASA's Marshall Space Flight Center, Ames Research Center and Kennedy Space Center. Coverage via NASA and autoevolution.",
+    "sources": [
+      [
+        "NASA: Rigorous Analysis Confirms NASA's Artemis II Heat Shield Performance",
+        "https://www.nasa.gov/missions/artemis/artemis-2/rigorous-analysis-confirms-nasas-artemis-ii-heat-shield-performance/"
+      ],
+      [
+        "NASA: NASA Identifies Cause of Artemis I Orion Heat Shield Char Loss",
+        "https://www.nasa.gov/missions/artemis/nasa-identifies-cause-of-artemis-i-orion-heat-shield-char-loss"
+      ],
+      [
+        "autoevolution: Artemis II Heat Shield Held Its Ground as Orion Spacecraft Plummeted to Earth at Asteroid Speed",
+        "https://www.autoevolution.com/news/artemis-ii-heat-shield-held-its-ground-as-orion-spacecraft-plummeted-to-earth-at-asteroid-speed-277176.html"
+      ]
+    ]
   }
 ]
