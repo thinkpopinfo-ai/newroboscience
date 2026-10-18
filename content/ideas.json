@@ -49,5 +49,33 @@
       "How should the decision logic balance speed, cost and safety?",
       "What new standards would certify a part that has repaired itself?"
     ]
+  },
+  {
+    "slug": "heat-shields-that-breathe-by-design",
+    "date": "2026-10-18",
+    "field": "aerospace",
+    "title": "Heat Shields That Breathe by Design",
+    "summary": "Orion's Artemis I char loss came down to gas that could not escape. What if a heat shield's permeability were engineered, zone by zone, as carefully as its thickness?",
+    "post": "artemis-ii-orion-heat-shield-postflight-verdict",
+    "concept": [
+      "NASA traced the char loss on the Artemis I heat shield to gases forming inside the Avcoat ablator that could not vent fast enough because the material was not permeable enough. For Artemis II, NASA changed the reentry path rather than the shield, and says Artemis III upgrades aim to make the Avcoat blocks uniformly permeable.",
+      "The idea goes one step further: treat permeability as a design variable that can vary across the shield, not a single material property. A coupled multiphysics model, linking heat conduction, pyrolysis gas generation, porous flow and internal stress, would map where pressure is most likely to build up for a given entry trajectory. Regions that run hotter or longer, or that sit near seams and fittings, could then be given more open venting paths, while other regions keep a denser structure for strength and insulation.",
+      "Manufacturing methods that control porosity locally, such as additive manufacturing or graded infiltration, could turn that map into hardware. Arc-jet tests and post-flight scans would close the loop by checking predicted pressure and recession against what the material actually did, and by recalibrating the model for the next design."
+    ],
+    "questions": [
+      "Can permeability be graded without creating weak interfaces where cracks would start?",
+      "How should the shield design and the entry trajectory be optimised together, instead of one constraining the other?",
+      "Which measurements from ground tests and recovered shields best constrain internal gas pressure, which is hard to measure directly?"
+    ],
+    "sources": [
+      [
+        "NASA: NASA Identifies Cause of Artemis I Orion Heat Shield Char Loss",
+        "https://www.nasa.gov/missions/artemis/nasa-identifies-cause-of-artemis-i-orion-heat-shield-char-loss"
+      ],
+      [
+        "NASA: Rigorous Analysis Confirms NASA's Artemis II Heat Shield Performance",
+        "https://www.nasa.gov/missions/artemis/artemis-2/rigorous-analysis-confirms-nasas-artemis-ii-heat-shield-performance/"
+      ]
+    ]
   }
 ]

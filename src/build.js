@@ -362,6 +362,7 @@
     <div class="prose">${d.concept.map(t => `<p>${esc(t)}</p>`).join("")}</div>
     <h3>Open questions</h3>
     <ul class="qs">${d.questions.map(q => `<li>${esc(q)}</li>`).join("")}</ul>
+    ${(d.post || (d.sources && d.sources.length)) ? `<p class="idea-src"><strong>Sparked by:</strong> ${[d.post ? `<a href="/posts/${esc(d.post)}/">the newroboscience explainer</a>` : ""].concat((d.sources || []).filter(([, u]) => /^https:\/\//.test(u)).map(([l, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(l)}</a>`)).filter(Boolean).join(" · ")}</p>` : ""}
     <a class="btn ghost" href="mailto:${EMAIL}?subject=${encodeURIComponent("Idea: " + d.title)}">Discuss this idea with Viraj</a>
   </article>`; }).join("")}
   <aside class="take" style="--c:var(--cyan)"><p class="take-label">Have more questions?</p><p>Need more innovative ideas or deeper knowledge on any of these topics? Feel free to reach out at <a href="mailto:${EMAIL}">${EMAIL}</a>.</p></aside>
@@ -424,8 +425,8 @@
     }).sort((a, b) => (a.date === b.date ? (a.tx < b.tx ? 1 : -1) : a.date < b.date ? 1 : -1));
     const year = posts[0].date.slice(0, 4);
     const out = {};
-    out["index.html"] = renderIndex(posts, assets.ideas || [], year);
-    const ideas = assets.ideas || [], prof = assets.profile;
+    const ideas = (assets.ideas || []).map((d, i) => [d, i]).sort((a, b) => (b[0].date || "").localeCompare(a[0].date || "") || b[1] - a[1]).map(x => x[0]), prof = assets.profile;
+    out["index.html"] = renderIndex(posts, ideas, year);
     out["about/index.html"] = renderAbout(posts, ideas, prof, year);
     out["ideas/index.html"] = renderIdeas(ideas, year);
     out["live/index.html"] = renderLive(year);
@@ -441,7 +442,7 @@
 <pubDate>${rfcDate(p.date)}</pubDate>
 <dc:creator>${AUTHOR}</dc:creator><category>${FIELDS[p.field].name}</category><description>${esc(p.dek)}</description></item>`).join("")}
 </channel></rss>`;
-    const urls = [["/", posts[0].date], ["/about/", posts[0].date], ["/ideas/", posts[0].date], ["/live/", posts[0].date], ["/subscribe/", posts[0].date]].concat(posts.map(p => [p.url, p.date]));
+    const urls = [["/", posts[0].date], ["/about/", posts[0].date], ["/ideas/", [posts[0].date].concat(ideas.map(d => d.date)).sort().pop()], ["/live/", posts[0].date], ["/subscribe/", posts[0].date]].concat(posts.map(p => [p.url, p.date]));
     out["sitemap.xml"] = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map(([u, d]) => `<url><loc>${SITE}${u}</loc><lastmod>${d}</lastmod></url>`).join("")}</urlset>`;
     out["robots.txt"] = `User-agent: *\nAllow: /\nDisallow: /_source/\nSitemap: ${SITE}/sitemap.xml\n`;
     out["404.html"] = head(`Signal lost | ${BRAND}`, "Page not found.", "/404") + `<main id="main" class="wrap-narrow about"><p class="kicker">Error 404</p><h1>Signal lost</h1><p class="post-dek">That page drifted out of range.</p><a class="btn" href="/">Return to the observatory</a></main>` + foot(year);
