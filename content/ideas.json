@@ -77,5 +77,33 @@
         "https://www.nasa.gov/missions/artemis/artemis-2/rigorous-analysis-confirms-nasas-artemis-ii-heat-shield-performance/"
       ]
     ]
+  },
+  {
+    "slug": "forecasting-how-long-a-one-time-gene-edit-will-last",
+    "date": "2026-10-19",
+    "field": "biotech",
+    "title": "Forecasting How Long a One-Time Gene Edit Will Last",
+    "summary": "Early base editing data in GSDIa leave durability open. A Bayesian model calibrated on each patient's sparse fasting data could forecast how long the benefit lasts, with honest error bars.",
+    "post": "beam-301-base-editing-gsd1a-first-patient-data",
+    "concept": [
+      "On October 13, Beam Therapeutics released the first human data for BEAM-301, a one-time base editing treatment for glycogen storage disease type Ia delivered to the liver in lipid nanoparticles. Across six patients, Beam reported that the two evaluable patients on the 40 milligram dose went from a median of 2.5 hours of safe fasting to the trial's 15-hour ceiling, while in the 20 milligram group the cut in daily cornstarch was 74 percent at day 128 but only 11 percent at day 387. The higher-dose group had been followed for a median of just 53 days, so the question that matters most to patients, how long the benefit lasts, cannot yet be answered from the raw numbers alone.",
+      "The proposal is a patient-specific prognostic model for one-shot gene therapies, borrowing the approach used to forecast remaining life in engineering hardware. A compact physiological model would link a few hidden states, such as the fraction of liver cells carrying the edit, the enzyme activity they provide and how that population changes over time, to the things clinicians actually measure: supervised fasting tests, prescribed cornstarch and routine glucose readings. Bayesian calibration would update each patient's hidden states every time a new measurement arrives, and the output would be a forecast of fasting tolerance months ahead with a credible interval, rather than a single snapshot. A widening interval or a downward trend would flag a fading effect early, and the same posterior could indicate when tapering cornstarch is likely safe and when it is not.",
+      "The model could be tested without new experiments on patients by fitting it only to early time points in published or shared trial data and checking its predictions against later visits it never saw, and by preregistering forecasts before each data release. An observability analysis would show which measurements, and how often, best pin down the hidden states, which could make monitoring lighter for patients. If it works, regulators, clinicians and developers would gain a common, quantitative way to talk about durability for single-dose treatments, and a tool to compare doses or editors long before multi-year follow-up is complete."
+    ],
+    "questions": [
+      "Which hidden variables, such as edited-cell fraction or turnover rate, can actually be identified from a handful of fasting tests and glucose readings, and which remain unobservable?",
+      "How should a model separate a genuinely fading edit from changes in diet, illness or dosing behaviour that also affect fasting tolerance?",
+      "What forecast accuracy and interval width would be good enough for a clinician to rely on it when tapering a patient's cornstarch?"
+    ],
+    "sources": [
+      [
+        "CRISPR Medicine News: Base editor restores glucose production in GSDIa patients",
+        "https://crisprmedicinenews.com/news/base-editor-restores-glucose-production-in-gsdia-patients/"
+      ],
+      [
+        "Beam Therapeutics press release (GlobeNewswire, via Finviz): Initial Data from Phase 1/2 Trial of BEAM-301 in GSDIa",
+        "https://finviz.com/news/401585/beam-therapeutics-to-present-initial-data-from-phase-12-trial-of-beam-301-in-glycogen-storage-disease-type-ia-gsdia-at-the-esgct-33rd-annual-congress"
+      ]
+    ]
   }
 ]
