@@ -290,5 +290,80 @@
         "https://www.autoevolution.com/news/artemis-ii-heat-shield-held-its-ground-as-orion-spacecraft-plummeted-to-earth-at-asteroid-speed-277176.html"
       ]
     ]
+  },
+  {
+    "slug": "beam-301-base-editing-gsd1a-first-patient-data",
+    "field": "biotech",
+    "date": "2026-10-19",
+    "title": "One Infusion, Longer Nights: Base Editing's First Results in a Rare Sugar Disorder",
+    "dek": "Beam Therapeutics reported early data from six people with glycogen storage disease type Ia, where a single dose of the base editor BEAM-301 stretched how long patients could safely go without food.",
+    "tags": [
+      "Base editing",
+      "Gene editing",
+      "Rare disease",
+      "Lipid nanoparticles",
+      "Clinical trials"
+    ],
+    "body": [
+      [
+        "p",
+        "For people with glycogen storage disease type Ia, or GSDIa, a night's sleep is a scheduling problem. The disease breaks the liver's ability to release stored sugar into the blood, so blood glucose can crash dangerously within a few hours of the last meal. Many patients take measured doses of uncooked cornstarch around the clock, even overnight. On October 13, Beam Therapeutics, a Massachusetts gene editing company, released the first human data for BEAM-301, a one-time treatment designed to fix the faulty gene directly inside the liver."
+      ],
+      [
+        "h2",
+        "Correcting a single letter of DNA"
+      ],
+      [
+        "p",
+        "GSDIa is an inherited disorder caused by mutations in the G6PC1 gene, which makes an enzyme called glucose-6-phosphatase. The enzyme handles the last step in turning stored glycogen back into blood sugar. BEAM-301 targets one specific spelling error in this gene, known as R83C, which Beam describes as one of the most common disease-causing variants. People with this variant can slip into hypoglycemia within one to three hours without cornstarch."
+      ],
+      [
+        "p",
+        "The treatment uses base editing, a newer form of gene editing that swaps a single DNA letter for another without cutting both strands of the double helix, as classic CRISPR does. The editing machinery travels to the liver inside lipid nanoparticles, the tiny fat bubbles used in mRNA vaccines, given as one intravenous infusion."
+      ],
+      [
+        "h2",
+        "What six patients showed"
+      ],
+      [
+        "p",
+        "The data come from an open-label Phase 1/2 trial and cover six patients as of a June 26 data cutoff: three who received a 20 milligram dose and three who received 40 milligrams. In the lower-dose group, the median time patients could fast before their blood sugar fell too low rose from 2.9 hours to 4.3 hours by day 36. The two evaluable patients in the higher-dose group, who started at a median of 2.5 hours, both reached the trial's ceiling of at least 15 hours of supervised fasting."
+      ],
+      [
+        "p",
+        "Patients also needed less cornstarch. The higher-dose group cut its prescribed daily amount by 71 percent at day 50 and 92 percent at day 93. The lower-dose group saw reductions of 74 percent at day 128 and 71 percent at day 227, but only 11 percent at day 387, a reminder that durability is still an open question."
+      ],
+      [
+        "p",
+        "Every patient had at least one side effect judged related to the treatment. There were five serious adverse events, including three severe infusion reactions, all of which resolved within two to ten days; Beam says it has since changed the steroid regimen given before infusion. Liver enzyme rises were mild and temporary, and no dose-limiting toxicities or deaths were reported. Updated results will be presented as a poster at the European Society of Gene and Cell Therapy congress in Hamburg on October 28, presented by Rebecca Riba-Wolman of Connecticut Children's."
+      ],
+      [
+        "h2",
+        "Reading the early numbers carefully"
+      ],
+      [
+        "p",
+        "These are company-reported results from a handful of people, without a control group and not yet peer reviewed. The high-dose cohort had been followed for a median of only 53 days. Still, going from under three hours to the 15-hour maximum would, if it lasts, reshape daily life."
+      ],
+      [
+        "take",
+        "Viraj's perspective: Base editing has long proven itself in dishes and animals. What makes BEAM-301 worth watching is that the readout is something patients feel directly: hours of safe fasting and fewer cornstarch doses. The questions for the Hamburg data and beyond are simple. Does the 40 milligram effect last past a few months, does the lower dose fade as the day 387 figure hints, and can the infusion reactions be tamed? If they break the right way, this could become a template for other single-letter liver diseases."
+      ]
+    ],
+    "credit": "Research by Beam Therapeutics and the investigators of the BEAM-301 Phase 1/2 trial (NCT06735755), with ESGCT data presented by Rebecca Riba-Wolman, M.D., of Connecticut Children's. Coverage via CRISPR Medicine News and Pharmacally.",
+    "sources": [
+      [
+        "Beam Therapeutics press release (GlobeNewswire, via Finviz): Beam Therapeutics to Present Initial Data from Phase 1/2 Trial of BEAM-301 in GSDIa at the ESGCT 33rd Annual Congress",
+        "https://finviz.com/news/401585/beam-therapeutics-to-present-initial-data-from-phase-12-trial-of-beam-301-in-glycogen-storage-disease-type-ia-gsdia-at-the-esgct-33rd-annual-congress"
+      ],
+      [
+        "CRISPR Medicine News: Base editor restores glucose production in GSDIa patients",
+        "https://crisprmedicinenews.com/news/base-editor-restores-glucose-production-in-gsdia-patients/"
+      ],
+      [
+        "Pharmacally: Beam Reports Improved Fasting Tolerance With BEAM-301 Base Editing in GSDIa",
+        "https://pharmacally.com/?p=25922"
+      ]
+    ]
   }
 ]
