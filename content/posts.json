@@ -365,5 +365,80 @@
         "https://pharmacally.com/?p=25922"
       ]
     ]
+  },
+  {
+    "slug": "gemini-4-argon-video-to-sim-to-real-apollo-cornhole",
+    "field": "robotics",
+    "date": "2026-10-20",
+    "title": "From One Video to Seven Straight Throws: Google DeepMind's Video-to-Sim-to-Real Demo",
+    "dek": "Google DeepMind says its new Gemini 4 Argon model watched a person play cornhole, wrote its own physics simulation, and helped Apptronik's Apollo humanoid land seven throws in a row.",
+    "tags": [
+      "Humanoid robots",
+      "Simulation",
+      "Sim-to-real",
+      "Foundation models",
+      "Embodied AI"
+    ],
+    "body": [
+      [
+        "p",
+        "Teaching a robot a new physical skill usually starts long before the robot moves. Engineers build a virtual copy of the task in a physics simulator, tune it by hand so it behaves like the real world, and then let the robot practice there thousands of times. That modeling step can take weeks. On October 13, Google DeepMind introduced Gemini 4 Argon, its newest frontier AI model, and showed an internal robotics test aimed squarely at that bottleneck."
+      ],
+      [
+        "h2",
+        "Watching, then building the practice field"
+      ],
+      [
+        "p",
+        "In the demonstration, the team gave Argon a video of a person playing cornhole, the backyard game of tossing beanbags at a slanted board with a hole. According to Google's announcement, the model worked out the spatial layout of the scene from the footage, estimated the whole-body joint movements a robot would need to make the throw, and then wrote the simulation code itself. Coverage of the demo says the practice took place in MuJoCo, a widely used open-source physics engine, where the model reviewed failed attempts and changed its approach, for example adjusting the stance and swing to fit a robot's body rather than a human's."
+      ],
+      [
+        "p",
+        "The result was then moved onto real hardware: Apollo, a humanoid robot built by Apptronik, an Austin, Texas company that works with Google DeepMind. In a real-world trial, Apollo landed seven consecutive throws. Google calls the workflow Video-to-Sim-to-Real and says it shrinks weeks of manual simulation work into a few hours."
+      ],
+      [
+        "h2",
+        "Part of a broader model launch"
+      ],
+      [
+        "p",
+        "The robotics test was one piece of a larger release. Gemini 4 Argon is a general model available to developers through Google's API, and the company highlighted uses ranging from software engineering to drug discovery and security. On the robotics side, Google reported a score of 87 percent on ERQA, a benchmark of multiple-choice questions about spatial and physical reasoning, which it says beats other frontier models. That number measures how well the model reasons about the physical world in a quiz format, not how well a robot performs tasks."
+      ],
+      [
+        "h2",
+        "What the demo does and does not show"
+      ],
+      [
+        "p",
+        "This was an internal company test, not a peer-reviewed study, and outside outlets were careful to say so. Google has not published how many total attempts were made, how much human engineering went into the setup, or how the seven-shot streak fits into the overall run; reporting notes the workflow included feedback from where earlier throws landed. Cornhole is also a single, fairly forgiving task. The weeks-to-hours claim comes from Google and has not been independently measured."
+      ],
+      [
+        "take",
+        "Viraj's perspective: The headline is not that a humanoid can toss a beanbag. It is that a general AI model may be able to draft the simulator itself from ordinary video, which is one of the slowest, most expert-heavy steps in robot learning. If that holds up, the supply of robot training scenarios could grow as fast as people can record videos. What I want to see next: a written technical report with attempt counts and failure cases, tests on tasks where physics is less forgiving, like handling soft or fragile objects, and independent labs reproducing the pipeline on their own robots."
+      ]
+    ],
+    "credit": "Research and demonstration by Google DeepMind, with the Apollo humanoid from Apptronik. Coverage via Humanoids Daily, Humanoid.guide, Crypto Briefing and IEEE Spectrum.",
+    "sources": [
+      [
+        "Google: Gemini 4 Argon: Built to solve your hardest problems",
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/"
+      ],
+      [
+        "Humanoids Daily: Gemini 4 Argon Takes Apollo From Human Video to Seven Straight Cornhole Shots",
+        "https://www.humanoidsdaily.com/news/gemini-4-argon-apollo-cornhole-robotics"
+      ],
+      [
+        "Humanoid.guide: Gemini 4 Argon robotics demo puts Apollo at cornhole",
+        "https://humanoid.guide/google-demonstrates-gemini-4-argon-robotics-on-apollo-humanoid/"
+      ],
+      [
+        "Crypto Briefing: Google DeepMind's Video-to-Sim-to-Real pipeline teaches a humanoid robot to play cornhole",
+        "https://cryptobriefing.com/gemini-4-argon-robot-cornhole/"
+      ],
+      [
+        "IEEE Spectrum: Video Friday: When Two Robots Become One",
+        "https://spectrum.ieee.org/video-friday-reconfigurable-robots"
+      ]
+    ]
   }
 ]
