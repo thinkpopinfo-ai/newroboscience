@@ -1,6 +1,8 @@
 [build]
   command = "node src/build.js"
   publish = "dist"
+  # Publish in batches (Mon/Wed/Fri morning) to stay within 300 credits/month; see scripts/netlify-ignore.js
+  ignore = "node scripts/netlify-ignore.js"
 
 [[headers]]
   for = "/assets/*"
