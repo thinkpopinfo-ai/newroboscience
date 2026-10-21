@@ -440,5 +440,80 @@
         "https://spectrum.ieee.org/video-friday-reconfigurable-robots"
       ]
     ]
+  },
+  {
+    "slug": "jaxa-mmx-launches-phobos-sample-return",
+    "field": "aerospace",
+    "date": "2026-10-21",
+    "title": "Japan's MMX Heads for Phobos to Bring Home a Piece of a Martian Moon",
+    "dek": "JAXA's Martian Moons eXploration spacecraft lifted off on an H3 rocket and is now bound for Mars, aiming to orbit Phobos, land on it and return at least 10 grams of its surface to Earth in 2031.",
+    "tags": [
+      "MMX",
+      "JAXA",
+      "Phobos",
+      "Sample return",
+      "Mars"
+    ],
+    "body": [
+      [
+        "p",
+        "Mars has two small, lumpy moons, Phobos and Deimos, and nobody is quite sure where they came from. On October 19 at 3:41 p.m. EDT (4:41 a.m. on October 20 in Japan), the Japan Aerospace Exploration Agency (JAXA) launched a spacecraft built to settle the question by bringing a piece of Phobos home. The Martian Moons eXploration mission, or MMX, rode an H3 rocket from Tanegashima Space Center. JAXA reports the rocket flew as planned and that the spacecraft separated about 71 minutes after liftoff, entering its intended orbit."
+      ],
+      [
+        "h2",
+        "A mystery about where two moons came from"
+      ],
+      [
+        "p",
+        "Phobos is only about 22 kilometers across and Deimos about 12. One idea is that they are asteroids that wandered too close to Mars and were captured by its gravity. Another is that they formed from rubble thrown into orbit when something large slammed into the planet. Their neat, circular orbits lined up with the Martian equator lean toward the impact story, but the evidence so far is indirect. NASA's Tom Statler told Space.com the moons \"may be the remains of a massive impact on Mars.\" A sample analyzed in labs on Earth could tell the two scenarios apart, and could also shed light on how water and organic material reached the inner planets."
+      ],
+      [
+        "h2",
+        "The plan: orbit, scout, land, return"
+      ],
+      [
+        "p",
+        "MMX is due to reach the Mars system in August 2027. It will then settle into a special path that keeps it close to Phobos and spend a long stretch mapping both moons from a distance. Before the main spacecraft touches down, it will release Idefix, a 25 kilogram, four-wheeled rover built jointly by the French space agency CNES and the German Aerospace Center (DLR), which will scout the surface and study its texture and makeup. The spacecraft will then land and collect at least 10 grams of material using two tools: JAXA's coring sampler, which digs deeper, and NASA's pneumatic sampler, built by Honeybee Robotics, which gathers surface grains in seconds. A return capsule is planned to land in Australia in 2031, as Japan's Hayabusa missions did."
+      ],
+      [
+        "p",
+        "It is a broad international effort. NASA supplied the MEGANE gamma-ray and neutron spectrometer, built by the Johns Hopkins Applied Physics Laboratory, to measure which elements make up Phobos. ESA provided deep space communication equipment and will support the mission through its Estrack ground stations. In all, the spacecraft carries more than a dozen science instruments, including cameras, an infrared spectrometer and a laser altimeter."
+      ],
+      [
+        "h2",
+        "Why this mission stands out"
+      ],
+      [
+        "p",
+        "Japan has returned asteroid samples twice before, from Itokawa and Ryugu, and NASA's OSIRIS-REx brought back material from Bennu. MMX aims for several firsts: the first spacecraft to orbit Phobos, the first sample from a moon other than our own, and the first return trip from the Mars system. The mission was originally planned for 2024 but slipped because of problems with the new H3 rocket, and Mars launch windows only open about every 26 months, so this successful departure matters."
+      ],
+      [
+        "take",
+        "Viraj's perspective: A clean launch is only the opening move of a five-year journey, and the hard parts, a landing in almost no gravity and a long trip home, are still ahead. What makes MMX worth watching is the payoff: a few grams of Phobos could answer a question that orbital pictures have left open for decades. Keep an eye on the August 2027 arrival, Idefix's first drive across a tiny moon, and whether Mars-orbiting rubble ends up carrying traces of Mars itself."
+      ]
+    ],
+    "credit": "Research by the Japan Aerospace Exploration Agency (JAXA) and its Institute of Space and Astronautical Science, with partners NASA, Johns Hopkins APL, Honeybee Robotics, CNES, DLR and ESA. Coverage via Space.com and SpacePolicyOnline.com.",
+    "sources": [
+      [
+        "JAXA: Launch result of the Martian Moons eXploration (MMX) spacecraft aboard H3 Launch Vehicle flight No.10",
+        "https://global.jaxa.jp/press/2026/10/20261020-1_e.html"
+      ],
+      [
+        "ESA: MMX lifts off to Mars's moon Phobos",
+        "https://www.esa.int/ESA_Multimedia/Images/2026/10/MMX_lifts_off_to_Mars_s_moon_Phobos"
+      ],
+      [
+        "ESA: MMX factsheet",
+        "https://esa.int/Science_Exploration/Space_Science/MMX_factsheet"
+      ],
+      [
+        "SpacePolicyOnline.com: JAXA's MMX Enroute to Mars To Return Samples of Phobos",
+        "https://spacepolicyonline.com/news/jaxas-mmx-enroute-to-mars-to-return-samples-of-phobos/"
+      ],
+      [
+        "Space.com: Japan launching bold sample-return mission to Mars moon Phobos",
+        "https://www.space.com/astronomy/mars/japan-launching-bold-sample-return-mission-to-mars-moon-phobos-today-watch-it-live"
+      ]
+    ]
   }
 ]
