@@ -105,5 +105,37 @@
         "https://finviz.com/news/401585/beam-therapeutics-to-present-initial-data-from-phase-12-trial-of-beam-301-in-glycogen-storage-disease-type-ia-gsdia-at-the-esgct-33rd-annual-congress"
       ]
     ]
+  },
+  {
+    "slug": "video-built-robot-simulators-that-know-their-own-uncertainty",
+    "date": "2026-10-21",
+    "field": "robotics",
+    "title": "Video-Built Robot Simulators That Know Their Own Uncertainty",
+    "summary": "If AI can write a robot's simulator from a single video, it should also say how unsure it is. A Bayesian ensemble of simulators, refined by each real attempt, could make video-to-real training safer.",
+    "post": "gemini-4-argon-video-to-sim-to-real-apollo-cornhole",
+    "concept": [
+      "On October 13, Google DeepMind introduced Gemini 4 Argon and showed an internal robotics test it calls Video-to-Sim-to-Real. According to Google, the model watched a video of a person playing cornhole, worked out the layout of the scene, estimated the whole-body motions a robot would need, and wrote the simulation code itself; coverage of the demo says the practice ran in the MuJoCo physics engine. Apptronik's Apollo humanoid then landed seven consecutive throws in a real-world trial, and Google says the workflow shrinks weeks of manual simulation work into a few hours. Google has not published attempt counts or failure cases, and reporting notes that the workflow used feedback from where earlier throws landed. A single video cannot reveal everything a simulator needs, such as an object's mass, friction or how it deforms on impact, so any simulator drafted from footage carries hidden guesses.",
+      "The proposal is to make those guesses explicit. Instead of writing one simulator, the model would write a parameterized scene in which every quantity it cannot see directly, such as mass, friction coefficients, surface stiffness, board angle or camera scale, is a variable with a prior range that it proposes and justifies from the video. Bayesian calibration would then turn that prior into a posterior ensemble of plausible simulators, first by matching simulated motion to the video itself and then by updating on each real attempt the robot makes, such as where a throw actually lands. The robot's policy would be trained across the whole ensemble rather than one guess, and the spread of the posterior would decide what happens next: practice more in simulation when the ensemble agrees, or request a small, deliberately chosen real-world trial when it does not, picking the trial that would shrink the most important uncertainty.",
+      "This could be tested with tasks where the true physical parameters can be measured independently, such as tossing objects of known mass and friction, comparing the calibrated posterior with the measured values and counting how many real attempts each approach needs to reach a target success rate. The harder test is the kind of task where physics is less forgiving, such as handling soft or fragile objects, where a single confident but wrong simulator is most likely to fail. If it works, video-drafted simulators would come with a stated confidence and a record of which assumptions were checked on hardware, which would make sim-to-real results easier to audit, reproduce in other labs and trust before a robot is used around people or valuable equipment."
+    ],
+    "questions": [
+      "Which physical parameters can actually be identified from ordinary video, and which stay unobservable until the robot touches the object?",
+      "Can a language-model-based system propose priors that are well calibrated, or does it need to be checked against measured physical properties to avoid overconfident ranges?",
+      "How should a robot trade off the cost and risk of an extra real-world trial against the information it would gain, especially for fragile objects?"
+    ],
+    "sources": [
+      [
+        "Google: Gemini 4 Argon: Built to solve your hardest problems",
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/"
+      ],
+      [
+        "Humanoids Daily: Gemini 4 Argon Takes Apollo From Human Video to Seven Straight Cornhole Shots",
+        "https://www.humanoidsdaily.com/news/gemini-4-argon-apollo-cornhole-robotics"
+      ],
+      [
+        "Humanoid.guide: Gemini 4 Argon robotics demo puts Apollo at cornhole",
+        "https://humanoid.guide/google-demonstrates-gemini-4-argon-robotics-on-apollo-humanoid/"
+      ]
+    ]
   }
 ]
