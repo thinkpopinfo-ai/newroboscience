@@ -515,5 +515,80 @@
         "https://www.space.com/astronomy/mars/japan-launching-bold-sample-return-mission-to-mars-moon-phobos-today-watch-it-live"
       ]
     ]
+  },
+  {
+    "slug": "utokyo-enzyme-embedded-plastics-degrade-deep-sea",
+    "field": "biotech",
+    "date": "2026-10-22",
+    "title": "Plastics With a Built-In Off Switch: Enzymes Help Compostable Polyesters Break Down in the Deep Sea",
+    "dek": "A University of Tokyo team mixed plastic-digesting enzymes into compostable polyesters, and some of the films almost completely broke down within months on the seafloor, where ordinary biodegradable plastics barely change.",
+    "tags": [
+      "Biodegradable plastics",
+      "Enzymes",
+      "Marine pollution",
+      "Materials science",
+      "Deep sea"
+    ],
+    "body": [
+      [
+        "p",
+        "\"Biodegradable\" on a label usually assumes a helpful setting: a warm compost heap or soil packed with microbes. The ocean, and above all the cold, dark deep sea, is far less cooperative, because the microbes that would chew through a plastic are scarce there. A research group led by Tadahisa Iwata at the University of Tokyo has tried a different approach. Rather than waiting for the environment to supply the right enzymes, they built the enzymes into the plastic. Their results were published in Nature on October 21."
+      ],
+      [
+        "h2",
+        "Packing the cleanup crew inside the plastic"
+      ],
+      [
+        "p",
+        "The team worked with four compostable polyesters already used in products such as bags and films: PBS, PBSA, PCL and PBAT. During manufacturing they blended in two natural enzymes that cut the ester bonds holding these polymers together, a cutinase and a lipase. The amounts were tiny, as little as 0.1 percent of the material by weight in some tests, with up to 3 percent used in certain deep-sea samples."
+      ],
+      [
+        "p",
+        "According to the university's announcement, the design behaves like a start switch. While the plastic stays dry and in use, the enzymes sit locked inside and almost nothing happens. Once the item ends up in the environment and its surface is scratched or broken, water reaches the enzymes and they begin to digest the material around them. In tensile tests, the enzyme-loaded plastics were about as strong as their enzyme-free versions, with almost no difference at the lowest loading."
+      ],
+      [
+        "h2",
+        "From the shoreline to 5,500 meters down"
+      ],
+      [
+        "p",
+        "The researchers placed samples in coastal seawater a few meters deep, at a deep-sea site 757 meters down, and on the seafloor at 5,503 meters. Deep samples were placed and recovered using the crewed submersible Shinkai 6500 or the remotely operated vehicle Kaimei. Near the coast, some materials almost completely degraded in roughly a month. At 757 meters, several of the films containing cutinase, made from PBS, PBSA and PCL, almost fully disappeared within about five months."
+      ],
+      [
+        "p",
+        "The university reports that this was 5 to 50 times faster than enzyme-free versions at the coast, and 12 to 80 times faster in the deep sea. Lab tests that measured oxygen consumption by microbes suggested the fragments were being converted into carbon dioxide and biomass, not simply crumbling into smaller pieces."
+      ],
+      [
+        "h2",
+        "What the results do not show yet"
+      ],
+      [
+        "p",
+        "The gains were uneven. On the deepest seafloor, at 5,503 meters, degradation was only moderate. Some analyses were small: microbial DNA sequencing used one sample per condition, and some microbeads escaped through the sample mesh, so their weight loss could not be measured reliably. The study also did not test long-term storage, shelf life or large-scale manufacturing, which would all matter before such plastics reach store shelves. And faster breakdown at sea does not make littering acceptable; collection and recycling remain the first line of defense."
+      ],
+      [
+        "take",
+        "Viraj's perspective: What I like here is the engineering logic. Instead of hoping the ocean supplies the right microbes, the material carries its own cleanup crew and only switches it on once damaged. The open questions are practical: will the enzymes stay active through months on a warehouse shelf, can the switch avoid triggering in humid use, and can the deepest, coldest sites be handled with better enzymes? If those hold up, built-in enzymes could make labels like marine-degradable mean something real."
+      ]
+    ],
+    "credit": "Research by Tadahisa Iwata's group at the University of Tokyo with co-authors QiuYuan Huang, Noriko Iida, Noriyuki Isobe, Taizo Kabe, Taku Omura, Manikandan Ilangovan, Satoshi Kimura, Jin Ho Seok, Hidetaka Nomaki and Ken-ichi Kasuya, published in Nature. Coverage via Nature's Research Briefing, Bioengineer.org and Tii Technical Information Institute (reprinting the University of Tokyo announcement).",
+    "sources": [
+      [
+        "Nature: Enzyme-embedded polyesters for accelerated biodegradation in the deep sea",
+        "https://www.nature.com/articles/s41586-026-11192-1"
+      ],
+      [
+        "Nature Research Briefing: Plastics embedded with enzymes degrade readily in the sea",
+        "https://www.nature.com/articles/d41586-026-03282-x"
+      ],
+      [
+        "Tii (University of Tokyo announcement, Japanese): Enzyme-embedded biodegradable plastic with accelerated degradation even in the deep sea",
+        "https://tiisys.com/blog/2026/10/22/post-210094/"
+      ],
+      [
+        "Bioengineer.org: Embedded enzymes accelerate polyester degradation in the deep sea",
+        "https://bioengineer.org/embedded-enzymes-accelerate-polyester-degradation-in-the-deep-sea/"
+      ]
+    ]
   }
 ]
