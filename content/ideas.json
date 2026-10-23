@@ -137,5 +137,33 @@
         "https://humanoid.guide/google-demonstrates-gemini-4-argon-robotics-on-apollo-humanoid/"
       ]
     ]
+  },
+  {
+    "slug": "turning-a-rovers-wheel-tracks-into-a-phobos-landing-forecast",
+    "date": "2026-10-23",
+    "field": "aerospace",
+    "title": "Turning a Rover's Wheel Tracks Into a Phobos Landing Forecast",
+    "summary": "MMX's Idefix rover will drive on Phobos before the spacecraft lands. Treating its wheels as soil sensors in a Bayesian regolith model could forecast touchdown and sampling, with honest error bars.",
+    "post": "jaxa-mmx-launches-phobos-sample-return",
+    "concept": [
+      "On October 19, the Japan Aerospace Exploration Agency (JAXA) launched its Martian Moons eXploration (MMX) spacecraft on an H3 rocket, bound for the Mars system and a planned landing on Phobos. According to ESA, MMX aims to bring at least 10 grams of Phobos material back to Earth using two tools: a corer that collects material from a depth of two centimetres and a pneumatic sampler that uses pressurised gas to lift grains from the surface. ESA also notes that Idefix, a rover developed jointly by France's CNES and Germany's DLR, will be deployed before the main spacecraft lands, and that in Phobos's weak gravity the 25 kilogram rover will weigh the equivalent of only 15 grams. How loose surface material behaves under a landing foot or a sampling tool in gravity that weak is hard to judge from orbital pictures alone, yet both the touchdown and the sample depend on it.",
+      "The proposal is to treat Idefix's wheels as a soil-mechanics instrument and feed what they reveal into a physics-informed Bayesian model of the regolith at the landing site. The model's hidden parameters would be properties such as bulk density, cohesion, internal friction and the depth of any loose top layer, each starting from a prior range informed by orbital imaging and laser altimetry. Fast surrogate models, trained on discrete-element and continuum simulations of wheel and tool interaction with granular material at very low gravity, would link those parameters to what the rover's cameras and telemetry can record: wheel sinkage, slip, track shape and how grains spill around the wheels. Each drive would update the posterior, and the same surrogates would then forecast, with credible intervals, how deep a landing foot might settle, how the spacecraft might move after contact, and how much material each sampler is likely to collect at a candidate spot. The model could also suggest which short manoeuvre, such as a tight turn or a stop and restart, would most reduce the uncertainty that matters most for sampling.",
+      "This could be built and checked on Earth before MMX arrives: run wheel tests on regolith simulants in reduced-gravity setups, calibrate the model only on the wheel data, and then predict separate penetration and sampling tests it has never seen, scoring whether the measured results fall inside the forecast intervals. Comparing simulants with different cohesion would show where the model's assumptions break down. If the approach holds up, a mission team would gain a quantified, traceable link between what a scout rover observes and the risk of a landing or sampling attempt, and the same framework could be reused by future small-body missions that pair a light scout with a larger lander. It is offered here as an open concept, not as part of the MMX mission plan."
+    ],
+    "questions": [
+      "Which regolith properties can actually be identified from wheel sinkage and slip at such low gravity, and which remain confounded with each other, such as cohesion and density?",
+      "How faithfully can Earth-based reduced-gravity tests and granular simulations reproduce surface behaviour where cohesive forces between grains may rival their weight?",
+      "How far can soil measured along a rover's path be trusted at a sampling site some distance away, and how should spatial variability be represented in the forecast?"
+    ],
+    "sources": [
+      [
+        "JAXA: Launch result of the Martian Moons eXploration (MMX) spacecraft aboard H3 Launch Vehicle flight No.10",
+        "https://global.jaxa.jp/press/2026/10/20261020-1_e.html"
+      ],
+      [
+        "ESA: MMX factsheet",
+        "https://esa.int/Science_Exploration/Space_Science/MMX_factsheet"
+      ]
+    ]
   }
 ]
