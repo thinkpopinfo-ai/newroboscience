@@ -590,5 +590,33 @@
         "https://bioengineer.org/embedded-enzymes-accelerate-polyester-degradation-in-the-deep-sea/"
       ]
     ]
+  },
+  {
+    "slug": "tu-delft-algae-powered-soft-robot-actuator",
+    "field": "robotics",
+    "date": "2026-10-23",
+    "title": "A Soft Robot Arm That Runs on Living Algae and Light",
+    "dek": "Researchers at Delft University of Technology grew living microalgae on a two-layer hydrogel strip that bends one way when the lights go on and back the other way when they go off, enough to hook a rubber ring and grip a small metal ball underwater.",
+    "tags": ["Soft robotics", "Biohybrid robots", "Microalgae", "Hydrogels", "Living materials"],
+    "body": [
+      ["p", "Most robots get their motion from motors, batteries and wires. A team at Delft University of Technology in the Netherlands has built a tiny soft gripper that gets its motion from something alive instead: a film of green microalgae. The work, led by Marie-Eve Aubin-Tam with PhD candidate Fan Jiang as first author, was published in Nature Communications on October 22."],
+      ["h2", "A green strip that breathes"],
+      ["p", "The device is a flexible strip about 2 centimeters long and roughly 1 millimeter thick. It is made of two different hydrogel layers, soft water-filled polymers that swell or shrink depending on how acidic their surroundings are. Living cells of the single-celled alga Chlamydomonas reinhardtii, a common lab organism, grow on its surface."],
+      ["p", "The trick is that the algae change the chemistry around them as they live. In the light, they photosynthesize, pulling in carbon dioxide to make sugars, and they also absorb nitrogen to build new cell parts. Both processes push the pH inside the hydrogel up. Because the two layers react differently to that shift, one swells more than the other and the strip curls, much like a bimetal strip in an old thermostat. When the light is switched off, the algae burn some of their stored fuel and release carbon dioxide, the pH drops again, and the strip bends back the other way."],
+      ["h2", "Hooking rings and gripping balls"],
+      ["p", "To show the motion can do useful work, the team shaped the strips into simple light-controlled grippers. Working underwater, one hooked and lifted a rubber ring, and another grasped a small metal ball. According to TU Delft, the strip starts reversing direction within about 10 seconds of the lights going off; the paper's summary gives an initial response time of 10 to 20 seconds. Reaching the largest bend is far slower, taking up to 18 hours, and the researchers report the movement held up over 10 continuous light-dark cycles."],
+      ["p", "Aubin-Tam said the aim was to explore what becomes possible when living cells are built into functional materials. The paper is co-authored by Friedrich Hans Kleiner, Roland Kieffer, Djanick de Jong and Jeong-Joo Oh."],
+      ["h2", "What it can and cannot do yet"],
+      ["p", "This is a proof of concept, not a product. The university's announcement does not report how much force the gripper produces, how heavy an object it can hold, or how long the algae keep it working. Ten cycles is a promising start but a long way from the thousands a practical device would need, and an hours-long full stroke rules out anything that has to move quickly. The team suggests the approach could suit gentle handling of delicate objects underwater, light-responsive blinds, or farming devices that turn or reshape themselves as sunlight changes. Because the algae draw their energy from light, the researchers expect such systems to need very little outside power, though that has not yet been measured."],
+      ["take", "Viraj's perspective: I find this a refreshing twist on actuator design. Instead of carrying its own power source, the material lets a living organism turn ambient light into motion, so the energy budget is set by the sun rather than a battery. The obvious limits are speed and stamina. What I will be watching for is whether follow-up work can show stronger forces, many more cycles, and algae that stay healthy for weeks. If it can, slow but self-sustaining living actuators could find a niche where patience matters more than speed, such as greenhouses, aquariums or long-term underwater sensors."]
+    ],
+    "credit": "Research by Fan Jiang, Friedrich Hans Kleiner, Roland Kieffer, Djanick de Jong, Jeong-Joo Oh and Marie-Eve Aubin-Tam at Delft University of Technology, published in Nature Communications. Coverage via EurekAlert! (TU Delft release), Mirage News, Bioengineer.org/Scienmag and Tii Technical Information Institute.",
+    "sources": [
+      ["Nature Communications: Light-powered photosynthetic living actuator (DOI 10.1038/s41467-026-78653-z)", "https://www.nature.com/articles/s41467-026-78653-z"],
+      ["EurekAlert! (TU Delft): A soft robot arm powered by algae and light", "https://www.eurekalert.org/news-releases/1148382"],
+      ["Mirage News: Algae and Light Power Soft Robot Arm", "https://www.miragenews.com/algae-and-light-power-soft-robot-arm-1764846/"],
+      ["Bioengineer.org: Delft researchers build light-controlled soft actuator powered by algae", "https://bioengineer.org/delft-researchers-build-light-controlled-soft-actuator-powered-by-algae/"],
+      ["Tii (TU Delft news, Japanese): Soft robot arm powered by algae", "https://tiisys.com/blog/2026/10/23/post-210154/"]
+    ]
   }
 ]
