@@ -618,5 +618,92 @@
       ["Bioengineer.org: Delft researchers build light-controlled soft actuator powered by algae", "https://bioengineer.org/delft-researchers-build-light-controlled-soft-actuator-powered-by-algae/"],
       ["Tii (TU Delft news, Japanese): Soft robot arm powered by algae", "https://tiisys.com/blog/2026/10/23/post-210154/"]
     ]
+  },
+  {
+    "slug": "nasa-artemis-iii-earth-orbit-lander-rehearsal-plan",
+    "field": "aerospace",
+    "date": "2026-10-24",
+    "title": "Two Landers, One Capsule, 14 Days: NASA's Plan for Artemis III",
+    "dek": "At an October 23 briefing, NASA laid out how Artemis III will spend about two weeks in Earth orbit in 2027, docking Orion with test versions of both Blue Origin's and SpaceX's lunar landers to clear the way for a Moon landing in 2028.",
+    "tags": [
+      "Artemis",
+      "Orion",
+      "Lunar landers",
+      "Human spaceflight",
+      "NASA"
+    ],
+    "body": [
+      [
+        "p",
+        "Artemis III was once meant to be the mission that put astronauts back on the Moon. Earlier this year NASA changed course and turned it into a test flight closer to home. On October 23, at a news conference at Kennedy Space Center in Florida, NASA Administrator Jared Isaacman, Associate Administrator Amit Kshatriya and Artemis program manager Jeremy Parsons explained in detail what that rehearsal will look like and how it feeds into a crewed landing targeted for 2028."
+      ],
+      [
+        "h2",
+        "A busy two weeks in low Earth orbit"
+      ],
+      [
+        "p",
+        "According to NASA's mission overview, Artemis III is planned for 2027 and will last about 14 days. Its crew is NASA astronauts Randy Bresnik, Frank Rubio and Andre Douglas, plus European Space Agency astronaut Luca Parmitano. The mission needs three heavy-lift rockets: Blue Origin's New Glenn, SpaceX's Starship and NASA's Space Launch System, which carries the crew aboard the Orion capsule."
+      ],
+      [
+        "p",
+        "Blue Origin goes first, placing a test version of its Blue Moon lander in a circular orbit roughly 273 miles up, where it can wait for up to 30 days. Once controllers confirm it is healthy, Orion launches, spends its first couple of days on checkouts, then rendezvouses and docks. The astronauts will then spend about two days inside the lander, checking its cabin, controls and life support."
+      ],
+      [
+        "p",
+        "Later in the mission, SpaceX launches a Starship test vehicle from Florida, timed late because Starship cannot loiter in orbit as long. Orion will dock with a fitting on Starship's nose for up to two hours, but the crew will not go inside. The two dockings use different geometries. Orion can then stay up for as many as five more days of suit, sensor and science tests before splashing down in the Pacific off California."
+      ],
+      [
+        "h2",
+        "Why test both landers"
+      ],
+      [
+        "p",
+        "Earlier in 2026 NASA reworked its contracts so that neither company is locked into a specific landing mission. Both landers take part in Artemis III, and NASA says it will pick which provider flies the first 2028 landing later, with a second landing opportunity to follow. As CBS News reported, Parsons said the agency will wait \"as long as possible\" before choosing."
+      ],
+      [
+        "p",
+        "The two companies are taking different routes to the Moon. NASA describes SpaceX's plan as launching several tanker Starships to fill an orbiting depot, which then fuels the lander before it pushes Orion toward the Moon. Blue Origin is putting off in-space refueling and will instead stack three transfer stages with its lander to reach an elliptical lunar orbit near the south pole. Either way, NASA requires an uncrewed demonstration before any crew flies, and plans two moonwalks of about two hours each on the first landing."
+      ],
+      [
+        "h2",
+        "The hurdles ahead"
+      ],
+      [
+        "p",
+        "The schedule is tight. CBS News noted that only the most recent of Starship's 13 test flights reached orbit, and that a launch pad explosion in May grounded New Glenn while a new pad is built, with flights expected to resume around the turn of the year. SpaceX has said its first large-scale orbital refueling demonstration is planned for early 2027. Isaacman himself acknowledged that the effort is extremely hard."
+      ],
+      [
+        "take",
+        "Viraj's perspective: I like that NASA is choosing to practice the hardest new steps, docking a small capsule to two very different landers, in Earth orbit where a quick return home is always possible. The thing I will watch is not the 2027 date itself but the precursors: whether SpaceX's refueling demo and New Glenn's return to flight happen on time. If either slips, Artemis III and the 2028 landing will likely slip with them."
+      ]
+    ],
+    "credit": "Mission planning and announcements by NASA (Jared Isaacman, Amit Kshatriya, Jeremy Parsons and the Artemis program), with lander development by SpaceX and Blue Origin and crew from NASA and the European Space Agency. Coverage via CBS News (William Harwood), Spectrum News 13 and Space.com.",
+    "sources": [
+      [
+        "NASA: NASA's Artemis III Mission to Test Future Moon Lander Operations",
+        "https://www.nasa.gov/missions/artemis/nasas-artemis-iii-mission-to-test-future-moon-lander-operations/"
+      ],
+      [
+        "NASA: NASA, Partners Accelerate Lander Development for 2028 Moon Missions",
+        "https://www.nasa.gov/missions/artemis/nasa-partners-accelerate-lander-development-for-2028-moon-missions/"
+      ],
+      [
+        "NASA: NASA Shares Artemis Acceleration Plans for Moon Missions",
+        "https://www.nasa.gov/blogs/missions/2026/10/23/nasa-shares-artemis-acceleration-plans-for-moon-missions/"
+      ],
+      [
+        "CBS News: NASA says Artemis program adjustments improve shot at 2028 moon landing",
+        "https://www.cbsnews.com/news/nasa-artemis-2028-moon-landing-program-adjustments/"
+      ],
+      [
+        "Spectrum News 13: NASA gives update to Artemis III mission",
+        "https://mynews13.com/fl/orlando/space/2026/10/23/nasa-gives-update-to-artemis-iii-mission"
+      ],
+      [
+        "Space.com: Watch NASA's update on accelerating Artemis moon plans today",
+        "https://www.space.com/space-exploration/artemis/nasa-giving-update-about-artemis-moon-plans-on-oct-23-watch-it-live"
+      ]
+    ]
   }
 ]
