@@ -705,5 +705,76 @@
         "https://www.space.com/space-exploration/artemis/nasa-giving-update-about-artemis-moon-plans-on-oct-23-watch-it-live"
       ]
     ]
+  },
+  {
+    "slug": "merck-moderna-intismeran-phase-3-melanoma-mrna-vaccine-esmo",
+    "field": "biotech",
+    "date": "2026-10-25",
+    "title": "A Personalized mRNA Vaccine Passes Its First Phase 3 Test Against Melanoma",
+    "dek": "At ESMO 2026, Merck and Moderna reported that adding the individualized mRNA vaccine intismeran to Keytruda after melanoma surgery cut the risk of recurrence or death by 42% in a 1,137-patient Phase 3 trial.",
+    "tags": [
+      "Cancer vaccines",
+      "mRNA",
+      "Melanoma",
+      "Immunotherapy",
+      "Clinical trials"
+    ],
+    "body": [
+      [
+        "p",
+        "Cancer vaccines have a long history of disappointing results. That makes the data presented on October 24 at the European Society for Medical Oncology (ESMO) Congress 2026 in Madrid worth paying attention to. In the Presidential Symposium, researchers from the INTerpath-001 trial, led by principal investigator Professor Georgina Long of Melanoma Institute Australia and the University of Sydney, reported Phase 3 results for intismeran autogene, a personalized mRNA vaccine developed by Merck and Moderna. According to the companies, the results have been accepted for publication in The New England Journal of Medicine."
+      ],
+      [
+        "h2",
+        "A vaccine built for one patient"
+      ],
+      [
+        "p",
+        "Intismeran is not an off-the-shelf shot. Merck describes how each dose starts from the patient's own tumor sample, which is compared against their normal DNA to find the mutations that only the cancer carries. A synthetic mRNA is then made that encodes up to 34 of these tumor-specific markers, called neoantigens. Once injected, the body reads the mRNA and displays the markers to the immune system, training T cells to recognize the cancer if it tries to come back. The vaccine is given alongside pembrolizumab (Keytruda), a checkpoint inhibitor that releases a brake on those same T cells."
+      ],
+      [
+        "h2",
+        "What the trial found"
+      ],
+      [
+        "p",
+        "The study enrolled 1,137 people whose stage IIB to IV melanoma had been completely removed by surgery, a group at real risk of relapse. Two out of three received the vaccine plus Keytruda, and the rest received a placebo plus Keytruda, for about a year. After a median follow-up of roughly two years, the combination reduced the risk of recurrence or death by 42% (hazard ratio 0.58). At two years, 82.2% of patients on the combination were alive and free of recurrence, compared with 70.0% on Keytruda alone. The risk of the cancer spreading to distant organs, or of death, fell by 38%."
+      ],
+      [
+        "p",
+        "One detail stands out. In the first six months the two groups looked almost identical, and the benefit only appeared afterward, which fits the idea that a personalized immune response takes time to build. Side effects were mostly fever, injection-site pain and fatigue, and serious treatment-related events were about as common in both groups (14.2% versus 13.4%). Overall survival data are not mature yet, though the companies report a favorable trend."
+      ],
+      [
+        "h2",
+        "What comes next"
+      ],
+      [
+        "p",
+        "Merck and Moderna say they are talking with regulators about the data. The same vaccine approach is being tested in nine Phase 2 and Phase 3 trials, including three Phase 3 studies in non-small cell lung cancer. Speaking to STAT, ESMO scientific co-chair James Larkin of the Royal Marsden Hospital said the strategy \"may be applicable to other types of tumors,\" while stressing that this is still a principle rather than proven fact."
+      ],
+      [
+        "take",
+        "Viraj's perspective: This feels like a turning point for mRNA beyond vaccines against viruses, because it shows a medicine designed from one person's tumor can work at Phase 3 scale. The questions I will watch are practical ones: how quickly each custom vaccine can be made after surgery, what it will cost, whether overall survival improves, and whether the lung cancer trials repeat the result in a very different tumor."
+      ]
+    ],
+    "credit": "Research by the INTerpath-001 investigators led by Professor Georgina Long (Melanoma Institute Australia and the University of Sydney), with the trial sponsored and the vaccine developed by Merck and Moderna. Coverage via CancerNetwork, AJMC and STAT.",
+    "sources": [
+      [
+        "Merck: Results from Phase 3 INTerpath-001 trial at ESMO 2026 Presidential Symposium",
+        "https://www.merck.com/news/merck-and-moderna-will-present-results-from-landmark-phase-3-interpath-001-trial-for-intismeran-autogene-plus-keytruda-pembrolizumab-at-esmo-2026-presidential-symposium/"
+      ],
+      [
+        "CancerNetwork: Intismeran Plus Pembrolizumab Reduces Recurrence Risk in Resected Melanoma",
+        "https://www.cancernetwork.com/view/intismeran-plus-pembrolizumab-reduces-recurrence-risk-in-resected-melanoma"
+      ],
+      [
+        "AJMC: Merck, Moderna Cancer Vaccine Cuts Melanoma Recurrence Risk by 42%",
+        "https://www.ajmc.com/view/merck-moderna-cancer-vaccine-cuts-melanoma-recurrence-risk-by-42-"
+      ],
+      [
+        "STAT: What's next for cancer vaccines after successful melanoma study",
+        "https://www.statnews.com/2026/10/25/mrna-cancer-vaccine-merck-moderna-esmo-intismeran-next-applications/"
+      ]
+    ]
   }
 ]
