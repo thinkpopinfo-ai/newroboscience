@@ -1,10 +1,6 @@
+# The site is published on GitHub Pages (.github/workflows/pages.yml).
+# Netlify serves only a redirect from the old address plus the newsletter forms.
 [build]
-  command = "node src/build.js"
-  publish = "dist"
-  # Publish in batches (Mon/Wed/Fri morning) to stay within 300 credits/month; see scripts/netlify-ignore.js
+  command = "node scripts/netlify-redirect.js"
+  publish = "dist-netlify"
   ignore = "node scripts/netlify-ignore.js"
-
-[[headers]]
-  for = "/assets/*"
-  [headers.values]
-    Cache-Control = "public, max-age=600"

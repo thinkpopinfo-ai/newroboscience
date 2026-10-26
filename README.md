@@ -1,6 +1,6 @@
 # newroboscience
 
-Source for https://newroboscience.netlify.app — research explainers, Ideas Lab and a Live Research Radar by Viraj Gajera.
+Source for https://thinkpopinfo-ai.github.io/newroboscience — research explainers, Ideas Lab and a Live Research Radar by Viraj Gajera.
 
 - `content/posts.json` — published transmissions (oldest first; append new posts to the end)
 - `content/ideas.json` — Ideas Lab concepts

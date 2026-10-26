@@ -2,7 +2,9 @@
    Input: posts array (oldest first, as stored in _source/posts.json) + asset texts.
    Output: { "path": "file contents", ... } for the whole site. */
 (function (root) {
-  const SITE = "https://newroboscience.netlify.app";
+  const SITE = "https://thinkpopinfo-ai.github.io/newroboscience"; // GitHub Pages (free, unlimited publishing)
+  const BASE = "/newroboscience"; // path prefix of SITE: every internal link starts with it
+  const FORMS = "https://newroboscience.netlify.app"; // Netlify still collects newsletter signups
   const AUTHOR = "Viraj Gajera";
   const ROLE = "Research and Development Engineer";
   const EMAIL = "virajgajera5@gmail.com";
@@ -123,7 +125,7 @@
 `;
   }
 
-  const subForm = (id) => `<form class="sub-form" name="newsletter" method="POST" action="/subscribed/" data-netlify="true" netlify-honeypot="bot-field">
+  const subForm = (id) => `<form class="sub-form" name="newsletter" method="POST" action="${FORMS}/subscribed/" data-netlify="true" netlify-honeypot="bot-field">
     <input type="hidden" name="form-name" value="newsletter">
     <p class="hp" hidden style="display:none" aria-hidden="true"><label>Do not fill this in <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
     <label class="sr" for="${id}-name">Your name</label>
@@ -400,7 +402,7 @@
       `<p class="post-dek">Thanks for subscribing. Your first newsletter will arrive with the next issue, about 10 AM New York time. If it doesn't show up, check your spam or promotions folder and mark it as safe.</p><a class="btn" href="/">Back to the observatory</a>`, year);
     out["unsubscribe/index.html"] = simplePage("/unsubscribe/", "Unsubscribe", "Unsubscribe from the newroboscience newsletter.", "Newsletter", "Unsubscribe",
       `<p class="post-dek">Sorry to see you go. Enter the email address you subscribed with and you'll be removed before the next issue.</p>
-  <form class="sub-form" name="unsubscribe" method="POST" action="/unsubscribed/" data-netlify="true" netlify-honeypot="bot-field">
+  <form class="sub-form" name="unsubscribe" method="POST" action="${FORMS}/unsubscribed/" data-netlify="true" netlify-honeypot="bot-field">
     <input type="hidden" name="form-name" value="unsubscribe">
     <p class="hp" hidden style="display:none" aria-hidden="true"><label>Do not fill this in <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
     <label class="sr" for="unsub-email">Email address</label>
@@ -451,10 +453,12 @@
       out[k] = out[k].replace(/<meta name="robots" content="[^"]*">\n<link rel="canonical" href="[^"]*">/, '<meta name="robots" content="noindex, follow">');
     }
     out["favicon.svg"] = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#05080f"/><ellipse cx="16" cy="16" rx="12" ry="5" fill="none" stroke="#5cd3ff" stroke-width="2" transform="rotate(-30 16 16)"/><circle cx="16" cy="16" r="4" fill="#ffb547"/><circle cx="26" cy="10" r="2" fill="#79f2b0"/></svg>`;
-    out["netlify.toml"] = `[[headers]]\n  for = "/assets/*"\n  [headers.values]\n    Cache-Control = "public, max-age=3600"\n`;
+    out[".nojekyll"] = ""; // GitHub Pages: serve folders like _source/ as-is
     out["assets/style.css"] = assets.style;
     out["assets/app.js"] = assets.app;
     out["_source/posts.json"] = JSON.stringify(stored, null, 1);
+    // The site lives under SITE's path (GitHub Pages project site): prefix every root-relative link with BASE
+    for (const k of Object.keys(out)) if (k.endsWith(".html")) out[k] = out[k].replace(/\b(href|src|action)="\/(?!\/)/g, `$1="${BASE}/`).replace(/"u":"\//g, `"u":"${BASE}/`);
     return out;
   }
 
