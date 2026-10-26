@@ -165,5 +165,37 @@
         "https://esa.int/Science_Exploration/Space_Science/MMX_factsheet"
       ]
     ]
+  },
+  {
+    "slug": "plastics-with-a-fuse-engineering-when-embedded-enzymes-wake-up",
+    "date": "2026-10-26",
+    "field": "biotech",
+    "title": "Plastics With a Fuse: Engineering When Embedded Enzymes Wake Up",
+    "summary": "Enzyme-loaded polyesters break down fast once damaged and wet. A moisture-blocking skin, sized with a coupled transport model, could set exactly when that switch flips.",
+    "post": "utokyo-enzyme-embedded-plastics-degrade-deep-sea",
+    "concept": [
+      "A University of Tokyo team led by Tadahisa Iwata reported in Nature on October 21 that blending small amounts of plastic-digesting enzymes, a cutinase and a lipase, into four compostable polyesters (PBS, PBSA, PCL and PBAT) made some films break down far faster in the sea. According to the university, several cutinase-containing films almost fully disappeared within about five months at 757 metres depth, and degradation was 5 to 50 times faster than enzyme-free versions near the coast and 12 to 80 times faster in the deep sea, while tensile strength was barely affected at the lowest loading. The university describes the design as a start switch: the enzymes stay locked inside while the plastic is dry and in use, and begin digesting once the surface is scratched or broken and water reaches them. The study did not test long-term storage or shelf life, and the switch itself is defined only loosely, so it is not yet clear how reliably an intact item in humid everyday use would stay dormant.",
+      "The proposal is to turn that loose switch into an engineered fuse. Instead of dispersing enzyme evenly, an item would be made with a thin enzyme-free outer skin over an enzyme-loaded core, so that the skin acts as the barrier that must be breached before digestion begins. The thickness and moisture permeability of that skin would not be chosen by trial and error but by a coupled multiphysics model that tracks water diffusing into the polymer, how enzyme activity rises as the surrounding material hydrates, how ester-bond cleavage weakens the matrix, and how an erosion front then advances and opens new paths for water. Running the model across humidity, temperature, enzyme loading and skin thickness would give a design map with two targets: a dormant life for an intact item, during which internal activity stays below a chosen threshold, and a degradation time once damage such as abrasion or fragmentation cuts through the skin. In effect this is the mirror image of a self-healing material: rather than damage triggering repair, damage would trigger a controlled, predictable breakdown.",
+      "The concept could be tested with films made in both layouts, evenly dispersed and skin-over-core, aged intact in humidity chambers and, separately, after controlled scratching or cutting. Mass loss, molecular weight and tensile strength would be tracked over time, the model would be calibrated on some conditions only, and its predictions would then be checked against conditions it had not seen before moving to seawater exposures. If the approach holds up, claims such as marine-degradable could be backed by two measurable specifications, how long an item stays intact in use and how quickly it breaks down once it becomes litter, rather than a single test result. It is offered as an open hypothesis that builds on the Tokyo group's work, not as a result."
+    ],
+    "questions": [
+      "Can an enzyme-free skin thin enough to preserve strength and processability still slow moisture uptake enough to keep the core dormant through months of humid use, or will water diffusing through intact polymer activate the enzymes anyway?",
+      "How much enzyme activity survives processing and long dry storage, and does it decay predictably enough to be built into a dormant-life model?",
+      "Which kinds of damage should trip the fuse: can the trigger be tuned so that everyday scuffs on an item in use do not start breakdown while fragmentation into litter-sized pieces does?"
+    ],
+    "sources": [
+      [
+        "Nature: Enzyme-embedded polyesters for accelerated biodegradation in the deep sea",
+        "https://www.nature.com/articles/s41586-026-11192-1"
+      ],
+      [
+        "Nature Research Briefing: Plastics embedded with enzymes degrade readily in the sea",
+        "https://www.nature.com/articles/d41586-026-03282-x"
+      ],
+      [
+        "Tii (University of Tokyo announcement, Japanese): Enzyme-embedded biodegradable plastic with accelerated degradation even in the deep sea",
+        "https://tiisys.com/blog/2026/10/22/post-210094/"
+      ]
+    ]
   }
 ]
