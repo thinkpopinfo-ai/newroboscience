@@ -114,6 +114,7 @@
     <a href="/#log">Transmissions</a>
     <a href="/live/">Live Radar</a>
     <a href="/ideas/">Ideas Lab</a>
+    <a href="/viraj-lab/">Viraj's Lab</a>
     <a href="/about/">Meet Viraj</a>
     <a href="/about/#contact">Contact</a>
     <a class="nav-sub" href="/subscribe/">Subscribe</a>
@@ -442,7 +443,7 @@
 <pubDate>${rfcDate(p.date)}</pubDate>
 <dc:creator>${AUTHOR}</dc:creator><category>${FIELDS[p.field].name}</category><description>${esc(p.dek)}</description></item>`).join("")}
 </channel></rss>`;
-    const urls = [["/", posts[0].date], ["/about/", posts[0].date], ["/ideas/", [posts[0].date].concat(ideas.map(d => d.date)).sort().pop()], ["/live/", posts[0].date], ["/subscribe/", posts[0].date]].concat(posts.map(p => [p.url, p.date]));
+    const urls = [["/", posts[0].date], ["/about/", posts[0].date], ["/ideas/", [posts[0].date].concat(ideas.map(d => d.date)).sort().pop()], ["/live/", posts[0].date], ["/viraj-lab/", posts[0].date], ["/subscribe/", posts[0].date]].concat(posts.map(p => [p.url, p.date]));
     out["sitemap.xml"] = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map(([u, d]) => `<url><loc>${SITE}${u}</loc><lastmod>${d}</lastmod></url>`).join("")}</urlset>`;
     out["robots.txt"] = `User-agent: *\nAllow: /\nDisallow: /_source/\nSitemap: ${SITE}/sitemap.xml\n`;
     out["404.html"] = head(`Signal lost | ${BRAND}`, "Page not found.", "/404") + `<main id="main" class="wrap-narrow about"><p class="kicker">Error 404</p><h1>Signal lost</h1><p class="post-dek">That page drifted out of range.</p><a class="btn" href="/">Return to the observatory</a></main>` + foot(year);
@@ -454,6 +455,7 @@
     out["netlify.toml"] = `[[headers]]\n  for = "/assets/*"\n  [headers.values]\n    Cache-Control = "public, max-age=3600"\n`;
     out["assets/style.css"] = assets.style;
     out["assets/app.js"] = assets.app;
+    if (assets.virajLab) out["viraj-lab/index.html"] = assets.virajLab;
     out["_source/posts.json"] = JSON.stringify(stored, null, 1);
     return out;
   }
@@ -466,7 +468,7 @@
     const fs = require("fs"), path = require("path"), here = __dirname;
     const [postsPath = path.join(here, "../content/posts.json"), outDir = path.join(here, "../dist")] = process.argv.slice(2);
     const files = build(JSON.parse(fs.readFileSync(postsPath, "utf8")), {
-      style: fs.readFileSync(path.join(here, "style.css"), "utf8"), app: fs.readFileSync(path.join(here, "app.js"), "utf8"), profile: JSON.parse(fs.readFileSync(path.join(here, "../content/profile.json"), "utf8")), ideas: JSON.parse(fs.readFileSync(path.join(here, "../content/ideas.json"), "utf8")),
+      style: fs.readFileSync(path.join(here, "style.css"), "utf8"), app: fs.readFileSync(path.join(here, "app.js"), "utf8"), profile: JSON.parse(fs.readFileSync(path.join(here, "../content/profile.json"), "utf8")), ideas: JSON.parse(fs.readFileSync(path.join(here, "../content/ideas.json"), "utf8")), virajLab: fs.readFileSync(path.join(here, "viraj-lab.html"), "utf8"),
     });
     fs.rmSync(outDir, { recursive: true, force: true });
     for (const [rel, txt] of Object.entries(files)) { const p = path.join(outDir, rel); fs.mkdirSync(path.dirname(p), { recursive: true }); fs.writeFileSync(p, txt); }

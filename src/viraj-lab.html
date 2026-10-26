@@ -1,0 +1,881 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="Viraj's Lab — Human made by Viraj. A living developmental simulator: watch an artificial human grow from a single cell."><meta property="og:title" content="Viraj's Lab — Human made by Viraj"><title>Viraj's Lab — Human made by Viraj</title><style>:root{color-scheme:dark;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html,body{height:100%}body{margin:0;font:14px system-ui,-apple-system,Segoe UI,Roboto,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style></head><body>
+<style>
+/* Layout: fixed console header with timeline; split body-viewer / detail-stack below, stacking on phones. Committed dark "bio-console" world. */
+:root{
+  --bg:#070b12; --panel:#0e1521; --panel-2:#121c2b; --line:#1e2b3e;
+  --fg:#e6edf6; --muted:#8699b3; --dim:#5c6f8a;
+  --cyan:#35e6d2; --cyan-dim:#1b7f78; --magenta:#ff5cc8; --amber:#ffb340;
+  --violet:#8f7bff; --good:#3fd97f; --warn:#ff6b6b;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --body:"IBM Plex Sans",system-ui,sans-serif;
+  --disp:"Chakra Petch","IBM Plex Sans",system-ui,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:
+    radial-gradient(1200px 600px at 80% -10%, #0d1a2a 0%, transparent 60%),
+    radial-gradient(900px 500px at -10% 110%, #10172a 0%, transparent 55%),
+    var(--bg);
+  color:var(--fg);font-family:var(--body);font-size:14px;line-height:1.5;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:var(--disp);font-weight:600;text-wrap:balance;margin:0}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.gut{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:#05080e;z-index:40}
+
+/* ---- header / transport ---- */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;
+  background:linear-gradient(180deg,#0a0f18 0%,#0a0f18f2 100%);
+  border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.hwrap{padding-block:10px;display:flex;flex-direction:column;gap:10px}
+.brand{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.logo{width:30px;height:30px;border:1px solid var(--cyan-dim);border-radius:8px;
+  display:grid;place-items:center;color:var(--cyan);box-shadow:0 0 18px -6px var(--cyan)}
+.brand h1{font-size:18px;letter-spacing:.5px}
+.brand .sub{font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase}
+.statuschip{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--cyan);
+  border:1px solid var(--cyan-dim);border-radius:999px;padding:3px 10px;white-space:nowrap}
+.transport{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+button{font-family:var(--disp);cursor:pointer;border:1px solid var(--line);background:var(--panel-2);
+  color:var(--fg);border-radius:8px;padding:7px 12px;font-size:13px;transition:.15s;letter-spacing:.3px}
+button:hover{border-color:var(--cyan-dim)}
+button:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+.btn-primary{background:var(--cyan);color:#042019;border-color:var(--cyan);font-weight:600}
+.btn-primary:hover{box-shadow:0 0 16px -4px var(--cyan)}
+.speeds{display:flex;gap:4px}
+.speeds button{padding:7px 9px;font-family:var(--mono);font-size:11px}
+.speeds button[aria-pressed="true"]{background:var(--cyan-dim);border-color:var(--cyan);color:#eafffb}
+.scrub{display:flex;align-items:center;gap:10px}
+.scrub .daybox{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}
+.scrub .daybox b{color:var(--fg)}
+input[type=range]{-webkit-appearance:none;appearance:none;height:4px;border-radius:4px;flex:1;min-width:0;
+  background:linear-gradient(90deg,var(--cyan) 0%,var(--cyan) var(--pct,0%),#20314a var(--pct,0%));cursor:pointer}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;
+  background:#eafffb;border:2px solid var(--cyan);box-shadow:0 0 10px -2px var(--cyan)}
+input[type=range]::-moz-range-thumb{width:14px;height:14px;border:2px solid var(--cyan);background:#eafffb;border-radius:50%}
+.phasebar{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.5px}
+
+/* ---- main grid ---- */
+main{max-width:1320px;margin:0 auto;padding-block:16px;display:grid;gap:16px;
+  grid-template-columns:minmax(0,420px) minmax(0,1fr)}
+@media(max-width:860px){main{grid-template-columns:1fr}}
+.col{display:flex;flex-direction:column;gap:16px;min-width:0}
+
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.panel-h{display:flex;align-items:center;gap:8px;padding:12px 14px;border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,#111b29,#0e1521)}
+.panel-h h2{font-size:13px;letter-spacing:1.2px;text-transform:uppercase;color:var(--fg)}
+.panel-h .tag{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--dim)}
+.panel-b{padding:14px}
+
+/* ---- body viewer ---- */
+.viewer{position:sticky;top:calc(env(safe-area-inset-top,0px) + 132px)}
+@media(max-width:860px){.viewer{position:static}}
+#bodyCanvas{width:100%;height:auto;display:block;background:
+    radial-gradient(60% 70% at 50% 42%, #0c1a28 0%, #070d16 70%);}
+.assembly{display:flex;align-items:center;gap:12px;padding:10px 14px;border-top:1px solid var(--line)}
+.assembly .big{font-family:var(--mono);font-size:30px;color:var(--cyan);line-height:1}
+.assembly .lbl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px}
+.ring{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted);text-align:right}
+
+/* ---- counters ---- */
+.counters{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
+.ctr{background:var(--panel);padding:12px 14px}
+.ctr .k{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:flex;gap:6px;align-items:center}
+.ctr .dot{width:7px;height:7px;border-radius:50%}
+.ctr .v{font-family:var(--mono);font-size:21px;margin-top:4px;word-break:break-word}
+.ctr .rate{font-family:var(--mono);font-size:11px;color:var(--dim);margin-top:2px}
+
+/* ---- organs ---- */
+.organ{padding:9px 0;border-bottom:1px solid #16223200}
+.organ+.organ{border-top:1px solid var(--line)}
+.organ .top{display:flex;align-items:center;gap:8px;font-size:13px}
+.organ .nm{font-family:var(--disp)}
+.organ .pct{margin-left:auto;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.bar{height:6px;border-radius:4px;background:#17243a;margin-top:6px;overflow:hidden}
+.bar>i{display:block;height:100%;border-radius:4px;background:linear-gradient(90deg,var(--cyan-dim),var(--cyan));transition:width .2s}
+.organ.done .bar>i{background:linear-gradient(90deg,var(--good),var(--cyan))}
+.organ .meta{font-size:11px;color:var(--dim);margin-top:3px}
+
+/* ---- sliders / gene editor ---- */
+.mod{padding:11px 0}
+.mod+.mod{border-top:1px solid var(--line)}
+.mod .row{display:flex;align-items:center;gap:8px}
+.mod .nm{font-family:var(--disp);font-size:13px}
+.mod .val{margin-left:auto;font-family:var(--mono);font-size:13px;color:var(--cyan)}
+.mod .boost{font-family:var(--mono);font-size:11px;color:var(--magenta)}
+.mod input[type=range]{width:100%;margin-top:8px;background:linear-gradient(90deg,var(--violet) 0%,var(--violet) var(--pct,50%),#20314a var(--pct,50%))}
+.mod input[type=range]::-webkit-slider-thumb{border-color:var(--violet);box-shadow:0 0 10px -2px var(--violet)}
+.mod input[type=range]::-moz-range-thumb{border-color:var(--violet)}
+.mod .desc{font-size:11px;color:var(--muted);margin-top:5px}
+
+/* ---- schedule log ---- */
+.sched{display:flex;flex-direction:column;max-height:340px;overflow:auto}
+.ev{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.ev:last-child{border-bottom:0}
+.ev .when{font-family:var(--mono);font-size:11px;color:var(--dim);white-space:nowrap;padding-top:2px;width:58px;flex:none}
+.ev .body{min-width:0}
+.ev .gene{font-family:var(--mono);font-weight:600;color:var(--cyan)}
+.ev.custom .gene{color:var(--magenta)}
+.ev .imp{font-size:12px;color:var(--muted)}
+.ev .st{font-family:var(--mono);font-size:10px;padding:1px 6px;border-radius:4px;margin-left:6px}
+.st.fired{background:#10301f;color:var(--good)}
+.st.pending{background:#2a2033;color:var(--violet)}
+.st.active{background:#2a2410;color:var(--amber)}
+
+/* ---- lab form ---- */
+.field{margin-bottom:11px}
+.field label{display:block;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.field input[type=text],.field select{width:100%;background:var(--panel-2);border:1px solid var(--line);
+  color:var(--fg);border-radius:8px;padding:9px 10px;font-family:var(--body);font-size:13px}
+.field input:focus,.field select:focus{outline:none;border-color:var(--cyan)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.seq{font-family:var(--mono);font-size:12px;color:var(--good);background:#08120d;border:1px dashed #1d3a2a;
+  border-radius:8px;padding:8px 10px;word-break:break-all;min-height:34px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chip{font-family:var(--mono);font-size:11px;border:1px solid var(--magenta);color:var(--magenta);
+  border-radius:999px;padding:3px 9px;display:flex;gap:6px;align-items:center}
+.chip b{color:var(--fg)}
+.chip button{padding:0 2px;background:none;border:none;color:var(--magenta);font-size:14px;line-height:1}
+.hint{font-size:11px;color:var(--dim);margin-top:4px}
+.note{font-size:11px;color:var(--dim);padding:10px 14px;border-top:1px solid var(--line);background:#0a0f18}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11px;color:var(--muted);margin-top:4px}
+.legend span{display:flex;gap:5px;align-items:center}
+.sw{width:9px;height:9px;border-radius:2px}
+/* environment sensor */
+.envgrid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-radius:10px;overflow:hidden;margin-bottom:12px}
+.envcell{background:var(--panel-2);padding:10px 12px}
+.envcell .k{font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--muted)}
+.envcell .v{font-family:var(--mono);font-size:16px;margin-top:3px}
+.envrange{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.envrange input[type=range]{background:linear-gradient(90deg,#35e6d2 0%,#9fe6c0 42%,#ffb340 72%,#ff6b6b 100%)}
+.envrange .tv{font-family:var(--mono);font-size:13px;white-space:nowrap}
+.tempctl{display:flex;gap:6px;margin-bottom:10px}
+.tempctl button{flex:1;padding:7px 4px;font-family:var(--mono);font-size:11px}
+#toasts{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;flex-direction:column;gap:10px;align-items:center;
+  padding:0 max(16px,env(safe-area-inset-left,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-right,0px));pointer-events:none}
+.toast{pointer-events:auto;width:100%;max-width:440px;background:#0c1623;border:1px solid var(--line);
+  border-left:3px solid var(--ta,var(--cyan));border-radius:12px;padding:12px 38px 12px 14px;position:relative;
+  box-shadow:0 14px 44px -14px #000;transform:translateY(20px);opacity:0;transition:.35s}
+.toast.in{transform:none;opacity:1}
+.toast .tt{font-family:var(--disp);font-size:13px;color:var(--fg);margin-bottom:3px}
+.toast .tb{font-size:12px;color:var(--muted);line-height:1.45}
+.toast .tx{position:absolute;top:8px;right:8px;background:none;border:none;color:var(--dim);font-size:16px;padding:2px 6px;cursor:pointer}
+@media(prefers-reduced-motion:reduce){.toast{transition:opacity .2s}.bar>i{transition:none}}
+/* public hero + owner access */
+.hero{border-bottom:1px solid var(--line);background:
+  radial-gradient(800px 240px at 18% -50%, #123445 0%, transparent 70%),linear-gradient(180deg,#0a111c,#070b12)}
+.herowrap{max-width:1320px;margin:0 auto;padding-block:26px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--cyan)}
+.herotitle{font-family:var(--disp);font-size:clamp(28px,6vw,46px);letter-spacing:1px;margin:6px 0 10px;line-height:1.05;
+  background:linear-gradient(90deg,#eafffb,#5fe0d2 55%,#8f7bff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{max-width:68ch;color:var(--muted);font-size:15px;margin:0 0 18px}
+.lede b{color:var(--fg)}
+.herostat{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.hs{display:flex;flex-direction:column;gap:2px}
+.hk{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim)}
+.hv{font-size:15px}
+.herospacer{flex:1;min-width:14px}
+.modepill{font-family:var(--mono);font-size:11px;border-radius:999px;padding:5px 11px;border:1px solid var(--line)}
+.modepill.vis{color:var(--amber);border-color:#4a3b1e}
+.modepill.own{color:var(--good);border-color:#1d4a30}
+.ownergate{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:14px;
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px}
+.ownergate input{background:var(--panel-2);border:1px solid var(--line);color:var(--fg);border-radius:8px;padding:9px 11px;font-family:var(--mono);font-size:13px}
+.ownergate input:focus{outline:none;border-color:var(--cyan)}
+.gatehint{font-size:11px;color:var(--dim);flex:1;min-width:160px}
+.lockbadge{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--amber);border:1px solid #4a3b1e;border-radius:999px;padding:2px 8px;white-space:nowrap}
+input:disabled,select:disabled{opacity:.5;cursor:not-allowed}
+button:disabled{opacity:.45;cursor:not-allowed}
+.layers{display:flex;gap:4px;padding:10px 14px 0;flex-wrap:wrap}
+.layers button{flex:1;min-width:52px;padding:7px 6px;font-family:var(--mono);font-size:11px}
+.layers button[aria-pressed="true"]{background:var(--cyan-dim);border-color:var(--cyan);color:#eafffb}
+.bodydetail{font-size:11px;color:var(--muted);padding:2px 14px 8px}
+.biokey{display:flex;flex-wrap:wrap;gap:7px 12px;padding:0 14px 12px;font-size:11px;color:var(--muted)}
+.biokey span{display:flex;gap:5px;align-items:center}
+.biokey i{width:10px;height:10px;border-radius:2px;display:inline-block;border:1px solid rgba(255,255,255,.12)}
+</style>
+
+<header class="gut">
+  <div class="hwrap">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">⬡</div>
+      <div>
+        <h1>Viraj's Lab</h1>
+        <div class="sub">Human made by Viraj</div>
+      </div>
+      <div class="statuschip mono" id="statusChip">● STANDBY</div>
+    </div>
+    <div class="transport">
+      <button class="btn-primary" id="playBtn" aria-label="Play or pause">▶ Run</button>
+      <button id="resetBtn">↺ Reset</button>
+      <div class="speeds" role="group" aria-label="Speed">
+        <button data-spd="1" aria-pressed="false">1×</button>
+        <button data-spd="4" aria-pressed="true">4×</button>
+        <button data-spd="12" aria-pressed="false">12×</button>
+        <button data-spd="40" aria-pressed="false">40×</button>
+      </div>
+      <div class="phasebar mono" id="phaseLabel">Pre-fertilization</div>
+    </div>
+    <div class="scrub">
+      <input type="range" id="timeline" min="0" max="340" step="1" value="0" aria-label="Gestational day">
+      <div class="daybox mono">Day <b id="dayNum">0</b> / 340</div>
+    </div>
+  </div>
+</header>
+
+<section class="hero gut">
+  <div class="herowrap">
+    <div class="eyebrow">Viraj's Lab · Living Specimen</div>
+    <h1 class="herotitle">Human made by Viraj</h1>
+    <p class="lede" id="lede">Inside Viraj's Lab I'm engineering a human from a single cell — every division, organ and gene unfolding in real time, and the traits that will define the first of a new kind tuned by hand. You are observing specimen <b>HM-001</b> as it develops. Watch it grow and feel its surroundings; the controls belong to me.</p>
+    <div class="herostat">
+      <div class="hs"><span class="hk">Specimen</span><span class="hv mono">HM-001</span></div>
+      <div class="hs"><span class="hk">Stage</span><span class="hv mono" id="heroPhase">—</span></div>
+      <div class="hs"><span class="hk">Assembled</span><span class="hv mono" id="heroAsm">0%</span></div>
+      <div class="herospacer"></div>
+      <span class="modepill vis" id="modePill">🔬 Observer mode</span>
+      <button id="ownerBtn">🔒 Owner access</button>
+    </div>
+    <div class="ownergate" id="ownerGate" hidden>
+      <input type="password" id="ownerPass" placeholder="Owner access code" autocomplete="off">
+      <button class="btn-primary" id="ownerUnlock">Unlock</button>
+      <span class="gatehint">Only the owner can edit the genome, run the synthesis lab and implant constructs. Visitors can watch and explore the environment.</span>
+    </div>
+  </div>
+</section>
+
+<main class="gut">
+  <!-- LEFT: body viewer -->
+  <div class="col">
+    <section class="panel viewer">
+      <div class="panel-h"><h2>Build Progress</h2><span class="tag" id="gestTag">gestational view</span></div>
+      <div class="layers" role="group" aria-label="Anatomy layer">
+        <button data-view="skin" aria-pressed="true">Skin</button>
+        <button data-view="muscle" aria-pressed="false">Muscle</button>
+        <button data-view="skeleton" aria-pressed="false">Bone</button>
+        <button data-view="nerves" aria-pressed="false">Nerves</button>
+        <button data-view="blood" aria-pressed="false">Blood</button>
+      </div>
+      <canvas id="bodyCanvas" width="420" height="600" role="img" aria-label="Humanoid specimen anatomy"></canvas>
+      <div class="assembly">
+        <div>
+          <div class="big mono" id="asmPct">0%</div>
+          <div class="lbl">Chassis assembled</div>
+        </div>
+        <div class="ring mono" id="asmRing">systems online: 0 / 14<br>viability: forming</div>
+      </div>
+      <div class="bodydetail" id="bodyDetail">Skin, face, eyes &amp; eyeballs, ears, 10 fingers + nails, 10 toes</div>
+      <div class="biokey">
+        <span><i style="background:#e3ac8a"></i>skin</span>
+        <span><i style="background:#a01818"></i>blood</span>
+        <span><i style="background:#2b5fa8"></i>veins</span>
+        <span><i style="background:#e8c84a"></i>nerves</span>
+        <span><i style="background:#efe9d8"></i>bone</span>
+        <span><i style="background:#b0392f"></i>muscle</span>
+        <span><i style="background:#d7a3a0"></i>brain</span>
+        <span><i style="background:#d98fb0"></i>cell</span>
+      </div>
+      <div class="note">Fictional developmental model. Milestones follow standard human embryology timing (development reveals head-first, as in a real embryo); all "genetic" controls are conceptual trait parameters, not engineering instructions.</div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-h"><h2>Production Rate</h2><span class="tag">per simulated day</span></div>
+      <div class="counters" id="counters"></div>
+    </section>
+  </div>
+
+  <!-- RIGHT: details -->
+  <div class="col">
+    <section class="panel">
+      <div class="panel-h"><h2>Environment Sensor</h2><span class="tag">live · device-aware</span></div>
+      <div class="panel-b">
+        <div class="envgrid">
+          <div class="envcell"><div class="k">Device light</div><div class="v" id="envLight">☀️ Light</div></div>
+          <div class="envcell"><div class="k">Local phase</div><div class="v" id="envPhase">day</div></div>
+        </div>
+        <div class="envrange">
+          <input type="range" id="envTemp" min="-10" max="45" step="1" value="22" aria-label="Ambient temperature">
+          <div class="tv"><span id="envTempV">22°C</span> · <b id="envBand" style="color:var(--good)">MILD</b></div>
+        </div>
+        <div class="tempctl">
+          <button data-temp="5">❄ Cold</button><button data-temp="22">🌡 Mild</button><button data-temp="36">🔥 Hot</button>
+        </div>
+        <div style="font-size:11px;color:var(--muted);margin-bottom:10px">Light &amp; dark are read live from your device's appearance — flip your phone to dark mode and watch it pop up. Browsers can't read air temperature, so set it here; each change retunes the genome below.</div>
+        <div class="legend" style="margin-bottom:8px"><span><i class="sw" style="background:var(--amber)"></i>environmentally active right now</span></div>
+        <div id="envGenes"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-h"><h2>Organ &amp; System Formation</h2><span class="tag" id="organCount">0 / 14 complete</span></div>
+      <div class="panel-b" id="organList"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-h"><h2>Trait Genome Editor</h2><span class="lockbadge">🔒 Owner only</span></div>
+      <div class="panel-b" id="modList"></div>
+      <div class="note">Adjust any trait at any time — during gestation or after birth. Changes retune the active gene profile and future expression impact in real time.</div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-h"><h2>Gene Expression Schedule</h2><span class="tag">when / what / impact</span></div>
+      <div class="panel-b">
+        <div class="legend">
+          <span><i class="sw" style="background:var(--good)"></i>fired</span>
+          <span><i class="sw" style="background:var(--amber)"></i>expressing</span>
+          <span><i class="sw" style="background:var(--violet)"></i>pending</span>
+          <span><i class="sw" style="background:var(--magenta)"></i>custom implant</span>
+        </div>
+        <div class="sched" id="schedList"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-h"><h2>Synthesis Lab</h2><span class="lockbadge">🔒 Owner only</span></div>
+      <div class="panel-b">
+        <div class="field">
+          <label for="cName">Construct name</label>
+          <input type="text" id="cName" placeholder="e.g. Aurora-Cognition v1">
+        </div>
+        <div class="two">
+          <div class="field">
+            <label for="cType">Molecule</label>
+            <select id="cType"><option>DNA</option><option>mRNA</option><option>Regulatory RNA</option></select>
+          </div>
+          <div class="field">
+            <label for="cTarget">Target trait</label>
+            <select id="cTarget"></select>
+          </div>
+        </div>
+        <div class="two">
+          <div class="field">
+            <label for="cMag">Boost (+<span id="cMagV">15</span>)</label>
+            <input type="range" id="cMag" min="1" max="40" value="15" style="width:100%">
+          </div>
+          <div class="field">
+            <label for="cDay">Activation day</label>
+            <input type="text" id="cDay" value="now" placeholder="now / 0-340">
+          </div>
+        </div>
+        <div class="field">
+          <label>Synthesized sequence (preview)</label>
+          <div class="seq" id="seqPreview">— press Synthesize —</div>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button id="synthBtn">⚗ Synthesize</button>
+          <button class="btn-primary" id="implantBtn" disabled>✚ Implant</button>
+        </div>
+        <div class="hint">Implanted constructs appear in the schedule and immediately retune the targeted trait.</div>
+        <div class="chips" id="implantChips"></div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div id="toasts" aria-live="polite"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fontfaceobserver/2.3.0/fontfaceobserver.standalone.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<script>
+"use strict";
+const OWNER_CODE="newrobo"; // ← change this to your own private owner code
+/* ============ model ============ */
+const MAXDAY=340, BIRTH=280;
+// Gompertz cell-growth model -> ~3.7e13 cells at birth, continuing toward ~6e13
+const NMAX=6e13, GB=31.7, GC=0.01494;
+const cellsAt=d=>d<=0?1:NMAX*Math.exp(-GB*Math.exp(-GC*d));
+const BP_PER_CELL=6.4e9, RNA_PER_CELL=3.6e5;
+
+const PHASES=[
+  [0,"Zygote → cleavage"],[5,"Blastocyst / implantation"],[14,"Gastrulation (3 germ layers)"],
+  [19,"Neurulation"],[22,"Organogenesis — heart beating"],[57,"Fetal period begins"],
+  [112,"Rapid growth & myelination"],[196,"Viability threshold passed"],[259,"Full term approaching"],
+  [280,"BIRTH"],[281,"Neonatal — post-natal editing open"]
+];
+const phaseAt=d=>{let p=PHASES[0][1];for(const[s,n]of PHASES){if(d>=s)p=n;}return p;};
+
+// organs/systems: [name, startDay, endDay, bodyRegion key]
+const ORGANS=[
+  ["Neural tube",18,30,"spine"],["Heart & vessels",18,56,"heart"],["Brain",28,340,"head"],
+  ["Spinal cord",19,60,"spine"],["Eyes",22,150,"head"],["Limbs",26,56,"limb"],
+  ["Liver",22,120,"abd"],["Kidneys",28,120,"abd"],["Lungs",26,252,"chest"],
+  ["Digestive tract",20,160,"abd"],["Skeleton",35,340,"frame"],["Immune system",42,300,"chest"],
+  ["Skin & sensory",40,220,"frame"],["Endocrine",42,200,"abd"]
+];
+const organProg=(o,d)=>Math.max(0,Math.min(1,(d-o[1])/(o[2]-o[1])));
+
+// trait modules
+const MODS=[
+  ["cog","Cognitive intelligence","Neuron density, cortical folding & working-memory circuits.","#8f7bff"],
+  ["emo","Emotional intelligence","Limbic regulation, empathy networks & social cognition.","#ff5cc8"],
+  ["imm","Immune resilience","Thymic output, antibody diversity & pathogen response.","#3fd97f"],
+  ["phy","Physical conditioning","Muscle fiber composition, bone density & motor control.","#ffb340"],
+  ["sen","Sensory acuity","Visual, auditory & tactile receptor fidelity.","#35e6d2"],
+  ["lon","Cellular longevity","Telomere maintenance & DNA-repair efficiency.","#6bb3ff"]
+];
+const modLabel=k=>MODS.find(m=>m[0]===k)[1];
+
+// natural gene schedule: [gene, day, system, module, impactLow, impactHigh]
+const GENES=[
+  ["NANOG",1,"Pluripotency","cog","maintains stem-cell identity","primes a deep progenitor pool for later neural expansion"],
+  ["POU5F1/OCT4",2,"Pluripotency","lon","sustains self-renewal","extends proliferative capacity of founder cells"],
+  ["T / Brachyury",16,"Gastrulation","phy","lays down mesoderm (future muscle & bone)","builds a robust mesodermal scaffold"],
+  ["SHH",19,"Patterning","sen","sets left-right & neural-tube axis","sharpens sensory ganglia patterning"],
+  ["NKX2-5",20,"Heart","phy","initiates cardiac looping","strengthens myocardial output capacity"],
+  ["HOX cluster",22,"Body axis","phy","assigns segment identity head-to-tail","optimizes limb proportion & posture"],
+  ["PAX6",24,"Eye / brain","sen","triggers eye & forebrain formation","heightens visual-cortex resolution"],
+  ["NEUROG2",30,"Neurogenesis","cog","converts progenitors to neurons","accelerates cortical neuron production"],
+  ["MYOD1",34,"Muscle","phy","commits cells to muscle lineage","raises fast/slow fiber balance"],
+  ["RUNX2",38,"Skeleton","phy","begins bone ossification","increases skeletal load tolerance"],
+  ["FOXN1",44,"Immune","imm","activates thymus / T-cell schooling","broadens adaptive immune repertoire"],
+  ["FOXP2",120,"Language circuits","cog","wires speech & sequencing pathways","enriches language & planning networks"],
+  ["DCX",150,"Neuron migration","cog","guides cortical layering","tightens cortical micro-architecture"],
+  ["BDNF",285,"Plasticity (post-natal)","emo","drives synaptic plasticity & learning","amplifies lifelong learning & emotional regulation"]
+];
+
+// environment-responsive genes: [name, significance, module]
+const ENVGENES={
+  lightDay:["CLOCK / BMAL1","Daylight entrains the circadian clock — CLOCK/BMAL1 drive daytime transcription, alertness, metabolism and timed cell division.","cog"],
+  lightDark:["PER / CRY + melatonin","Darkness releases melatonin and activates PER/CRY repressors — the nightly antioxidant, DNA-repair and memory-consolidation window.","lon"],
+  hot:["HSP70 / HSP90","Heat triggers heat-shock chaperones that refold stressed proteins; mild warmth lifts metabolic rate, sustained heat risks proteotoxic stress.","imm"],
+  cold:["RBM3 / CIRBP","Cold induces cold-shock proteins RBM3 & CIRBP — neuroprotective and pro-repair — while overall cell division and metabolism slow.","lon"],
+  mild:["Baseline homeostasis","Thermoneutral range — chaperone load is low and transcription runs at baseline, ideal for balanced organ formation.","phy"]
+};
+const tempBand=c=>c>=30?"hot":c<=15?"cold":"mild";
+function getLight(){
+  const dt=document.documentElement.dataset.theme;
+  if(dt==="light")return"light"; if(dt==="dark")return"dark";
+  return (window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";
+}
+function phaseOfDay(){const h=new Date().getHours();
+  return (h>=5&&h<8)?"dawn":(h>=8&&h<18)?"day":(h>=18&&h<21)?"dusk":"night";}
+function envBonus(k){
+  let b=0;const e=state.env;
+  if(e.light==="light"){if(k==="cog")b+=4;if(k==="sen")b+=2;}else{if(k==="lon")b+=4;if(k==="emo")b+=2;}
+  if(e.tempBand==="hot"){if(k==="imm")b+=5;if(k==="phy")b+=3;if(k==="lon")b-=4;}
+  else if(e.tempBand==="cold"){if(k==="lon")b+=5;if(k==="cog")b+=2;if(k==="phy")b-=4;}
+  else{if(k==="phy")b+=3;}
+  return b;
+}
+
+/* ============ state ============ */
+const state={day:0,playing:false,spd:4,mods:{cog:50,emo:50,imm:50,phy:50,sen:50,lon:50},
+  constructs:[], fired:new Set(), owner:false, view:"skin", env:{light:"light",phase:"day",tempC:22,tempBand:"mild"}, last:performance.now()};
+let pendingConstruct=null;
+
+/* ============ helpers ============ */
+const SCALE=[["",1],["K",1e3],["M",1e6],["B",1e9],["T",1e12],["Qa",1e15],["Qi",1e18],["Sx",1e21]];
+function humanize(n){
+  if(n<1000)return Math.round(n).toLocaleString();
+  let i=SCALE.length-1;while(i>0&&n<SCALE[i][1])i--;
+  const v=n/SCALE[i][1];return (v>=100?v.toFixed(0):v.toFixed(2))+" "+SCALE[i][0];
+}
+function effMod(k,d){
+  let v=state.mods[k];
+  for(const c of state.constructs){if(c.module===k && d>=c.day) v+=c.mag;}
+  v+=envBonus(k);
+  return Math.max(0,Math.min(130,v));
+}
+function randSeq(len){let s="",a="ACGT";for(let i=0;i<len;i++)s+=a[(Math.random()*4)|0];return s;}
+
+/* ============ build static UI ============ */
+const countersEl=document.getElementById("counters");
+const COUNTERS=[
+  ["cells","Cells in body","var(--cyan)"],["cellRate","Cells added / day","var(--good)"],
+  ["dna","DNA replicated (bp)","var(--violet)"],["rna","RNA transcripts","var(--magenta)"]
+];
+countersEl.innerHTML=COUNTERS.map(c=>`<div class="ctr"><div class="k"><span class="dot" style="background:${c[2]}"></span>${c[1]}</div><div class="v mono" id="ctr_${c[0]}">—</div><div class="rate mono" id="rate_${c[0]}"></div></div>`).join("");
+
+const organListEl=document.getElementById("organList");
+organListEl.innerHTML=ORGANS.map((o,i)=>`<div class="organ" id="org_${i}"><div class="top"><span class="nm">${o[0]}</span><span class="pct mono">0%</span></div><div class="bar"><i style="width:0%"></i></div><div class="meta">starts day ${o[1]}</div></div>`).join("");
+
+const modListEl=document.getElementById("modList");
+modListEl.innerHTML=MODS.map(m=>`<div class="mod"><div class="row"><span class="nm" style="color:${m[3]}">${m[1]}</span><span class="boost mono" id="boost_${m[0]}"></span><span class="val mono" id="mval_${m[0]}">50</span></div><input type="range" id="m_${m[0]}" min="0" max="100" value="50" aria-label="${m[1]}"><div class="desc">${m[2]}</div></div>`).join("");
+MODS.forEach(m=>{
+  const el=document.getElementById("m_"+m[0]);
+  el.addEventListener("input",()=>{state.mods[m[0]]=+el.value;renderAll();});
+});
+
+const cTarget=document.getElementById("cTarget");
+cTarget.innerHTML=MODS.map(m=>`<option value="${m[0]}">${m[1]}</option>`).join("");
+
+/* ============ canvas body ============ */
+const cv=document.getElementById("bodyCanvas"),cx=cv.getContext("2d");
+const VIEWDESC={
+  skin:"Skin, face, eyes & eyeballs, ears, 10 fingers + nails, 10 toes",
+  muscle:"Muscle groups — pectorals, abdominals, deltoids, biceps, quads, calves",
+  skeleton:"Skeleton — skull, spine, ribcage, pelvis, limb & digit bones",
+  nerves:"Nervous system — brain, spinal cord & peripheral nerves",
+  blood:"Circulatory — heart, arteries (red) & veins (blue)"
+};
+function bodyPath(W,H){
+  const m=W/2,P=new Path2D();
+  P.ellipse(m,H*0.115,W*0.093,H*0.082,0,0,7);           // head
+  P.rect(m-W*0.038,H*0.17,W*0.076,H*0.05);              // neck
+  P.moveTo(m-W*0.145,H*0.235);                          // torso
+  P.quadraticCurveTo(m-W*0.17,H*0.30,m-W*0.11,H*0.40);
+  P.quadraticCurveTo(m-W*0.10,H*0.44,m-W*0.125,H*0.485);
+  P.lineTo(m+W*0.125,H*0.485);
+  P.quadraticCurveTo(m+W*0.10,H*0.44,m+W*0.11,H*0.40);
+  P.quadraticCurveTo(m+W*0.17,H*0.30,m+W*0.145,H*0.235);
+  P.closePath();
+  P.ellipse(m-W*0.165,H*0.33,W*0.036,H*0.11,0,0,7);     // upper arms
+  P.ellipse(m+W*0.165,H*0.33,W*0.036,H*0.11,0,0,7);
+  P.ellipse(m-W*0.188,H*0.455,W*0.030,H*0.10,0,0,7);    // forearms
+  P.ellipse(m+W*0.188,H*0.455,W*0.030,H*0.10,0,0,7);
+  P.ellipse(m-W*0.205,H*0.565,W*0.030,H*0.027,0,0,7);   // hands
+  P.ellipse(m+W*0.205,H*0.565,W*0.030,H*0.027,0,0,7);
+  P.ellipse(m,H*0.49,W*0.122,H*0.055,0,0,7);            // pelvis / hip bridge
+  P.ellipse(m-W*0.060,H*0.63,W*0.056,H*0.145,0,0,7);    // thighs
+  P.ellipse(m+W*0.060,H*0.63,W*0.056,H*0.145,0,0,7);
+  P.ellipse(m-W*0.058,H*0.845,W*0.042,H*0.125,0,0,7);   // calves
+  P.ellipse(m+W*0.058,H*0.845,W*0.042,H*0.125,0,0,7);
+  P.ellipse(m-W*0.058,H*0.965,W*0.034,H*0.022,0,0,7);   // feet
+  P.ellipse(m+W*0.058,H*0.965,W*0.034,H*0.022,0,0,7);
+  return P;
+}
+function drawFace(W,H,m){
+  const hy=H*0.115,rx=W*0.09,ry=H*0.08,eyeY=hy+ry*0.08,ex=rx*0.42,ew=rx*0.30,eh=ry*0.17;
+  cx.fillStyle="#3a2a1e";
+  cx.beginPath();cx.ellipse(m,hy-ry*0.28,rx*1.03,ry*0.8,0,Math.PI,2*Math.PI);cx.fill();   // hair
+  cx.fillStyle="#e3ac8a";
+  [-1,1].forEach(s=>{cx.beginPath();cx.ellipse(m+s*rx*0.98,eyeY,rx*0.12,ry*0.22,0,0,7);cx.fill();}); // ears
+  [-1,1].forEach(s=>{const c=m+s*ex;
+    cx.fillStyle="#fbfbf7";cx.beginPath();cx.ellipse(c,eyeY,ew,eh,0,0,7);cx.fill();        // sclera
+    cx.fillStyle="#6b4a2b";cx.beginPath();cx.arc(c,eyeY,eh*0.95,0,7);cx.fill();            // iris
+    cx.fillStyle="#140d08";cx.beginPath();cx.arc(c,eyeY,eh*0.45,0,7);cx.fill();            // pupil
+    cx.fillStyle="rgba(255,255,255,.9)";cx.beginPath();cx.arc(c-eh*0.3,eyeY-eh*0.3,eh*0.2,0,7);cx.fill();
+    cx.strokeStyle="#3a2a1e";cx.lineWidth=2;cx.beginPath();
+    cx.moveTo(c-ew,eyeY-eh*1.9);cx.quadraticCurveTo(c,eyeY-eh*2.4,c+ew,eyeY-eh*1.8);cx.stroke();});
+  cx.strokeStyle="rgba(150,90,60,0.55)";cx.lineWidth=1.5;cx.beginPath();                  // nose
+  cx.moveTo(m,eyeY+eh*0.6);cx.lineTo(m-rx*0.09,eyeY+ry*0.55);cx.quadraticCurveTo(m,eyeY+ry*0.66,m+rx*0.09,eyeY+ry*0.55);cx.stroke();
+  cx.strokeStyle="#9c4b45";cx.lineWidth=2.2;cx.beginPath();                               // mouth
+  cx.moveTo(m-rx*0.3,eyeY+ry*0.85);cx.quadraticCurveTo(m,eyeY+ry*1.05,m+rx*0.3,eyeY+ry*0.85);cx.stroke();
+}
+function drawHand(x,y,W,H,side){
+  cx.fillStyle="#e3ac8a";cx.beginPath();cx.ellipse(x,y,W*0.028,H*0.024,0,0,7);cx.fill();
+  const fw=W*0.011,fl=H*0.03;
+  for(let i=0;i<4;i++){const fx=x-W*0.021+i*W*0.014;
+    cx.fillStyle="#e3ac8a";cx.beginPath();cx.ellipse(fx,y+H*0.028,fw,fl,0,0,7);cx.fill();
+    cx.fillStyle="#f3d9c6";cx.beginPath();cx.ellipse(fx,y+H*0.048,fw*0.6,fl*0.22,0,0,7);cx.fill();}
+  cx.fillStyle="#e3ac8a";cx.beginPath();cx.ellipse(x+side*W*0.03,y,W*0.012,H*0.018,side*0.6,0,7);cx.fill();
+}
+function drawFoot(x,y,W,H){
+  cx.fillStyle="#e3ac8a";cx.beginPath();cx.ellipse(x,y,W*0.032,H*0.019,0,0,7);cx.fill();
+  const tw=W*0.0075,tl=H*0.009;
+  for(let i=0;i<5;i++){const tx=x-W*0.021+i*W*0.0105;
+    cx.fillStyle="#e3ac8a";cx.beginPath();cx.ellipse(tx,y+H*0.015,tw,tl,0,0,7);cx.fill();
+    cx.fillStyle="#f3d9c6";cx.beginPath();cx.ellipse(tx,y+H*0.018,tw*0.6,tl*0.4,0,0,7);cx.fill();}
+}
+function drawSkin(W,H,m){
+  const g=cx.createLinearGradient(0,0,W,H);
+  g.addColorStop(0,"#f0c6a8");g.addColorStop(.5,"#e3ac8a");g.addColorStop(1,"#cf9470");
+  cx.fillStyle=g;cx.fillRect(0,0,W,H);
+  cx.fillStyle="rgba(120,70,45,0.16)";cx.fillRect(m-1.5,H*0.22,3,H*0.26);
+  cx.fillStyle="rgba(120,70,45,0.4)";
+  cx.beginPath();cx.arc(m,H*0.40,2,0,7);cx.fill();
+  cx.beginPath();cx.arc(m-W*0.05,H*0.28,2.2,0,7);cx.fill();
+  cx.beginPath();cx.arc(m+W*0.05,H*0.28,2.2,0,7);cx.fill();
+  drawFace(W,H,m);
+  drawHand(m-W*0.205,H*0.565,W,H,-1);drawHand(m+W*0.205,H*0.565,W,H,1);
+  drawFoot(m-W*0.058,H*0.965,W,H);drawFoot(m+W*0.058,H*0.965,W,H);
+}
+function drawMuscle(W,H,m){
+  cx.fillStyle="#b0392f";cx.strokeStyle="#7d241d";cx.lineWidth=1;
+  const g=(x,y,rx,ry)=>{cx.beginPath();cx.ellipse(x,y,rx,ry,0,0,7);cx.fill();cx.stroke();};
+  g(m,H*0.195,W*0.04,H*0.028);
+  g(m-W*0.06,H*0.27,W*0.07,H*0.045);g(m+W*0.06,H*0.27,W*0.07,H*0.045);
+  for(let r=0;r<4;r++){g(m-W*0.035,H*0.33+r*H*0.03,W*0.028,H*0.015);g(m+W*0.035,H*0.33+r*H*0.03,W*0.028,H*0.015);}
+  g(m-W*0.155,H*0.255,W*0.045,H*0.05);g(m+W*0.155,H*0.255,W*0.045,H*0.05);
+  g(m-W*0.165,H*0.34,W*0.032,H*0.07);g(m+W*0.165,H*0.34,W*0.032,H*0.07);
+  g(m-W*0.188,H*0.455,W*0.026,H*0.075);g(m+W*0.188,H*0.455,W*0.026,H*0.075);
+  g(m-W*0.060,H*0.63,W*0.052,H*0.12);g(m+W*0.060,H*0.63,W*0.052,H*0.12);
+  g(m-W*0.058,H*0.845,W*0.040,H*0.11);g(m+W*0.058,H*0.845,W*0.040,H*0.11);
+}
+function drawSkeleton(W,H,m){
+  const bone="#efe9d8";cx.fillStyle=bone;cx.strokeStyle="#cfc7b0";cx.lineWidth=1.3;
+  cx.beginPath();cx.ellipse(m,H*0.10,W*0.07,H*0.065,0,0,7);cx.fill();cx.stroke();
+  cx.beginPath();cx.ellipse(m,H*0.145,W*0.045,H*0.028,0,0,7);cx.fill();
+  cx.strokeStyle=bone;cx.lineWidth=W*0.018;cx.beginPath();cx.moveTo(m,H*0.185);cx.lineTo(m,H*0.47);cx.stroke();
+  cx.lineWidth=2;cx.strokeStyle="#d8d0ba";
+  for(let i=0;i<5;i++){const y=H*0.245+i*H*0.027;
+    cx.beginPath();cx.moveTo(m,y);cx.quadraticCurveTo(m-W*0.11,y+H*0.008,m-W*0.085,y+H*0.03);cx.stroke();
+    cx.beginPath();cx.moveTo(m,y);cx.quadraticCurveTo(m+W*0.11,y+H*0.008,m+W*0.085,y+H*0.03);cx.stroke();}
+  cx.fillStyle=bone;cx.beginPath();cx.ellipse(m,H*0.455,W*0.10,H*0.038,0,0,7);cx.fill();
+  cx.fillStyle="#0c1622";cx.beginPath();cx.ellipse(m,H*0.47,W*0.05,H*0.028,0,0,7);cx.fill();
+  cx.strokeStyle=bone;cx.lineWidth=W*0.014;
+  [-1,1].forEach(s=>{cx.beginPath();cx.moveTo(m+s*W*0.145,H*0.245);cx.lineTo(m+s*W*0.165,H*0.40);cx.lineTo(m+s*W*0.188,H*0.55);cx.stroke();
+    cx.beginPath();cx.moveTo(m+s*W*0.045,H*0.49);cx.lineTo(m+s*W*0.060,H*0.72);cx.lineTo(m+s*W*0.058,H*0.945);cx.stroke();});
+  cx.lineWidth=1.4;
+  [-1,1].forEach(s=>{for(let i=0;i<4;i++){const hx=m+s*W*0.205-W*0.021+i*W*0.014;cx.beginPath();cx.moveTo(hx,H*0.56);cx.lineTo(hx,H*0.61);cx.stroke();}});
+}
+function drawNerves(W,H,m){
+  cx.fillStyle="#d7a3a0";cx.beginPath();cx.ellipse(m,H*0.10,W*0.066,H*0.052,0,0,7);cx.fill();
+  cx.strokeStyle="#b97e7b";cx.lineWidth=1;
+  for(let i=0;i<4;i++){cx.beginPath();cx.arc(m-W*0.04+i*W*0.026,H*0.10,W*0.013,0,Math.PI);cx.stroke();}
+  cx.strokeStyle="#e8c84a";cx.lineWidth=3;cx.beginPath();cx.moveTo(m,H*0.165);cx.lineTo(m,H*0.49);cx.stroke();
+  cx.lineWidth=1.4;
+  [0.24,0.30,0.36,0.42].forEach(f=>[-1,1].forEach(s=>{cx.beginPath();cx.moveTo(m,H*f);cx.quadraticCurveTo(m+s*W*0.1,H*f+H*0.02,m+s*W*0.185,H*f+H*0.06);cx.stroke();}));
+  [-1,1].forEach(s=>{cx.beginPath();cx.moveTo(m,H*0.47);cx.quadraticCurveTo(m+s*W*0.05,H*0.63,m+s*W*0.058,H*0.94);cx.stroke();});
+  cx.fillStyle="#f0d868";[0.24,0.30,0.36,0.42].forEach(f=>{cx.beginPath();cx.arc(m,H*f,2.4,0,7);cx.fill();});
+}
+function drawBlood(W,H,m){
+  cx.fillStyle="#b11818";cx.beginPath();cx.ellipse(m-W*0.025,H*0.285,W*0.032,H*0.03,0.3,0,7);cx.fill();
+  cx.strokeStyle="#c0392b";cx.lineWidth=2.2;cx.beginPath();cx.moveTo(m,H*0.285);cx.lineTo(m,H*0.12);cx.stroke();
+  const tree=(col,off)=>{cx.strokeStyle=col;cx.lineWidth=2;
+    cx.beginPath();cx.moveTo(m+off,H*0.30);cx.lineTo(m+off,H*0.47);cx.stroke();
+    [-1,1].forEach(s=>{cx.beginPath();cx.moveTo(m+off,H*0.47);cx.quadraticCurveTo(m+s*W*0.05,H*0.65,m+s*W*0.058,H*0.94);cx.stroke();});
+    [-1,1].forEach(s=>{cx.beginPath();cx.moveTo(m+off,H*0.27);cx.quadraticCurveTo(m+s*W*0.12,H*0.33,m+s*W*0.188,H*0.52);cx.stroke();});};
+  tree("#c0392b",-2);tree("#2b5fa8",2);
+}
+function drawBody(){
+  const W=cv.width,H=cv.height,m=W/2;cx.clearRect(0,0,W,H);
+  const asm=Math.min(1,state.day/BIRTH),view=state.view||"skin";
+  const body=bodyPath(W,H);
+  cx.save();cx.clip(body);
+  cx.fillStyle="#0c1622";cx.fillRect(0,0,W,H);
+  if(view==="skin")drawSkin(W,H,m);
+  else{cx.save();cx.globalAlpha=.15;drawSkin(W,H,m);cx.restore();
+    if(view==="muscle")drawMuscle(W,H,m);
+    else if(view==="skeleton")drawSkeleton(W,H,m);
+    else if(view==="nerves")drawNerves(W,H,m);
+    else if(view==="blood")drawBlood(W,H,m);}
+  cx.restore();
+  cx.lineWidth=1.4;cx.strokeStyle="rgba(150,180,205,.35)";cx.stroke(body);
+  cx.save();cx.clip(body);
+  const revealY=Math.max(H*0.02,H*asm);
+  if(asm<1){cx.fillStyle="rgba(7,11,18,0.84)";cx.fillRect(0,revealY,W,H-revealY);
+    const b=state.env.tempBand,ac=b==="hot"?"255,120,80":b==="cold"?"120,200,255":"53,230,210";
+    cx.strokeStyle="rgba("+ac+",.85)";cx.lineWidth=1.5;cx.beginPath();cx.moveTo(0,revealY);cx.lineTo(W,revealY);cx.stroke();}
+  const tb=state.env.tempBand;
+  if(tb==="hot"){cx.fillStyle="rgba(255,110,70,0.07)";cx.fillRect(0,0,W,H);}
+  else if(tb==="cold"){cx.fillStyle="rgba(120,200,255,0.08)";cx.fillRect(0,0,W,H);}
+  if(state.env.light==="dark"){cx.fillStyle="rgba(0,0,0,0.26)";cx.fillRect(0,0,W,H);}
+  cx.restore();
+}
+
+/* ============ render ============ */
+function renderAll(){
+  const d=state.day;
+  document.getElementById("timeline").value=d;
+  document.getElementById("timeline").style.setProperty("--pct",(d/MAXDAY*100)+"%");
+  document.getElementById("dayNum").textContent=d;
+  document.getElementById("phaseLabel").textContent=phaseAt(d);
+  const born=d>=BIRTH;
+  document.getElementById("gestTag").textContent=born?"post-natal view":"gestational view";
+  document.getElementById("statusChip").innerHTML=state.playing?"● RUNNING":(d===0?"● STANDBY":"❚❚ PAUSED");
+  document.getElementById("statusChip").style.color=state.playing?"var(--good)":"var(--cyan)";
+
+  // counters
+  const cells=cellsAt(d), cellsPrev=cellsAt(Math.max(0,d-1));
+  const rate=Math.max(0,cells-cellsPrev);
+  setCtr("cells",humanize(cells));
+  setCtr("cellRate",humanize(rate));
+  setCtr("dna",humanize(cells*BP_PER_CELL));
+  setCtr("rna",humanize(cells*RNA_PER_CELL));
+  document.getElementById("rate_dna").textContent="+"+humanize(rate*BP_PER_CELL)+" / day";
+  document.getElementById("rate_rna").textContent="+"+humanize(rate*RNA_PER_CELL)+"/day";
+  document.getElementById("rate_cells").textContent=born?"maintenance phase":"dividing";
+  document.getElementById("rate_cellRate").textContent=d===0?"—":phaseAt(d).split("—")[0];
+
+  // organs
+  let complete=0;
+  ORGANS.forEach((o,i)=>{
+    const p=organProg(o,d),el=document.getElementById("org_"+i);
+    el.querySelector("i").style.width=(p*100).toFixed(0)+"%";
+    el.querySelector(".pct").textContent=p>=1?"✓ 100%":(p*100).toFixed(0)+"%";
+    el.classList.toggle("done",p>=1);
+    const meta=el.querySelector(".meta");
+    if(p<=0)meta.textContent="starts day "+o[1];
+    else if(p>=1)meta.textContent="complete (day "+o[2]+")";
+    else meta.textContent="forming — day "+o[1]+"→"+o[2];
+    if(p>=1)complete++;
+  });
+  document.getElementById("organCount").textContent=complete+" / "+ORGANS.length+" complete";
+
+  // assembly
+  const asm=Math.min(100,Math.round(d/BIRTH*100));
+  document.getElementById("asmPct").textContent=(d>BIRTH?100:asm)+"%";
+  const viab=d<154?"non-viable":d<196?"marginal":d<259?"viable w/ support":"full viability";
+  document.getElementById("asmRing").innerHTML=`systems online: ${complete} / ${ORGANS.length}<br>viability: ${d>=BIRTH?"born ✓":viab}`;
+  const hp=document.getElementById("heroPhase");if(hp)hp.textContent=phaseAt(d);
+  const ha=document.getElementById("heroAsm");if(ha)ha.textContent=(d>BIRTH?100:asm)+"%";
+
+  // modules
+  MODS.forEach(m=>{
+    const base=state.mods[m[0]];
+    let impl=0;for(const c of state.constructs){if(c.module===m[0]&&d>=c.day)impl+=c.mag;}
+    const envB=envBonus(m[0]);
+    document.getElementById("mval_"+m[0]).textContent=Math.round(effMod(m[0],d));
+    const tags=[];if(impl>0)tags.push("+"+impl+" implant");if(envB!==0)tags.push((envB>0?"+":"")+envB+" env");
+    document.getElementById("boost_"+m[0]).textContent=tags.join(" · ");
+    const el=document.getElementById("m_"+m[0]);
+    el.style.setProperty("--pct",base+"%");
+  });
+
+  renderEnv();
+  renderSchedule();
+  drawBody();
+}
+function setCtr(id,v){document.getElementById("ctr_"+id).textContent=v;}
+
+function renderSchedule(){
+  const d=state.day;
+  // merge natural + custom
+  const items=GENES.map(g=>({gene:g[0],day:g[1],sys:g[2],mod:g[3],lo:g[4],hi:g[5],custom:false}))
+    .concat(state.constructs.map(c=>({gene:c.name,day:c.day,sys:c.type,mod:c.module,lo:"custom implant",hi:"custom implant",custom:true})));
+  items.sort((a,b)=>a.day-b.day);
+  const el=document.getElementById("schedList");
+  el.innerHTML=items.map(it=>{
+    const eff=effMod(it.mod,Math.max(it.day,d));
+    const strong=eff>=70;
+    let st,cls;
+    if(d>=it.day+3){st="fired";cls="fired";}
+    else if(d>=it.day){st="expressing";cls="active";}
+    else {st="day "+it.day;cls="pending";}
+    const impact=it.custom?`Implanted ${it.sys} → +${it.mag||""} to ${modLabel(it.mod)}`
+      :`${strong?it.hi:it.lo} <span style="color:var(--dim)">· ${modLabel(it.mod)} @ ${Math.round(eff)}</span>`;
+    return `<div class="ev ${it.custom?'custom':''}"><div class="when">${it.custom?'◆ ':''}day ${it.day}</div><div class="body"><div><span class="gene">${it.gene}</span><span class="st ${cls}">${st}</span></div><div class="imp">${impact}</div></div></div>`;
+  }).join("");
+}
+
+/* ============ transport ============ */
+const playBtn=document.getElementById("playBtn");
+function setPlay(p){state.playing=p;playBtn.textContent=p?"❚❚ Pause":"▶ Run";if(p)state.last=performance.now();}
+playBtn.onclick=()=>setPlay(!state.playing);
+document.getElementById("resetBtn").onclick=()=>{state.day=0;setPlay(false);renderAll();};
+document.querySelectorAll(".speeds button").forEach(b=>b.onclick=()=>{
+  state.spd=+b.dataset.spd;
+  document.querySelectorAll(".speeds button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+});
+document.getElementById("timeline").addEventListener("input",e=>{state.day=+e.target.value;renderAll();});
+
+function loop(t){
+  if(state.playing){
+    const dt=(t-state.last)/1000;state.last=t;
+    state.day=Math.min(MAXDAY,state.day+dt*state.spd);
+    if(state.day>=MAXDAY){state.day=MAXDAY;setPlay(false);}
+    renderAll();
+  }
+  requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+
+/* ============ lab ============ */
+const cMag=document.getElementById("cMag"),cMagV=document.getElementById("cMagV");
+cMag.oninput=()=>cMagV.textContent=cMag.value;
+document.getElementById("synthBtn").onclick=()=>{
+  const name=(document.getElementById("cName").value||"Construct-"+(state.constructs.length+1)).trim();
+  const type=document.getElementById("cType").value;
+  const mod=cTarget.value, mag=+cMag.value;
+  let day=document.getElementById("cDay").value.trim().toLowerCase();
+  day=day==="now"?Math.round(state.day):Math.max(0,Math.min(MAXDAY,parseInt(day)||Math.round(state.day)));
+  const seq=randSeq(36);
+  pendingConstruct={name,type,module:mod,mag,day,seq};
+  document.getElementById("seqPreview").innerHTML=`<b style="color:var(--cyan)">${name}</b> · ${type} · →${modLabel(mod)} +${mag} · day ${day}<br>5'-${seq}-3'`;
+  document.getElementById("implantBtn").disabled=false;
+};
+document.getElementById("implantBtn").onclick=()=>{
+  if(!pendingConstruct)return;
+  state.constructs.push(pendingConstruct);
+  renderChips();pendingConstruct=null;
+  document.getElementById("implantBtn").disabled=true;
+  document.getElementById("seqPreview").textContent="✓ implanted — trait retuned";
+  renderAll();
+};
+function renderChips(){
+  document.getElementById("implantChips").innerHTML=state.constructs.map((c,i)=>
+    `<span class="chip">${c.type} <b>${c.name}</b> +${c.mag}→${modLabel(c.module)} d${c.day}<button data-i="${i}" aria-label="remove">×</button></span>`).join("");
+  document.querySelectorAll("#implantChips button").forEach(b=>b.onclick=()=>{
+    state.constructs.splice(+b.dataset.i,1);renderChips();renderAll();});
+}
+
+/* ============ environment sensing ============ */
+function toast(title,body,accent){
+  const wrap=document.getElementById("toasts");if(!wrap)return;
+  const el=document.createElement("div");el.className="toast";el.style.setProperty("--ta",accent||"var(--cyan)");
+  el.innerHTML='<div class="tt"></div><div class="tb"></div><button class="tx" aria-label="dismiss">×</button>';
+  el.querySelector(".tt").textContent=title;el.querySelector(".tb").textContent=body;
+  el.querySelector(".tx").onclick=()=>el.remove();
+  wrap.appendChild(el);requestAnimationFrame(()=>el.classList.add("in"));
+  setTimeout(()=>{el.classList.remove("in");setTimeout(()=>el.remove(),400);},9000);
+}
+function renderEnv(){
+  const e=state.env;
+  document.getElementById("envLight").textContent=e.light==="dark"?"🌙 Dark":"☀️ Light";
+  document.getElementById("envPhase").textContent=e.phase;
+  document.getElementById("envTempV").textContent=e.tempC+"°C";
+  const bEl=document.getElementById("envBand");
+  bEl.textContent=e.tempBand.toUpperCase();
+  bEl.style.color=e.tempBand==="hot"?"var(--warn)":e.tempBand==="cold"?"var(--cyan)":"var(--good)";
+  const active=[e.light==="dark"?ENVGENES.lightDark:ENVGENES.lightDay, ENVGENES[e.tempBand]];
+  document.getElementById("envGenes").innerHTML=active.map(g=>
+    '<div class="ev"><div class="when" style="color:var(--amber)">◉ live</div><div class="body"><div><span class="gene" style="color:var(--amber)">'+g[0]+'</span></div><div class="imp">'+g[1]+' <span style="color:var(--dim)">· '+modLabel(g[2])+'</span></div></div></div>').join("");
+}
+function setLight(l,announce){
+  const changed=state.env.light!==l;state.env.light=l;
+  if(announce&&changed){const g=l==="dark"?ENVGENES.lightDark:ENVGENES.lightDay;
+    toast((l==="dark"?"🌙 Darkness detected — ":"☀️ Light detected — ")+g[0], g[1], l==="dark"?"var(--violet)":"var(--amber)");}
+  renderAll();
+}
+function setTemp(c,announce){
+  c=Math.max(-10,Math.min(45,Math.round(c)));const prev=state.env.tempBand;
+  state.env.tempC=c;state.env.tempBand=tempBand(c);
+  const r=document.getElementById("envTemp");r.value=c;r.style.setProperty("--pct",((c+10)/55*100)+"%");
+  if(announce&&prev!==state.env.tempBand){const g=ENVGENES[state.env.tempBand];
+    toast((state.env.tempBand==="hot"?"🔥 Heat — ":state.env.tempBand==="cold"?"❄ Cold — ":"🌡 Mild — ")+c+"°C · "+g[0], g[1],
+      state.env.tempBand==="hot"?"var(--warn)":state.env.tempBand==="cold"?"var(--cyan)":"var(--good)");}
+  renderAll();
+}
+// detect device light live + clock phase
+state.env.light=getLight();state.env.phase=phaseOfDay();
+if(window.matchMedia){const mq=matchMedia("(prefers-color-scheme: dark)");
+  const h=()=>setLight(getLight(),true);
+  mq.addEventListener?mq.addEventListener("change",h):mq.addListener(h);}
+new MutationObserver(()=>setLight(getLight(),true)).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
+setInterval(()=>{const p=phaseOfDay();if(p!==state.env.phase){state.env.phase=p;renderEnv();}},60000);
+document.getElementById("envTemp").addEventListener("input",ev=>setTemp(+ev.target.value,true));
+document.querySelectorAll("[data-temp]").forEach(b=>b.onclick=()=>setTemp(+b.dataset.temp,true));
+setTemp(22,false);
+
+/* ============ owner / visitor access ============ */
+try{if(localStorage.getItem("genesis_owner")==="1")state.owner=true;}catch(e){}
+function applyLock(){
+  const o=state.owner;
+  MODS.forEach(m=>{document.getElementById("m_"+m[0]).disabled=!o;});
+  ["cName","cType","cTarget","cMag","cDay","synthBtn"].forEach(id=>{document.getElementById(id).disabled=!o;});
+  document.getElementById("implantBtn").disabled=!o||!pendingConstruct;
+  document.querySelectorAll("#implantChips button").forEach(b=>b.disabled=!o);
+  document.querySelectorAll(".lockbadge").forEach(b=>b.hidden=o);
+  const pill=document.getElementById("modePill");
+  pill.textContent=o?"🔓 Owner mode":"🔬 Observer mode";pill.className="modepill "+(o?"own":"vis");
+  document.getElementById("ownerBtn").textContent=o?"🔓 Owner ✓ — lock":"🔒 Owner access";
+  document.getElementById("ownerGate").hidden=true;
+}
+function tryUnlock(){
+  const i=document.getElementById("ownerPass"),v=i.value;i.value="";
+  if(v===OWNER_CODE){state.owner=true;try{localStorage.setItem("genesis_owner","1");}catch(e){}
+    applyLock();toast("🔓 Owner verified","Full control unlocked — edit the genome, synthesise and implant.","var(--cyan)");}
+  else toast("Access denied","Incorrect owner code.","var(--warn)");
+}
+document.getElementById("ownerBtn").onclick=()=>{
+  if(state.owner){state.owner=false;try{localStorage.removeItem("genesis_owner");}catch(e){}
+    applyLock();toast("🔒 Locked","Observer mode — the genome and lab are now read-only.","var(--violet)");}
+  else{const g=document.getElementById("ownerGate");g.hidden=!g.hidden;if(!g.hidden)document.getElementById("ownerPass").focus();}
+};
+document.getElementById("ownerUnlock").onclick=tryUnlock;
+document.getElementById("ownerPass").addEventListener("keydown",e=>{if(e.key==="Enter")tryUnlock();});
+applyLock();
+
+document.querySelectorAll(".layers button").forEach(b=>b.onclick=()=>{
+  state.view=b.dataset.view;
+  document.querySelectorAll(".layers button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+  document.getElementById("bodyDetail").textContent=VIEWDESC[state.view];
+  drawBody();
+});
+
+renderAll();
+</script>
+
+</body></html>
