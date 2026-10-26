@@ -776,5 +776,72 @@
         "https://www.statnews.com/2026/10/25/mrna-cancer-vaccine-merck-moderna-esmo-intismeran-next-applications/"
       ]
     ]
+  },
+  {
+    "slug": "eth-zurich-lab-grown-muscle-biohybrid-robots-jump-walk",
+    "field": "robotics",
+    "date": "2026-10-26",
+    "title": "Lab-Grown Muscle Gives Tiny Robots a Real Leap",
+    "dek": "ETH Zurich engineers designed living muscle tissue and its soft scaffold together on a computer, producing centimeter-scale biohybrid robots that bend far more than earlier versions and can jump, walk, swim and grasp.",
+    "tags": [
+      "Biohybrid robots",
+      "Soft robotics",
+      "Tissue engineering",
+      "Actuators",
+      "ETH Zurich"
+    ],
+    "body": [
+      [
+        "p",
+        "Living muscle is one of nature's best motors: soft, efficient and able to heal itself. Robotics researchers have tried for years to borrow it by growing muscle cells in the lab and attaching them to small robot bodies. The catch has been that these biohybrid machines usually twitch so weakly that you need a microscope to see them move. A team at ETH Zurich's Soft Robotics Lab, led by Professor Robert Katzschmann with doctoral student Aiste Balciunaite and Mike Y. Michelis as co-lead authors, reports a design approach that makes the motion big enough to see with the naked eye. The study appeared in Nature Communications, and ETH announced it on October 22."
+      ],
+      [
+        "h2",
+        "Designing muscle and skeleton together"
+      ],
+      [
+        "p",
+        "Each actuator pairs skeletal muscle tissue, grown from mouse muscle cells, with a soft, water-rich hydrogel scaffold that stretches and bends a bit like living tissue. Instead of building a scaffold first and then fitting muscle onto it, the team designed both parts at once. A computer simulation decided where to place the tissue, how much to use and how stiff the hydrogel should be, while an algorithm searched for the layout that would make the whole part move the most."
+      ],
+      [
+        "p",
+        "The scaffolds were printed with light using a technique called xolography, which takes about a minute per piece, so the researchers could test a design, feed the results back into the simulation and try again. Fine grooves in the scaffold help the tissue anchor firmly and line up its fibers, so less of each contraction's pull is wasted. Balciunaite said the goal was to design the whole thing from scratch on the computer."
+      ],
+      [
+        "h2",
+        "Jumping, walking, swimming and grasping"
+      ],
+      [
+        "p",
+        "The resulting actuators are about 1.5 centimeters long. According to ETH, they achieve up to 11 times the range of motion of earlier systems that use a comparable amount of muscle. When triggered by an electrical pulse, a single contraction pushes one actuator about 5 millimeters off the bottom of its dish, roughly a third of its own length. A walking version covers 6.2 millimeters per second, which the researchers say is faster for its body size than any walking biohybrid robot reported so far. The team also built versions that swim, move across surfaces and grasp objects, though the announcement does not give performance numbers for those."
+      ],
+      [
+        "h2",
+        "Still tied to the lab dish"
+      ],
+      [
+        "p",
+        "These robots cannot yet survive outside the lab. The muscle must sit in a nutrient solution to stay alive, and the researchers note that anything larger would need an artificial blood supply to deliver oxygen and nutrients and carry away waste. Grown tissue also varies naturally, so two actuators made the same way will not behave identically, unlike factory-made motors. Next, the team wants to better understand and control how the tissue matures. The ETH coverage does not report contraction forces or how long the actuators keep working."
+      ],
+      [
+        "take",
+        "Viraj's perspective: The interesting move here is treating biology as a design variable instead of a fixed ingredient. By letting simulation decide where the muscle goes and how stiff its scaffold should be, the ETH team turned a weak, hard-to-see twitch into a visible jump, which is the kind of step that makes a field start to feel like engineering. The hard problems are still ahead: keeping tissue alive without a dish, getting consistent behavior from one batch to the next, and measuring real forces and lifetimes. If artificial vascular systems start to work at this scale, I would watch for soft medical or inspection devices that need gentle, self-repairing motion more than raw strength."
+      ]
+    ],
+    "credit": "Research by Aiste Balciunaite, Mike Y. Michelis, M. Filippi, P. Paniagua, O. Yasa and Robert K. Katzschmann at ETH Zurich's Soft Robotics Lab, published in Nature Communications. Coverage via ETH Zurich News and Robotics & Automation News.",
+    "sources": [
+      [
+        "ETH Zurich News: One small leap for a muscle, one giant step for robotics",
+        "https://ethz.ch/en/news-and-events/eth-news/news/2026/10/one-small-leap-for-a-muscle-one-giant-step-for-robotics.html"
+      ],
+      [
+        "Nature Communications: Co-optimized volumetric muscle design for large dynamic deformations in versatile biohybrid robots (DOI 10.1038/s41467-026-77655-1)",
+        "https://doi.org/10.1038/s41467-026-77655-1"
+      ],
+      [
+        "Robotics & Automation News: ETH scientists set to bring Terminator-style robots to life with lab-grown muscles",
+        "https://roboticsandautomationnews.com/2026/10/23/eth-scientists-set-to-bring-terminator-style-robots-to-life-with-lab-grown-muscles/106249/"
+      ]
+    ]
   }
 ]
