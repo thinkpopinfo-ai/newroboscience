@@ -843,5 +843,76 @@
         "https://roboticsandautomationnews.com/2026/10/23/eth-scientists-set-to-bring-terminator-style-robots-to-life-with-lab-grown-muscles/106249/"
       ]
     ]
+  },
+  {
+    "slug": "nasa-swift-observatory-ends-mission-after-22-years",
+    "field": "aerospace",
+    "date": "2026-10-27",
+    "title": "Swift Signs Off: NASA's Gamma-Ray Burst Hunter Ends Its Mission After Nearly 22 Years",
+    "dek": "NASA has ended science operations for the Neil Gehrels Swift Observatory, which made its last observation on October 20 after drag pulled it too low, leaving behind data that has fed roughly 7,000 scientific papers.",
+    "tags": [
+      "Swift",
+      "Gamma-ray bursts",
+      "Space telescopes",
+      "Satellite reentry",
+      "NASA"
+    ],
+    "body": [
+      [
+        "p",
+        "On October 23, NASA announced that the Neil Gehrels Swift Observatory has ended its science mission. The spacecraft collected its final observation on October 20, after its orbit had sunk to about 171 miles (275 kilometers) above Earth. At that height the thin upper atmosphere drags on the satellite enough that its telescopes can no longer hold steady on their targets. NASA expects Swift to fall back into the atmosphere within the next few weeks."
+      ],
+      [
+        "h2",
+        "Built for the universe's fastest explosions"
+      ],
+      [
+        "p",
+        "Swift launched in November 2004 with a planned two-year primary mission. It kept working for more than ten times that long. Its job was to catch gamma-ray bursts, brief and extremely powerful flashes from distant explosions, and then quickly swing its X-ray, ultraviolet and optical telescopes toward the spot before the fading afterglow disappeared. According to NASA, Swift could point at a new burst in about a minute and could schedule up to 75 separate targets in a single day."
+      ],
+      [
+        "p",
+        "That speed paid off early. In May 2005, Swift caught the afterglow of a burst that lasted just 0.03 seconds, the first short burst ever seen with an afterglow. Only a handful of X-ray particles of light were detected, but they supported the idea that short bursts come from colliding neutron stars. Over its lifetime the observatory recorded more than 2,000 gamma-ray bursts, studied more than 1,400 supernovae, watched stars being torn apart by black holes, and surveyed the whole sky in X-rays. NASA counts about 7,000 published papers that drew on its data. In 2018 the mission was renamed for Neil Gehrels, its first principal investigator, after his death."
+      ],
+      [
+        "h2",
+        "A rescue that did not work out"
+      ],
+      [
+        "p",
+        "Swift has no thrusters of its own to fight drag, and strong solar activity in recent years puffed up the upper atmosphere and sped up its descent. NASA paid Katalyst Space Technologies about $30 million for a commercial spacecraft called LINK that would grab Swift and push it back up to a higher orbit. LINK launched on July 3, 2026, on a Northrop Grumman Pegasus XL rocket, but soon developed attitude-control problems and went into an unplanned spin. On August 19, NASA and Katalyst concluded the capture could not go ahead, as reported by SpacePolicyOnline and others. After Swift reached about 275 kilometers on October 20, the mission operations team at Penn State sent the commands that ended science work and prepared the spacecraft for reentry."
+      ],
+      [
+        "h2",
+        "What it leaves behind"
+      ],
+      [
+        "p",
+        "The mission is led from NASA's Goddard Space Flight Center, where S. Bradley Cenko serves as principal investigator, with operations run by Penn State under operations director John Nousek. Shawn Domagal-Goldman, who directs NASA's Astrophysics Division, said the agency is looking at ways, including commercial and new missions, to keep a rapid-response capability for sudden cosmic events. Swift's archive, nearly 22 years of measurements and more than 1.5 million ultraviolet and optical images totaling about 12 terabytes, stays open to anyone."
+      ],
+      [
+        "take",
+        "Viraj's perspective: Swift is a reminder that the most valuable instrument is not always the biggest one, but the one that can react fastest. Losing it leaves a real gap for catching short-lived events like neutron star mergers. The thing I will watch is whether NASA follows through on a replacement for that fast-pointing role, and whether in-orbit servicing like Katalyst's attempt matures enough to save the next aging observatory."
+      ]
+    ],
+    "credit": "Mission led by NASA's Goddard Space Flight Center (principal investigator S. Bradley Cenko) with operations at Penn State (operations director John Nousek); reboost attempt by Katalyst Space Technologies under NASA contract. Coverage via Live Science, SpacePolicyOnline and Aviation Today.",
+    "sources": [
+      [
+        "NASA Science: NASA's Swift Mission Ends, Leaves Behind Scientific Bonanza",
+        "https://science.nasa.gov/missions/swift/nasas-swift-mission-ends/"
+      ],
+      [
+        "Live Science: NASA's Swift observatory ends mission to study the most powerful explosions since the Big Bang",
+        "https://www.livescience.com/space/space-exploration/nasas-swift-observatory-ends-22-year-mission-to-study-the-most-powerful-explosions-since-the-big-bang"
+      ],
+      [
+        "SpacePolicyOnline: No-Go for Katalyst's Reboost of NASA's Swift Observatory",
+        "https://spacepolicyonline.com/?p=90438"
+      ],
+      [
+        "Aviation Today: NASA Ends 21-Year Swift Mission After Failed Attempt To Boost Telescope's Orbit",
+        "https://aviationtoday.in/space/nasa-ends-21-year-swift-mission-after-failed-attempt-to-boost-telescopes-orbit/"
+      ]
+    ]
   }
 ]
