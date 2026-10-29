@@ -197,5 +197,33 @@
         "https://tiisys.com/blog/2026/10/22/post-210094/"
       ]
     ]
+  },
+  {
+    "slug": "designing-muscle-robots-for-the-tissue-you-actually-grow",
+    "date": "2026-10-29",
+    "field": "robotics",
+    "title": "Designing Muscle Robots for the Tissue You Actually Grow",
+    "summary": "Lab-grown muscle never comes out the same twice. Designing biohybrid actuators for a spread of tissue, then calibrating each unit with a quick test, could make that variation a spec rather than a surprise.",
+    "post": "eth-zurich-lab-grown-muscle-biohybrid-robots-jump-walk",
+    "concept": [
+      "A team at ETH Zurich's Soft Robotics Lab led by Robert Katzschmann, with Aiste Balciunaite and Mike Y. Michelis as co-lead authors, reported in Nature Communications (announced by ETH on October 22) that designing skeletal muscle tissue and its soft hydrogel scaffold together in simulation produces centimetre-scale biohybrid actuators with far larger motion. According to ETH, a computer model chose where to place the tissue, how much to use and how stiff the scaffold should be, the scaffolds were light-printed by xolography in about a minute each, and the resulting actuators reach up to 11 times the range of motion of earlier systems with comparable muscle, jump about 5 millimetres and, in a walking version, cover 6.2 millimetres per second. The researchers also note a basic limit: grown tissue varies naturally, so two actuators made the same way do not behave identically, and the team's next goal is to better understand and control how the tissue matures.",
+      "The proposal is to make that variability part of the design rather than something discovered afterwards, in two steps. First, robust co-design: instead of optimising the layout for a single nominal tissue, the simulation would treat tissue properties such as contractile strength, stiffness, fibre alignment and maturation rate as a probability distribution, and search for layouts that maximise expected motion while keeping its spread small, favouring geometries whose performance is insensitive to how well a given batch of tissue grew. Second, per-unit calibration: once an actuator has matured, it would receive a short, gentle electrical stimulation sweep while a camera records its deflection, and a Bayesian update would narrow that unit's tissue parameters to give it its own digital twin with credible intervals. The stimulation for each unit could then be tuned so that, for example, the legs of a walker contract in balance, and repeating the same quick check over days would track maturation and decline, turning it into a simple prognostic for living actuators.",
+      "The concept could be tested by printing matched batches of nominally optimal and robustly optimal designs, which fast xolography makes practical, and comparing both the mean and the spread of stroke or jump height across units. The calibration step would be judged by whether each unit's predicted credible intervals cover responses measured under stimulation patterns held out from the fit, and whether a walker driven with calibrated stimulation moves straighter and more consistently than one driven uniformly. Day-by-day tracking would show whether the model can forecast when an actuator's performance will peak and fall off. If it works, biohybrid robots could be specified the way engineered parts are, with a stated performance band and expected useful life, which matters for any future medical or inspection device built from living tissue. It is offered as an open hypothesis that builds on the ETH group's work, not as a result."
+    ],
+    "questions": [
+      "Which tissue properties dominate actuator-to-actuator variation, and can a few seconds of low-amplitude stimulation identify them without stressing or damaging the tissue?",
+      "How much peak motion must be traded away to make a design robust to biological variability, and is that trade-off acceptable for real tasks such as walking or grasping?",
+      "Can a maturation and fatigue model calibrated on one batch of cells forecast the useful life of actuators grown from a different batch, or must every batch be characterised from scratch?"
+    ],
+    "sources": [
+      [
+        "ETH Zurich News: One small leap for a muscle, one giant step for robotics",
+        "https://ethz.ch/en/news-and-events/eth-news/news/2026/10/one-small-leap-for-a-muscle-one-giant-step-for-robotics.html"
+      ],
+      [
+        "Nature Communications: Co-optimized volumetric muscle design for large dynamic deformations in versatile biohybrid robots (DOI 10.1038/s41467-026-77655-1)",
+        "https://doi.org/10.1038/s41467-026-77655-1"
+      ]
+    ]
   }
 ]
