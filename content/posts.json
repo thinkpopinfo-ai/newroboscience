@@ -914,5 +914,80 @@
         "https://aviationtoday.in/space/nasa-ends-21-year-swift-mission-after-failed-attempt-to-boost-telescopes-orbit/"
       ]
     ]
+  },
+  {
+    "slug": "lilly-retatrutide-beats-ozempic-transcend-t2d-2",
+    "field": "biotech",
+    "date": "2026-10-29",
+    "title": "Triple-Action Retatrutide Outperforms Ozempic in a Head-to-Head Diabetes Trial",
+    "dek": "In an 80-week Phase 3 trial of 1,298 adults with type 2 diabetes, Eli Lilly's experimental drug retatrutide lowered blood sugar further than Ozempic's top dose and produced roughly twice the weight loss, according to topline results the company released on October 28.",
+    "tags": [
+      "Retatrutide",
+      "Type 2 diabetes",
+      "Obesity",
+      "Clinical trials",
+      "GLP-1"
+    ],
+    "body": [
+      [
+        "p",
+        "On October 28, Eli Lilly and Company reported the first results from TRANSCEND-T2D-2, a Phase 3 trial that put its experimental medicine retatrutide directly against Novo Nordisk's Ozempic (semaglutide) at 2 mg, the highest dose approved for type 2 diabetes. It is the first late-stage study to compare retatrutide with another drug in this class rather than with a placebo. On both of the trial's main measures, blood sugar and body weight, retatrutide came out ahead."
+      ],
+      [
+        "h2",
+        "Three hormone signals instead of one or two"
+      ],
+      [
+        "p",
+        "Ozempic copies a single gut hormone, GLP-1, which helps the body release insulin and makes people feel full. Lilly's existing drug Mounjaro adds a second hormone signal called GIP. Retatrutide goes a step further: one weekly injection switches on receptors for GLP-1, GIP and glucagon. The idea is that adding glucagon's signal boosts energy use, pushing weight loss beyond what current drugs achieve."
+      ],
+      [
+        "h2",
+        "What the trial found"
+      ],
+      [
+        "p",
+        "The study enrolled 1,298 adults whose diabetes was not well controlled on metformin, some of whom also took an SGLT2 inhibitor. On average they started with an A1C, a measure of long-term blood sugar, of 8.3 percent and weighed about 102 kilograms (226 pounds). Participants were randomly assigned to retatrutide at 9 mg or 12 mg, or to Ozempic 2 mg, and were followed for 80 weeks."
+      ],
+      [
+        "p",
+        "Both retatrutide doses cut A1C by 2.2 percentage points, compared with 1.8 points for Ozempic. The trial's formal goal was to show the 12 mg dose was at least as good as Ozempic, and Lilly says it went further and proved statistically better. Weight loss was where the gap was widest: about 19.5 percent of body weight on 9 mg and 20.9 percent on 12 mg, versus 9.4 percent on Ozempic. Lilly also reported larger improvements in triglycerides, non-HDL cholesterol and systolic blood pressure."
+      ],
+      [
+        "h2",
+        "Side effects and the fine print"
+      ],
+      [
+        "p",
+        "Stomach-related problems were the most common side effects in every group. Diarrhea and vomiting were somewhat more frequent on the higher retatrutide dose, while constipation was less common on retatrutide than on Ozempic. More people stopped treatment because of side effects on retatrutide (4.8 percent on 9 mg and 7.9 percent on 12 mg) than on Ozempic (2.7 percent)."
+      ],
+      [
+        "p",
+        "These are company-released topline numbers, not yet peer reviewed. The headline figures use an analysis that assumes everyone stayed on their assigned drug for the full 80 weeks, which typically yields larger effects than counting everyone who dropped out. The trial was also open-label, meaning participants and doctors knew which drug was being given. Retatrutide remains investigational and is not approved anywhere. Lilly, which ran the study, says full results will be presented at a medical meeting and published in a journal, and Kenneth Custer, who leads its cardiometabolic business, said the drug, if approved, \"could shift the treatment paradigm\" for type 2 diabetes. A separate Lilly trial, TRIUMPH-5, is now comparing retatrutide with the company's own tirzepatide."
+      ],
+      [
+        "take",
+        "Viraj's perspective: Placebo-controlled trials tell you a drug works; head-to-head trials tell you whether it is worth switching. Doubling Ozempic's weight loss while also beating it on blood sugar is a strong signal that adding a third hormone target pays off. What I will be watching is the peer-reviewed paper: how the results hold up when dropouts are counted, why more people quit on the higher dose, and whether the TRIUMPH-5 comparison against tirzepatide shows the same kind of gap. Tolerability, price and supply will decide how many patients actually benefit."
+      ]
+    ],
+    "credit": "Research by Eli Lilly and Company and the TRANSCEND-T2D-2 (NCT06260722) clinical trial investigators and participants. Coverage via HCPLive, BioSpace and STAT.",
+    "sources": [
+      [
+        "Eli Lilly and Company: Lilly's retatrutide delivered greater A1C reduction and more than double the weight loss of Ozempic's highest approved dose in head-to-head trial",
+        "https://investor.lilly.com/news-releases/news-release-details/lillys-retatrutide-delivered-greater-a1c-reduction-and-more"
+      ],
+      [
+        "HCPLive: TRANSCEND-T2D-2: Retatrutide Beats Semaglutide 2 mg on A1C, Weight Loss",
+        "https://www.hcplive.com/view/transcend-t2d-2-retatrutide-beats-semaglutide-2-mg-on-a1c-weight-loss"
+      ],
+      [
+        "BioSpace: Lilly's retatrutide delivered greater A1C reduction and more than double the weight loss of Ozempic's highest approved dose",
+        "https://www.biospace.com/press-releases/lillys-retatrutide-delivered-greater-a1c-reduction-and-more-than-double-the-weight-loss-of-ozempics-highest-approved-dose-in-head-to-head-trial"
+      ],
+      [
+        "STAT: Lilly's triple-G drug beats Ozempic in head-to-head study (Readout newsletter)",
+        "https://www.statnews.com/2026/10/28/biotech-news-lillys-triple-g-drug-beats-ozempic-in-head-to-head-study/"
+      ]
+    ]
   }
 ]
