@@ -989,5 +989,72 @@
         "https://www.statnews.com/2026/10/28/biotech-news-lillys-triple-g-drug-beats-ozempic-in-head-to-head-study/"
       ]
     ]
+  },
+  {
+    "slug": "mit-soft-snake-robot-small-intestine-enteroscope",
+    "field": "robotics",
+    "date": "2026-10-31",
+    "title": "A Soft Robot That Crawls Like a Snake Could Reach the Gut's Hardest-to-Reach Stretch",
+    "dek": "MIT engineers have built an inflatable, snake-inspired robotic enteroscope that grips and steers its way through the small intestine, and in animal tests it captured images, took tissue samples and sprayed fluid on target, according to a study in Science Robotics.",
+    "tags": [
+      "Soft robotics",
+      "Medical robots",
+      "Gastroenterology",
+      "Bioinspiration",
+      "MIT"
+    ],
+    "body": [
+      [
+        "p",
+        "The small intestine is one of the hardest places in the body for doctors to reach. It is more than 20 feet long, only about an inch wide, and coiled tightly between the stomach and the colon. Standard endoscopes reach the ends, but examining the long middle usually requires a technique called double-balloon enteroscopy, which MIT describes as slow and laborious. A team led by Giovanni Traverso, a professor of mechanical engineering at MIT and a gastroenterologist at Brigham and Women's Hospital, has now built a soft robot designed to make that trip easier. Their study, published on October 28 in Science Robotics, describes the device and its first tests in animals."
+      ],
+      [
+        "h2",
+        "Borrowing moves from snakes"
+      ],
+      [
+        "p",
+        "Snakes steer by tightening muscles on one side of the body and then the other. The MIT robot copies that idea with soft, tube-shaped actuators that each contain four chambers. Inflating the chambers in different combinations lets the tube stretch forward or bend in any direction. To move along, the robot's head and tail carry balloons that take turns expanding and relaxing, so one end anchors against the intestinal wall while the other end pushes ahead, much like an inchworm."
+      ],
+      [
+        "p",
+        "Grip is the hard part on slippery, delicate tissue. The team wrapped the head and tail in sleeves cut with kirigami patterns, a paper-cutting technique the Traverso lab has used before for shoe soles and medical stents. The sleeves lie flat until a balloon stretches them, at which point tiny three-dimensional spikes pop up, a bit like a snake's scales catching the ground. The robot is tethered to an external controller, which MIT likens to a 3D-printed video game controller, and can enter through either the mouth or the rectum."
+      ],
+      [
+        "h2",
+        "What it did in testing"
+      ],
+      [
+        "p",
+        "Down a hollow central channel, the robot carries tools: a camera, a sprayer for delivering drugs, and clips for taking biopsies or removing polyps. In animal studies the robot traveled about six and a half feet through the small intestine while the researchers demonstrated all three tools. Popular Science reports that the tests took place in sedated pigs, whose digestive anatomy is similar to ours, and that the robot captured live images, collected small tissue samples and delivered fluid to chosen spots. No human testing has been reported."
+      ],
+      [
+        "h2",
+        "Who built it and what comes next"
+      ],
+      [
+        "p",
+        "The paper's lead authors are Binbin Ying, a former MIT postdoc now an assistant professor at UT Southwestern Medical Center; Ahmad Mujtaba Jebran, an MIT graduate student; and Sahab Babaee, a former MIT research scientist. The team says it is now improving the robot's navigation and testing it for more tasks in the small intestine. Traverso's longer-term aim is more automated examination of the organ. \"We hope we can continue to move it forward,\" he told MIT News."
+      ],
+      [
+        "take",
+        "Viraj's perspective: Soft robots often look clever in the lab and struggle in the body, so the meaningful detail here is the combination of passive grip and simple pneumatic steering that worked inside living tissue while carrying real clinical tools. The big questions now are speed, safety on inflamed or fragile intestines, and how much a physician still has to drive it by hand. Watch for human feasibility studies and side-by-side comparisons with double-balloon enteroscopy; those will decide whether this becomes a hospital tool or stays a striking demo."
+      ]
+    ],
+    "credit": "Research by Giovanni Traverso, Binbin Ying, Ahmad Mujtaba Jebran, Sahab Babaee and colleagues at MIT, Brigham and Women's Hospital and UT Southwestern Medical Center. Coverage via MIT News and Popular Science.",
+    "sources": [
+      [
+        "MIT News: A soft robot could help doctors diagnose and treat disorders of the small intestine",
+        "https://news.mit.edu/2026/soft-robot-could-help-doctors-diagnose-treat-small-intestine-disorders-1028"
+      ],
+      [
+        "Science Robotics: Bioinspired soft enteroscopic robot for intestinal locomotion, steering, and intervention",
+        "https://doi.org/10.1126/scirobotics.adt2230"
+      ],
+      [
+        "Popular Science: MIT develops robot that slithers through intestines like a snake",
+        "https://www.popsci.com/technology/mit-robot-snake-intestines/"
+      ]
+    ]
   }
 ]
