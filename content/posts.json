@@ -1056,5 +1056,72 @@
         "https://www.popsci.com/technology/mit-robot-snake-intestines/"
       ]
     ]
+  },
+  {
+    "slug": "teghaza-001-ancient-mars-meteorite-early-crust-science",
+    "field": "aerospace",
+    "date": "2026-11-01",
+    "title": "A Rock From the Sahara Opens a Window on Mars' First Crust",
+    "dek": "A NASA JPL-led team reports in Science that Teghaza 001, a meteorite picked up in the Sahara in 2022, is a piece of Martian crust that formed at least 4.1 billion years ago and was soaked by water early in the planet's history.",
+    "tags": [
+      "Mars",
+      "Meteorites",
+      "Planetary science",
+      "Early Mars water",
+      "NASA JPL"
+    ],
+    "body": [
+      [
+        "p",
+        "Of the roughly 435 meteorites known to have come from Mars, nearly all are young by planetary standards. A new study published on October 29 in the journal Science describes a rare exception. Called Teghaza 001, the rock was found in the Sahara Desert in 2022 and named after the salt plain in Mali where it turned up. It weighs a little under 2 pounds (about 800 grams). The research team, led by Yang Liu of NASA's Jet Propulsion Laboratory, reports that it formed no later than about 4.1 billion years ago, making it one of the three most ancient Martian meteorites ever found on Earth."
+      ],
+      [
+        "h2",
+        "How a desert stone became a dated piece of Mars"
+      ],
+      [
+        "p",
+        "Researchers at the University of New Mexico had already confirmed the rock was Martian from its oxygen isotopes, and at first it looked like a shergottite, the most common and much younger type of Mars meteorite. But its textures and minerals did not fit. When Liu's group looked closer they found zircon crystals, durable minerals that act as natural clocks. Working with a sliver smaller than a fingernail, Francois Tissot's lab at Caltech dated individual mineral grains on its surface, a technique NASA says few labs in the world can perform. According to Sci.News, the paper describes the rock as a coarse-grained igneous rock that cooled slowly, probably underground, and points to the southern highlands northwest of the giant Hellas impact basin as its most likely source. NASA notes the team found 13 places on Mars whose minerals and chemistry match the rock, though no one can know its exact launch site."
+      ],
+      [
+        "h2",
+        "A record of water on young Mars"
+      ],
+      [
+        "p",
+        "The dates also tell a story about water. The analysis shows the rock was altered by Martian water around 4.1 billion years ago, which suggests it crystallized even earlier. Its oxygen isotopes, texture and chemistry point to a more active water cycle on early Mars than many scientists assumed. Second author Lee Saper, who did the work as a JPL postdoctoral scholar and is now at NASA's Ames Research Center, said the rock may even hold an imprint of the Martian atmosphere as it was losing water. A separate paper published in June in Science Advances examined the meteorite's water content in detail."
+      ],
+      [
+        "h2",
+        "Why one rock matters so much"
+      ],
+      [
+        "p",
+        "Before Teghaza 001, scientists had very few samples from Mars' earliest era. Allan Hills 84001, found in Antarctica, is similar in age but made almost entirely of a single mineral, and the famous Black Beauty meteorite is a jumble of many rock fragments. Carl Agee of the University of New Mexico's Institute of Meteoritics told Sci.News that Teghaza 001 is unusual because it is one unmixed rock type that old. In NASA's release, Liu said one of the paper's reviewers called it \"a Rosetta Stone for Mars.\""
+      ],
+      [
+        "take",
+        "Viraj's perspective: Until samples come home from Mars itself, lucky finds in deserts are our best physical evidence of the planet's past, and this one samples a part of the crust we have never held before. It also shows how much careful lab work, from single-grain dating to isotope chemistry, can pull out of a fingernail-sized chip. What I will watch is whether orbiters and future landers can narrow down those 13 candidate source sites, and whether other researchers confirm the picture of an early, wet and actively changing Martian crust."
+      ]
+    ],
+    "credit": "Research by a team led by Yang Liu of NASA's Jet Propulsion Laboratory, with Lee Saper (formerly JPL, now NASA Ames Research Center) and Francois Tissot's age-dating lab at Caltech, published in Science; earlier Martian identification by the University of New Mexico. Coverage via NASA, Sci.News and CBS News.",
+    "sources": [
+      [
+        "NASA: NASA-funded Study Details One of Oldest Mars Meteorites Ever Found",
+        "https://www.nasa.gov/solar-system/planets/mars/nasa-funded-study-details-one-of-oldest-mars-meteorites-ever-found/"
+      ],
+      [
+        "Science: A Martian meteorite that formed ≳4.1 billion years ago samples Mars' early crust and mantle",
+        "https://www.science.org/doi/10.1126/science.adz5646"
+      ],
+      [
+        "Sci.News: Meteorite Found in Sahara is Piece of Mars at Least 4.1 Billion Years Old",
+        "https://www.sci.news/space/martian-meteorite-teghaza-001-15165.html"
+      ],
+      [
+        "CBS News: Rose-colored meteorite found in the Sahara Desert turns out to be 4.1 billion-year-old piece of Mars",
+        "https://www.cbsnews.com/news/mars-meteorite-found-sahara-desert/"
+      ]
+    ]
   }
 ]
