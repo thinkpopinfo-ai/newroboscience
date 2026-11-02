@@ -225,5 +225,37 @@
         "https://doi.org/10.1038/s41467-026-77655-1"
       ]
     ]
+  },
+  {
+    "slug": "a-countdown-clock-for-observatories-that-cannot-lift-themselves",
+    "date": "2026-11-02",
+    "field": "aerospace",
+    "title": "A Countdown Clock for Observatories That Cannot Lift Themselves",
+    "summary": "Swift's science ended when drag outran its rescue. A forecast of when an aging observatory loses steady pointing, not just when it reenters, could tell agencies how late a rescue can still launch.",
+    "post": "nasa-swift-observatory-ends-mission-after-22-years",
+    "concept": [
+      "On October 23, NASA announced that the Neil Gehrels Swift Observatory had ended its science mission. Launched in November 2004 for a planned two-year mission, Swift made its final observation on October 20, after its orbit had sunk to about 275 kilometres, where, according to NASA, drag from the thin upper atmosphere was strong enough that its telescopes could no longer hold steady on targets. Swift has no thrusters of its own, and strong solar activity in recent years puffed up the upper atmosphere and sped its descent. NASA paid Katalyst Space Technologies about $30 million for a reboost spacecraft called LINK, which launched on July 3, 2026, but developed attitude-control problems; on August 19, as SpacePolicyOnline reported, NASA and Katalyst concluded the capture could not go ahead. The case shows that for observatories without propulsion, the deadline that matters is not reentry but the earlier, softer moment when pointing stops being good enough for science, and that a rescue plan competes against that moment under real uncertainty.",
+      "The proposal is a physics-informed prognostic that forecasts two thresholds with credible intervals: the date an observatory's pointing can no longer meet its science requirement, and the last date a servicing mission could still reach it at an altitude where capture and reboost remain feasible. The orbit part would propagate drag using an ensemble of upper-atmosphere density scenarios driven by solar-activity forecasts and their uncertainty, while a Bayesian filter continually recalibrates the spacecraft's effective drag area from its own tracking history. The pointing part would couple that orbit to a model of aerodynamic torque on the spacecraft against the authority of its attitude-control system, calibrated where possible on the operators' own pointing-performance records, so that the forecast end of science reflects the instrument's actual tolerance rather than a fixed altitude rule. A third layer would fold in the servicing side, treating launch slips and the chance of a vehicle problem like the one LINK experienced as probabilities, and would output a probability that science is saved as a function of when a rescue is committed, along with how much a backup vehicle or an earlier start would raise it.",
+      "The concept could be tested first as a hindcast on Swift itself: starting forecasts from public orbit-tracking data at earlier dates and checking whether the credible intervals for the end of science covered the October 20 date that NASA reported, and how far ahead the interval became narrow enough to act on. The same procedure could be repeated on other low-orbit spacecraft that have already decayed, to see whether the calibration holds across sizes and shapes and across quieter and more active solar periods. If it works, mission managers would have a running estimate of how much science time remains and a quantitative case for when to commission in-orbit servicing, which matters as NASA looks at ways, including commercial and new missions, to keep a rapid-response capability, as Astrophysics Division director Shawn Domagal-Goldman described. It is offered as an open hypothesis building on the work of the Swift team at NASA Goddard and Penn State and on Katalyst's reboost attempt, not as a result."
+    ],
+    "questions": [
+      "How much of the uncertainty in when a drag-limited observatory loses usable pointing comes from solar-activity forecasts versus from poorly known spacecraft properties such as drag area and attitude-control margin?",
+      "Can a forecaster calibrated on spacecraft that have already decayed give credible intervals tight enough, far enough in advance, to justify committing to a servicing mission before it is too late?",
+      "Should future observatories carry low-cost features such as capture fixtures or simple drag-management modes so that a rescue decided late in their lives stays technically feasible?"
+    ],
+    "sources": [
+      [
+        "NASA Science: NASA's Swift Mission Ends, Leaves Behind Scientific Bonanza",
+        "https://science.nasa.gov/missions/swift/nasas-swift-mission-ends/"
+      ],
+      [
+        "SpacePolicyOnline: No-Go for Katalyst's Reboost of NASA's Swift Observatory",
+        "https://spacepolicyonline.com/?p=90438"
+      ],
+      [
+        "Live Science: NASA's Swift observatory ends mission to study the most powerful explosions since the Big Bang",
+        "https://www.livescience.com/space/space-exploration/nasas-swift-observatory-ends-22-year-mission-to-study-the-most-powerful-explosions-since-the-big-bang"
+      ]
+    ]
   }
 ]
