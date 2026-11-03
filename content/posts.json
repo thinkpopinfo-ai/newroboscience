@@ -1123,5 +1123,80 @@
         "https://www.cbsnews.com/news/mars-meteorite-found-sahara-desert/"
       ]
     ]
+  },
+  {
+    "slug": "uniqure-amt-130-huntingtons-gene-therapy-fda-priority-review",
+    "field": "biotech",
+    "date": "2026-11-03",
+    "title": "A Huntington's Gene Therapy Reaches the FDA's Desk, With a Decision Due by May",
+    "dek": "The FDA has accepted uniQure's application for AMT-130, a one-time gene therapy for Huntington's disease, granting priority review and setting a decision date of May 1, 2027.",
+    "tags": [
+      "Huntington's disease",
+      "Gene therapy",
+      "FDA",
+      "Neurology",
+      "uniQure"
+    ],
+    "body": [
+      [
+        "p",
+        "Huntington's disease is an inherited brain disorder that slowly erodes movement, thinking and mood, and there is still no treatment that changes its course. On November 2, the Dutch-American biotech company uniQure announced that the US Food and Drug Administration has accepted its application to approve AMT-130, now formally named ifezuntirgene inilparvovec, and granted it priority review. The agency's target date for a decision is May 1, 2027. The company says the FDA has also tentatively planned to discuss the application at an advisory committee meeting."
+      ],
+      [
+        "h2",
+        "What the therapy does"
+      ],
+      [
+        "p",
+        "AMT-130 is meant to be given once. Surgeons use MRI guidance to infuse it directly into the striatum, a deep brain region (the caudate and putamen) that is hit early and hard by the disease. The treatment carries genetic instructions for a small RNA molecule designed to lower production of huntingtin, the protein whose faulty form drives Huntington's. The idea is that turning down the toxic protein at its source could slow the damage."
+      ],
+      [
+        "p",
+        "The application rests on three years of follow-up from early-stage trials in the US and Europe, which together dosed 51 patients. Because those studies were small, uniQure compared treated patients with a statistically matched group of untreated people drawn from Enroll-HD, a large natural history database that tracks how the disease normally progresses. In September 2025 the company and University College London Hospitals (UCLH) reported a 75 per cent slowing of disease progression at 36 months compared with that control, with the higher dose doing better than the lower one. UCLH neurologists Sarah Tabrizi, the study's lead scientific advisor, and Ed Wild were among the clinicians involved. Wild called it \"the good news we've been working and waiting for.\" The therapy was reported to be generally well tolerated."
+      ],
+      [
+        "h2",
+        "A bumpy road to this point"
+      ],
+      [
+        "p",
+        "Getting here was not smooth. According to BioSpace, in November 2025 the FDA told uniQure it no longer considered the early-stage data adequate as the main evidence for approval, and pushed for a new trial with a sham-surgery control group, a design many patient advocates and experts objected to. In June 2026, after another meeting, the agency reversed course and agreed the three-year data could support a filing under the accelerated approval pathway. uniQure submitted the application in early September."
+      ],
+      [
+        "p",
+        "Accelerated approval comes with strings attached. uniQure plans a confirmatory trial of about 200 patients, randomized two-to-one between the gene therapy and standard care, measuring everyday functioning after 36 months. The company says US screening should begin by the end of 2026. AMT-130 also holds Breakthrough Therapy, RMAT and Fast Track designations from the FDA."
+      ],
+      [
+        "h2",
+        "Why it matters"
+      ],
+      [
+        "p",
+        "uniQure estimates that about 75,000 people live with Huntington's across the US, the EU and the UK, and many more carry the gene and know what is coming. An approval would make AMT-130 the first therapy aimed at slowing the disease itself rather than easing its symptoms. It would also be a test case for whether regulators will accept small trials paired with external natural-history comparisons in rare brain diseases."
+      ],
+      [
+        "take",
+        "Viraj's perspective: The science here is promising but the evidence base is thin, and the FDA's own flip-flopping shows how unsettled the bar is. Watch the advisory committee: how the panel weighs a matched external control against a randomized one will matter well beyond Huntington's. Also watch the confirmatory trial's enrollment, since a brain-surgery-delivered therapy needs that follow-up to keep its approval."
+      ]
+    ],
+    "credit": "Research by uniQure and its clinical collaborators, including Sarah Tabrizi and Ed Wild at University College London Hospitals (National Hospital for Neurology and Neurosurgery). Coverage via uniQure (GlobeNewswire), UCLH, BioSpace and PharmaShots.",
+    "sources": [
+      [
+        "uniQure (GlobeNewswire): FDA acceptance and priority review of the BLA for ifezuntirgene inilparvovec",
+        "https://www.globenewswire.com/news-release/2026/11/02/3393020/0/en/uniqure-announces-fda-acceptance-and-priority-review-of-the-biologics-license-application-for-ifezuntirgene-inilparvovec-for-the-treatment-of-huntington-s-disease.html"
+      ],
+      [
+        "UCLH: Huntington's disease gene therapy shows 75 per cent slowing of disease progression",
+        "https://www.uclh.nhs.uk/news/huntingtons-disease-gene-therapy-shows-75-cent-slowing-disease-progression"
+      ],
+      [
+        "BioSpace: UniQure plans Q3 submission for Huntington's gene therapy after FDA reverses course, again",
+        "https://www.biospace.com/fda/uniqure-plans-resubmission-for-huntingtons-gene-therapy-after-fda-reverses-course-again"
+      ],
+      [
+        "PharmaShots: ifezuntirgene inilparvovec coverage",
+        "https://pharmashots.com/tag/ifezuntirgene-inilparvovec/"
+      ]
+    ]
   }
 ]
