@@ -1198,5 +1198,76 @@
         "https://pharmashots.com/tag/ifezuntirgene-inilparvovec/"
       ]
     ]
+  },
+  {
+    "slug": "google-nasa-robot-medic-deep-space-proof-of-concept",
+    "field": "robotics",
+    "date": "2026-11-05",
+    "title": "A Robot Medic for Mars: Google and NASA Test an Early Helper for Astronaut Health",
+    "dek": "Google and NASA teams are building a proof-of-concept robot that could fetch and set up medical gear for astronauts too far from Earth to wait for a doctor, and it succeeded 85 percent of the time at its first lab task.",
+    "tags": [
+      "Space robotics",
+      "Medical robots",
+      "NASA",
+      "Google",
+      "Robot learning"
+    ],
+    "body": [
+      [
+        "p",
+        "On a trip to Mars, a medical emergency cannot wait for advice from Earth. A message and its reply can take up to 44 minutes to make the round trip, so a crew will often have to handle problems on its own. In a blog post published on October 27, Google Public Sector described a project with NASA to give future crews a robotic helper for exactly those moments."
+      ],
+      [
+        "h2",
+        "From a medical chatbot to a robot with hands"
+      ],
+      [
+        "p",
+        "The robot builds on an earlier collaboration called the Crew Medical Officer Digital Assistant, or CMO-DA. That system is an AI tool meant to support the crew member who acts as medical officer, helping them reason through symptoms and decide what to do. It has been evaluated on Earth-based copies of the computers used aboard the International Space Station. The new step pairs that guidance with a machine that can move things."
+      ],
+      [
+        "p",
+        "The partners on the NASA side include the agency's Human Research Program, the robotics team at Johnson Space Center in Houston and the Jet Propulsion Laboratory in California. According to The Register, JPL is adapting tools originally developed to help satellites understand their surroundings so the robot can find its way through three-dimensional spaces. Google says it tested the robot's movements in MuJoCo, a physics simulator from Google DeepMind, and Nextgov reports that the robot's control software is based on Pi0, an open-source robot model from the startup Physical Intelligence, trained and run on Google Cloud."
+      ],
+      [
+        "h2",
+        "What it has done so far"
+      ],
+      [
+        "p",
+        "The first test was deliberately modest: find a medical bag and move it. In early lab trials the robot managed that about 85 percent of the time. The example scenario the teams describe shows where they want to go next. If an astronaut has back pain that might be caused by kidney stones, the robot could gather and set up an ultrasound machine so the crew can scan for the problem. Google Public Sector vice president Jim Kelly wrote that the long-term aim is a robot that can carry out a range of tasks from \"simple voice instructions.\""
+      ],
+      [
+        "p",
+        "For now the machine is described as a payload handler, moving cargo and equipment rather than touching patients. Nextgov reports that it is meant to act only under the close guidance of the crew medical officer, supporting human decisions rather than replacing them."
+      ],
+      [
+        "h2",
+        "The fine print"
+      ],
+      [
+        "p",
+        "This is a proof of concept, not flight hardware. Google has not said that a fully integrated, space-ready robot exists, and The Register noted that NASA declined to share specifics when asked. An 85 percent success rate at moving a bag is a reasonable start in a lab, but it is a long way from the reliability anyone would want during a real emergency. No peer-reviewed paper accompanies the announcement, so outside experts cannot yet check the methods or results."
+      ],
+      [
+        "take",
+        "Viraj's perspective: I like that this project starts with the boring part. Before a robot can help with an ultrasound, it has to find the right bag every single time, in cramped spaces, with no one on Earth able to step in. The interesting question is whether a general-purpose robot model like Pi0 can be pushed from 85 percent to something close to 100 percent on a small set of critical tasks, and whether it can do that on the limited computers a spacecraft can carry. I will be watching for published test data and any sign of a trial on the ISS or an Artemis mission."
+      ]
+    ],
+    "credit": "Research and development by Google Public Sector and Google Cloud with NASA's Human Research Program, the Johnson Space Center robotics team and NASA's Jet Propulsion Laboratory, using Google DeepMind's MuJoCo simulator and Physical Intelligence's open-source Pi0 model. Coverage via The Register, Nextgov/FCW and TechRadar.",
+    "sources": [
+      [
+        "The Register: Please state the nature of the medical emergency: Google is building a robot medic for NASA",
+        "https://www.theregister.com/offbeat/2026/10/28/please-state-the-nature-of-the-medical-emergency-google-is-building-a-robot-medic-for-nasa/5306130"
+      ],
+      [
+        "Nextgov/FCW: NASA, Google test AI-powered medical robot for deep space missions",
+        "https://www.nextgov.com/emerging-tech/2026/10/nasa-google-test-ai-powered-medical-robot-deep-space-missions/416874/"
+      ],
+      [
+        "TechRadar: Google is building NASA a robot doctor for use on future deep space missions",
+        "https://www.techradar.com/pro/google-is-building-nasa-a-robot-doctor-for-use-on-future-deep-space-missions"
+      ]
+    ]
   }
 ]
