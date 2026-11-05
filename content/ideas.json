@@ -257,5 +257,33 @@
         "https://www.livescience.com/space/space-exploration/nasas-swift-observatory-ends-22-year-mission-to-study-the-most-powerful-explosions-since-the-big-bang"
       ]
     ]
+  },
+  {
+    "slug": "mapping-where-a-brain-gene-therapy-actually-lands",
+    "date": "2026-11-05",
+    "field": "biotech",
+    "title": "Mapping Where a Brain Gene Therapy Actually Lands",
+    "summary": "AMT-130 is infused once into the striatum under MRI guidance. A patient-specific infusion model could estimate how much of the target each person received, and help read small trials more sharply.",
+    "post": "uniqure-amt-130-huntingtons-gene-therapy-fda-priority-review",
+    "concept": [
+      "On November 2, uniQure announced that the US Food and Drug Administration has accepted its application for AMT-130 (ifezuntirgene inilparvovec), a one-time gene therapy for Huntington's disease, with priority review and a target decision date of May 1, 2027. The therapy is infused under MRI guidance directly into the striatum, the caudate and putamen, and carries instructions for a small RNA designed to lower production of huntingtin. The filing rests on three years of follow-up in 51 patients compared with a matched external control drawn from the Enroll-HD natural history database; in September 2025 uniQure and University College London Hospitals reported a 75 per cent slowing of progression at 36 months, with the higher dose doing better than the lower one. uniQure plans a confirmatory trial of about 200 patients. For a treatment placed by surgery into a deep brain structure, though, the nominal dose may not be the whole story: what could matter is how much of the target tissue the infusion actually reached in each person.",
+      "The proposal is a patient-specific delivered-dose map. Each patient's pre-operative MRI would be turned into a computational model of the striatum and its surroundings, with brain tissue treated as a soft, fluid-filled porous solid. The model would simulate the infusion itself, coupling fluid pressure, local tissue swelling, leakage along preferential paths such as fibre tracts or back along the cannula track, and the spread and uptake of the vector, to predict which parts of the caudate and putamen received a meaningful exposure. Where imaging during or after surgery shows how the infused volume actually spread, that information would be assimilated to correct the model, so the final map reflects what happened in theatre rather than what was planned, together with a stated uncertainty. The result would be a coverage measure for every patient, such as the fraction of striatal volume above an exposure threshold, to sit alongside the dose on the label. It draws on the same kind of fluid-structure interaction modelling of the brain that Viraj has applied to neurosurgical shunt systems.",
+      "The model could first be checked against infusions into tissue-mimicking gels and against published imaging from other MRI-guided brain infusion studies, testing whether it predicts the shape and extent of spread it was not tuned to. If trial sponsors shared imaging and outcome data, a retrospective analysis could ask whether modelled coverage explains patient-to-patient differences in progression better than nominal dose alone, and a prespecified, preregistered version could be run on the planned confirmatory trial before it reads out. If coverage does track benefit, it would give surgeons a way to plan cannula trajectories for better reach and give regulators a mechanistic covariate when weighing small studies against external controls; if it does not, that too would narrow down where the variation in response comes from."
+    ],
+    "questions": [
+      "Can the imaging available during or after surgery constrain the model enough to estimate where the vector itself ended up, rather than only where the infused fluid went?",
+      "Is total striatal coverage, coverage of a particular subregion or some combined exposure measure the quantity that best tracks clinical slowing, and how could that be decided with only tens of treated patients?",
+      "How should a per-patient coverage measure be used alongside an external natural-history control without opening new routes to bias in the comparison?"
+    ],
+    "sources": [
+      [
+        "uniQure (GlobeNewswire): FDA acceptance and priority review of the BLA for ifezuntirgene inilparvovec",
+        "https://www.globenewswire.com/news-release/2026/11/02/3393020/0/en/uniqure-announces-fda-acceptance-and-priority-review-of-the-biologics-license-application-for-ifezuntirgene-inilparvovec-for-the-treatment-of-huntington-s-disease.html"
+      ],
+      [
+        "UCLH: Huntington's disease gene therapy shows 75 per cent slowing of disease progression",
+        "https://www.uclh.nhs.uk/news/huntingtons-disease-gene-therapy-shows-75-cent-slowing-disease-progression"
+      ]
+    ]
   }
 ]
