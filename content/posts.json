@@ -1269,5 +1269,80 @@
         "https://www.techradar.com/pro/google-is-building-nasa-a-robot-doctor-for-use-on-future-deep-space-missions"
       ]
     ]
+  },
+  {
+    "slug": "esa-hera-reaches-didymos-dimorphos-dart-crash-site",
+    "field": "aerospace",
+    "date": "2026-11-07",
+    "title": "Hera Reaches the Asteroid NASA Knocked Off Course",
+    "dek": "Europe's Hera spacecraft has arrived at the Didymos–Dimorphos asteroid pair, and its first close-up view already shows a side of Didymos that NASA's DART mission never got a good look at.",
+    "tags": [
+      "Hera",
+      "Planetary defense",
+      "Asteroids",
+      "ESA",
+      "DART"
+    ],
+    "body": [
+      [
+        "p",
+        "In September 2022, NASA's DART spacecraft deliberately slammed into Dimorphos, a small moonlet circling a larger asteroid called Didymos. The goal was to see whether hitting an asteroid could nudge its path, a test run for defending Earth from a future threat. It worked: Dimorphos's orbit around its partner became roughly 33 minutes shorter. But DART was destroyed in the impact, so nobody has been able to look closely at the aftermath. That is the job of the European Space Agency's Hera mission, which has now reached the pair after a two-year journey."
+      ],
+      [
+        "h2",
+        "From one dot to two worlds"
+      ],
+      [
+        "p",
+        "According to ESA, Hera's black-and-white Asteroid Framing Camera first told the two bodies apart on the evening of October 18, from about 1,280 kilometers away. At that range Dimorphos was barely a single pixel. The system was then roughly 197 million kilometers from Earth. Earlier in October, two thruster firings a week apart had slowed the spacecraft to about 20 meters per second relative to the asteroids, so it could ease in rather than fly past."
+      ],
+      [
+        "p",
+        "The two objects are very different in size. Didymos is about 780 meters across, while Dimorphos is only about 151 meters wide and circles it at an average distance of about 1.15 kilometers. ESA scientist Michael Küppers summed up the October image simply: \"With this image, the smaller Dimorphos asteroid becomes visible for the first time.\""
+      ],
+      [
+        "h2",
+        "A first close-up, and a surprise"
+      ],
+      [
+        "p",
+        "In early November the Hera team released its first close-up of the system. It shows Didymos in the foreground, with its ridge around the middle, and Dimorphos in the lower corner, partly in shadow. This face of Didymos was poorly photographed during DART's approach in 2022, and team members say it is covered in more boulders than they expected. One idea they are weighing is that some of that rubble was blasted off Dimorphos by DART and drifted across the short gap to settle on its larger neighbor. That remains a hypothesis for now, and the coming months of mapping should help test it."
+      ],
+      [
+        "h2",
+        "The crash-site investigation begins"
+      ],
+      [
+        "p",
+        "Hera's main task is to measure what DART could not. Dimorphos shifted more than computer simulations predicted, likely because debris thrown off by the impact pushed back like rocket exhaust. How strong that effect is depends on the moonlet's mass and inner structure, so Hera will weigh it, map its surface and look for DART's crater, or find out whether the impact simply reshaped the rubble pile. Two shoebox-sized CubeSats, Milani and Juventas, will join the effort: Milani will study surface composition and dust, while Juventas carries a low-frequency radar meant to peer inside the asteroid. The mission plan ends with landing attempts."
+      ],
+      [
+        "p",
+        "ESA says the first detailed images of Dimorphos are due on November 25. Hera is expected to spend about six months studying the pair, with its main mission running into mid-2027."
+      ],
+      [
+        "take",
+        "Viraj's perspective: DART showed that we can push an asteroid; Hera is what turns that one-off stunt into an engineering tool. The number that matters most is Dimorphos's mass, because without it nobody can say how much of the push came from the spacecraft and how much came from flying debris, and that ratio is exactly what you would need to plan a real deflection. Watch the November 25 images for the crater, or its absence, and watch the CubeSat radar results: a rubble pile that behaves like loose gravel would change how hard, and how early, we would need to hit a threatening asteroid."
+      ]
+    ],
+    "credit": "Research by the European Space Agency's Hera mission team, including mission manager Ian Carnelli and ESA scientist Michael Küppers, building on NASA's DART mission. Coverage via ScienceDaily (ESA release), Nature World News, Tech Times and Behind The Black.",
+    "sources": [
+      [
+        "ScienceDaily (ESA release): NASA smashed into an asteroid. Now Hera is closing in to see what happened",
+        "https://www.sciencedaily.com/releases/2026/11/261103003154.htm"
+      ],
+      [
+        "Nature World News: Europe's Hera Mission Closes In on the Only Asteroid Humans Have Ever Knocked Off Its Original Orbit",
+        "https://www.natureworldnews.com/articles/73731/20261104/europes-hera-mission-closes-only-asteroid-humans-have-ever-knocked-off-its-original-orbit.htm"
+      ],
+      [
+        "Tech Times: ESA Hera Reaches Asteroid Didymos: First Close Image Shows Side DART Never Photographed",
+        "https://www.techtimes.com/articles/330121/20261105/esa-hera-reaches-asteroid-didymos-first-close-image-shows-side-dart-never-photographed.htm"
+      ],
+      [
+        "Behind The Black: Scientists release Hera's first close-up images of Didymos and Dimorphos",
+        "https://behindtheblack.com/behind-the-black/points-of-information/scientists-release-heras-first-close-up-images-of-didymos-and-dimorphos/"
+      ]
+    ]
   }
 ]
