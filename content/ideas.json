@@ -285,5 +285,33 @@
         "https://www.uclh.nhs.uk/news/huntingtons-disease-gene-therapy-shows-75-cent-slowing-disease-progression"
       ]
     ]
+  },
+  {
+    "slug": "designing-the-medical-kit-around-the-robot-that-fetches-it",
+    "date": "2026-11-09",
+    "field": "robotics",
+    "title": "Designing the Medical Kit Around the Robot That Fetches It",
+    "summary": "A robot medic for deep space succeeded about 85% of the time at fetching a medical bag. Mapping where it fails, with honest uncertainty, could guide how the kit is stowed and when the robot should defer.",
+    "post": "google-nasa-robot-medic-deep-space-proof-of-concept",
+    "concept": [
+      "On a mission to Mars, a message to Earth and its reply can take up to 44 minutes, so a crew will often have to handle a medical problem on its own. In an October 27 blog post, Google Public Sector described a proof-of-concept robot, built with NASA's Human Research Program, the Johnson Space Center robotics team and the Jet Propulsion Laboratory, that is meant to fetch and set up medical equipment under the guidance of the crew medical officer. Google says it tested the robot's movements in Google DeepMind's MuJoCo simulator, and Nextgov reports that its control software is based on Physical Intelligence's open-source Pi0 model. In early lab trials, the robot found and moved a medical bag about 85 percent of the time. As The Register and Nextgov note, this is a lab demonstration with no peer-reviewed data yet, and the robot is described as a payload handler rather than something that touches patients. The gap between that first figure and the reliability an emergency would demand is the problem this idea addresses.",
+      "The proposal is to treat reliability as something to design for on both sides: the robot and the kit it handles. First, every simulated and physical trial would be tagged with the conditions that shaped it, such as where the bag was stowed, its orientation, lighting, clutter, handle type and how far it sat from the robot, and a Bayesian model would estimate the probability of success under each combination of conditions, with a credible interval that stays wide wherever data are thin. Simulation results would act as a prior, discounted by a learned correction for how well simulation has predicted the lab so far, rather than being counted as equal to real trials. Second, that failure map would be used to redesign the environment: stowage locations, bag shapes, grasp handles and visual markers would be chosen so that every critical item sits in a region where the robot's estimated success rate is high and its uncertainty is low. Third, at run time the robot would check the conditions it faces against the map and, when its predicted chance of success falls below a threshold set by the medical officer, it would say so and ask for confirmation or hand the task back instead of attempting it. This applies the physics-informed prognostics and Bayesian uncertainty quantification Viraj works on for hardware fatigue to the question of whether a robot will succeed at a task.",
+      "The approach could be tested in a mock spacecraft cabin. A baseline round of trials with the existing kit layout would build the first map, the kit and stowage would then be redesigned using it, and a second round, with trial conditions fixed in advance, would check whether success rates rose where the model predicted, and whether the run-time check flagged the attempts that actually failed. A key test is calibration: across many trials, tasks the robot rates at a given chance of success should succeed at roughly that rate. If it works, the result would be a reliability case that crews and flight surgeons could inspect item by item, and a design rule that medical kits, cabins and robot policies should be qualified together rather than separately, which could also apply to robots handling critical supplies on Earth."
+    ],
+    "questions": [
+      "How many physical trials are needed, and how should they be spread across conditions, before a success estimate for a rare but critical task is narrow enough to rely on?",
+      "Can the mismatch between MuJoCo and the real robot be modelled well enough that simulation meaningfully reduces the number of physical trials, or does it mainly help find failure modes to test?",
+      "Where should the threshold for the robot to defer to the crew sit, and how should it change with the urgency of the medical situation and the crew's workload?"
+    ],
+    "sources": [
+      [
+        "Nextgov/FCW: NASA, Google test AI-powered medical robot for deep space missions",
+        "https://www.nextgov.com/emerging-tech/2026/10/nasa-google-test-ai-powered-medical-robot-deep-space-missions/416874/"
+      ],
+      [
+        "The Register: Please state the nature of the medical emergency: Google is building a robot medic for NASA",
+        "https://www.theregister.com/offbeat/2026/10/28/please-state-the-nature-of-the-medical-emergency-google-is-building-a-robot-medic-for-nasa/5306130"
+      ]
+    ]
   }
 ]
