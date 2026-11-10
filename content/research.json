@@ -11,6 +11,8 @@
   "url": "https://doi.org/10.21203/rs.3.rs-11434494/v1",
   "abstract": "Abstract Humanoid robots intended for care, education and collaboration are expected to perceive human affect and respond appropriately, yet published systems often map momentary classifier outputs directly to robot expressions, discarding uncertainty, temporal structure and the asymmetric informativeness of sensing channels. This paper formulates affect transfer from human to robot as a Bayesian state-estimation and constrained-control problem. A six-dimensional latent state couples fast emotion and slow mood in pleasure–arousal–dominance (PAD) space; physiological, facial and vocal channels enter through modality-specific linear-Gaussian observation models; a sequential Kalman filter with a chi-square innovation gate fuses them under intermittent dropout and outliers; and an uncertainty-weighted, rate-limited mapping converts the posterior into robot display commands. The framework is evaluated entirely in synthetic Monte Carlo simulation (200 trials, 120 s each) under explicitly stated assumptions; no human-subject data are used. Under nominal conditions the gated fused filter reached an overall PAD RMSE of 0.151, against 0.257 for smoothed late fusion and 0.243 for a face-only filter. A 2 factorial study (R2 = 0.862) showed that gating helps only when outliers are present and slightly harms accuracy otherwise. Confidence scaling with λ = 2 cut display jitter by 81% and wrong-sign valence displays by 42% at a 32% tracking-error cost. The contribution is a reproducible, falsifiable baseline that must next be tested on recorded human data.",
   "audiences": [
+   "Human spaceflight health",
+   "NASA Human Research Program",
    "Space robotics and autonomy",
    "NASA JPL"
   ]
@@ -63,10 +65,7 @@
    "Prognostics and health management",
    "NASA Glenn",
    "L3Harris Aerojet Rocketdyne",
-   "Rocket Lab",
-   "Space hardware manufacturing quality",
-   "NASA Safety and Mission Assurance",
-   "Satellite manufacturers"
+   "Rocket Lab"
   ]
  },
  {
@@ -83,9 +82,7 @@
   "audiences": [
    "Space hardware manufacturing quality",
    "NASA Safety and Mission Assurance",
-   "Satellite manufacturers",
-   "Space robotics and autonomy",
-   "NASA JPL"
+   "Satellite manufacturers"
   ]
  },
  {
@@ -100,9 +97,8 @@
   "url": "https://doi.org/10.2139/ssrn.7655918",
   "abstract": "AI accelerators now reach 1.4-2.3 kW per package, and industry analyses place the practical limit of single-phase direct-tochip cooling near 1.5-2.0 kW, yet the geometry-level reasons for that limit, and how far a well-designed cold plate can move it, are not available in open form. This paper develops a reduced-order thermal-hydraulic-structural model of a split-flow, straight-fin copper cold plate cooled by PG25. It couples developing laminar channel flow, fin conduction, an exact three-dimensional spreadingresistance series, and clamped-plate cover mechanics with burst and fin-tip-bypass checks. Five finite-difference and finite-volume solutions verify the model to within 0.9 %. All results are computational; no physical testing was performed. A grid optimiser constrained by Open Compute Project flow and test conventions reduces the hot-spot resistance of a 1.4 kW, 30 × 30 mm heater from 19.48 to 10.46 mK/W (-46 %) at 16.1 kPa. The optimum is bounded by manufacturing limits rather than pressure drop, and spreading contributes 56 % of the remaining resistance. The resulting capability envelope gives 2.59 kW for a 30 × 30 mm source and 1.20 kW for 20 × 20 mm at a 25 K base-to-inlet budget, which locates the single-phase limit primarily in heat flux. A browser calculator implementing the identical model is released for engineering use.",
   "audiences": [
-   "Space hardware manufacturing quality",
-   "NASA Safety and Mission Assurance",
-   "Satellite manufacturers"
+   "Spacecraft thermal control",
+   "NASA Goddard"
   ]
  },
  {
@@ -117,9 +113,6 @@
   "url": "https://doi.org/10.5281/zenodo.19597240",
   "abstract": "",
   "audiences": [
-   "Space hardware manufacturing quality",
-   "NASA Safety and Mission Assurance",
-   "Satellite manufacturers",
    "Spacecraft materials",
    "NASA Langley"
   ]
@@ -146,9 +139,8 @@
    "NASA Glenn",
    "L3Harris Aerojet Rocketdyne",
    "Rocket Lab",
-   "Space hardware manufacturing quality",
-   "NASA Safety and Mission Assurance",
-   "Satellite manufacturers"
+   "Human spaceflight health",
+   "NASA Human Research Program"
   ]
  },
  {
@@ -181,9 +173,7 @@
   "audiences": [
    "Space hardware manufacturing quality",
    "NASA Safety and Mission Assurance",
-   "Satellite manufacturers",
-   "Space robotics and autonomy",
-   "NASA JPL"
+   "Satellite manufacturers"
   ]
  }
 ]
