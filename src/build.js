@@ -357,9 +357,11 @@
       venue: (s && s.venue) || (base.doi ? venue(base.doi) : ""), authors: (s && s.authors && s.authors.length ? s.authors : [AUTHOR]),
       audiences: (s && s.audiences) || [], type: (s && s.type) || "" });
     const works = (prof.research || []).map(w => { const s = byDoi.get(norm(w.doi)); if (s) used.add(norm(w.doi)); return merge({ ...w, doi: norm(w.doi) }, s); });
+    const key = t => String(t).toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
     for (const s of synced || []) {
       if (s.doi && used.has(norm(s.doi))) continue;
-      if (!s.doi && works.some(w => w.title.toLowerCase() === s.title.toLowerCase())) continue;
+      // Same paper posted in two places (e.g. Research Square + Zenodo): keep one page
+      if (works.some(w => key(w.title) === key(s.title))) continue;
       works.push(merge({ title: s.title, area: (s.audiences && s.audiences[0]) || "Research", doi: norm(s.doi) }, s));
     }
     return works.map(w => ({ ...w, slug: slugOf(w.title) }));
