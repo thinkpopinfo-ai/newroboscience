@@ -73,7 +73,7 @@
   }
 
   let ASSET_V = "1";
-  function head(title, desc, path, extraLd, ogType = "website", ogImage) {
+  function head(title, desc, path, extraLd, ogType = "website", ogImage, extraHead = "") {
     const url = SITE + path;
     if (desc.length > 158) { desc = desc.slice(0, 155).replace(/\s+\S*$/, "") + "…"; }
     const ld = [
@@ -103,7 +103,7 @@
 <link rel="alternate" type="application/rss+xml" title="${BRAND} by ${AUTHOR}" href="/feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css?v=${ASSET_V}">
+<link rel="stylesheet" href="/assets/style.css?v=${ASSET_V}">${extraHead}
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
 </head>
 <body>
@@ -114,6 +114,7 @@
     <a href="/#log">Transmissions</a>
     <a href="/live/">Live Radar</a>
     <a href="/ideas/">Ideas Lab</a>
+    <a href="/research/">Research</a>
     <a href="/viraj-lab/">Viraj's Lab</a>
     <a href="/about/">Meet Viraj</a>
     <a href="/about/#contact">Contact</a>
@@ -150,7 +151,7 @@
     <p class="foot-brand">${BRAND}</p>
     <p>Written and curated by <a href="/about/">${AUTHOR}</a>. Every transmission credits the scientists and sources behind the research it covers.</p>
   </div>
-  <div class="foot-links"><a href="mailto:${EMAIL}">${EMAIL}</a><a href="/live/">Live Research Radar</a><a href="/ideas/">Ideas Lab</a><a href="/about/#contact">Contact</a><a href="/subscribe/">Newsletter</a><a href="/feed.xml">RSS feed</a><a href="/about/">About</a><a href="/#log">All transmissions</a></div>
+  <div class="foot-links"><a href="mailto:${EMAIL}">${EMAIL}</a><a href="/live/">Live Research Radar</a><a href="/ideas/">Ideas Lab</a><a href="/research/">Research</a><a href="/about/#contact">Contact</a><a href="/subscribe/">Newsletter</a><a href="/feed.xml">RSS feed</a><a href="/about/">About</a><a href="/#log">All transmissions</a></div>
   <p class="foot-copy">© ${year} ${AUTHOR}. Cover art is generated uniquely for each post; photos are credited to their owners.</p>
 </footer>
 <script src="/assets/app.js?v=${ASSET_V}" defer></script>
@@ -319,7 +320,7 @@
 
   <section class="wrap" id="research">
     <h2 class="sec-title"><span>Publications</span> Research by ${AUTHOR}</h2>
-    <ol class="pubs">${works.map((w, i) => `<li><span class="pub-n">${String(i + 1).padStart(2, "0")}</span><div><p class="pub-area">${esc(w.area)}</p><h3>${w.doi ? `<a href="${doiUrl(w.doi)}" target="_blank" rel="noopener">${esc(w.title)}</a>` : esc(w.title)}</h3><p class="pub-meta">${AUTHOR}${w.doi ? ` · ${venue(w.doi)} · DOI <a href="${doiUrl(w.doi)}" target="_blank" rel="noopener">${esc(w.doi)}</a>` : " · Completed research study"}</p></div></li>`).join("")}</ol>
+    <ol class="pubs">${works.map((w, i) => `<li><span class="pub-n">${String(i + 1).padStart(2, "0")}</span><div><p class="pub-area">${esc(w.area)}</p><h3>${w.slug ? `<a href="/research/${w.slug}/">${esc(w.title)}</a>` : w.doi ? `<a href="${doiUrl(w.doi)}" target="_blank" rel="noopener">${esc(w.title)}</a>` : esc(w.title)}</h3><p class="pub-meta">${AUTHOR}${w.doi ? ` · ${venue(w.doi)} · DOI <a href="${doiUrl(w.doi)}" target="_blank" rel="noopener">${esc(w.doi)}</a>` : " · Completed research study"}</p></div></li>`).join("")}</ol>
   </section>
 
   <section class="wrap">
@@ -339,6 +340,75 @@
     </ul>
   </section>
 </main>` + foot(year);
+  }
+
+  /* Research: profile.json (hand-curated titles + areas) merged with content/research.json
+     (written weekly from ORCID by scripts/orcid_sync.py). Matched by DOI; works found only on
+     ORCID are added. Each work gets /research/<slug>/ with Google Scholar citation tags. */
+  function researchWorks(prof, synced) {
+    const norm = d => String(d || "").toLowerCase().replace(/^https?:\/\/(dx\.)?doi\.org\//, "");
+    const byDoi = new Map((synced || []).filter(s => s.doi).map(s => [norm(s.doi), s]));
+    const used = new Set(), slugs = new Set();
+    const slugOf = t => {
+      let s = t.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 80).replace(/-[^-]*$/, "") || "paper", k = s, n = 2;
+      while (slugs.has(k)) k = `${s}-${n++}`; slugs.add(k); return k;
+    };
+    const merge = (base, s) => ({ ...base, abstract: (s && s.abstract) || base.abstract || "", date: (s && s.date) || base.date || "",
+      venue: (s && s.venue) || (base.doi ? venue(base.doi) : ""), authors: (s && s.authors && s.authors.length ? s.authors : [AUTHOR]),
+      audiences: (s && s.audiences) || [], type: (s && s.type) || "" });
+    const works = (prof.research || []).map(w => { const s = byDoi.get(norm(w.doi)); if (s) used.add(norm(w.doi)); return merge({ ...w, doi: norm(w.doi) }, s); });
+    for (const s of synced || []) {
+      if (s.doi && used.has(norm(s.doi))) continue;
+      if (!s.doi && works.some(w => w.title.toLowerCase() === s.title.toLowerCase())) continue;
+      works.push(merge({ title: s.title, area: (s.audiences && s.audiences[0]) || "Research", doi: norm(s.doi) }, s));
+    }
+    return works.map(w => ({ ...w, slug: slugOf(w.title) }));
+  }
+
+  function renderResearch(works, year) {
+    const out = {};
+    const ld = { "@context": "https://schema.org", "@type": "CollectionPage", name: `Research by ${AUTHOR}`, url: SITE + "/research/", author: { "@id": SITE + "/#viraj" },
+      hasPart: works.map(w => ({ "@type": "ScholarlyArticle", name: w.title, url: `${SITE}/research/${w.slug}/`, author: { "@id": SITE + "/#viraj" }, ...(w.doi ? { sameAs: doiUrl(w.doi) } : {}) })) };
+    out["research/index.html"] = head(`Research by ${AUTHOR} | ${BRAND}`, `Peer-reviewable research by ${AUTHOR} (ORCID 0009-0003-5123-7729) on rocket propulsion, additive-manufacturing reliability, intelligent manufacturing and biomedical engineering.`, "/research/", ld) + `
+<main id="main" class="wrap-narrow about">
+  <p class="kicker">Research</p>
+  <h1>Research by ${AUTHOR}</h1>
+  <p class="post-dek">Papers and preprints on aerospace propulsion, reliability of additively manufactured rocket hardware, intelligent manufacturing and biomedical engineering. Every work is linked to ORCID <a href="${ORCID}" rel="me noopener" target="_blank">${ORCID.replace("https://orcid.org/", "")}</a>, and this list updates itself from it every week.</p>
+  <ol class="pubs">${works.map((w, i) => `<li><span class="pub-n">${String(i + 1).padStart(2, "0")}</span><div><p class="pub-area">${esc(w.area)}</p><h3><a href="/research/${w.slug}/">${esc(w.title)}</a></h3><p class="pub-meta">${esc(w.authors.join(", "))}${w.venue ? ` · ${esc(w.venue)}` : ""}${w.date ? ` · ${esc(w.date.slice(0, 4))}` : ""}${w.doi ? ` · DOI <a href="${doiUrl(w.doi)}" target="_blank" rel="noopener">${esc(w.doi)}</a>` : ""}</p></div></li>`).join("")}</ol>
+  <aside class="take" style="--c:var(--cyan)"><p class="take-label">For space agencies and industry</p><p>Engineers at agencies, launch providers and space startups are welcome to use, test or build on this work. To collaborate, request data or discuss an application, email <a href="mailto:${EMAIL}?subject=Research%20collaboration">${EMAIL}</a>.</p></aside>
+</main>` + foot(year);
+
+    for (const w of works) {
+      const path = `/research/${w.slug}/`, d = w.date ? w.date.replace(/-/g, "/") : "";
+      const isJournal = w.type === "journal-article";
+      const meta = [`<meta name="citation_title" content="${esc(w.title)}">`]
+        .concat(w.authors.map(a => `<meta name="citation_author" content="${esc(a)}">`))
+        .concat(d ? [`<meta name="citation_publication_date" content="${esc(d)}">`] : [])
+        .concat(w.doi ? [`<meta name="citation_doi" content="${esc(w.doi)}">`] : [])
+        .concat(w.venue ? [`<meta name="${isJournal ? "citation_journal_title" : "citation_publisher"}" content="${esc(w.venue)}">`] : [])
+        .concat([`<meta name="citation_abstract_html_url" content="${SITE}${path}">`]);
+      const art = { "@context": "https://schema.org", "@type": "ScholarlyArticle", headline: w.title.slice(0, 110), name: w.title, url: SITE + path,
+        author: w.authors.map(a => a === AUTHOR ? { "@id": SITE + "/#viraj", "@type": "Person", name: AUTHOR, sameAs: ORCID } : { "@type": "Person", name: a }),
+        about: [w.area].concat(w.audiences), ...(w.date ? { datePublished: w.date } : {}), ...(w.abstract ? { abstract: w.abstract } : {}),
+        ...(w.venue ? { publisher: { "@type": "Organization", name: w.venue } } : {}),
+        ...(w.doi ? { identifier: { "@type": "PropertyValue", propertyID: "DOI", value: w.doi }, sameAs: doiUrl(w.doi) } : {}) };
+      const cite = `${w.authors.join(", ")} (${w.date ? w.date.slice(0, 4) : "n.d."}). ${w.title}. ${w.venue ? w.venue + ". " : ""}${w.doi ? doiUrl(w.doi) : ""}`;
+      out[`research/${w.slug}/index.html`] = head(`${w.title} | ${AUTHOR}`, w.abstract || `${w.area} research by ${AUTHOR}.`, path, art, "article", undefined, "\n" + meta.join("\n")) + `
+<main id="main" class="wrap-narrow about">
+  <p class="kicker"><a href="/research/">Research</a> · ${esc(w.area)}</p>
+  <h1>${esc(w.title)}</h1>
+  <p class="role">${esc(w.authors.join(", "))}${w.venue ? ` · ${esc(w.venue)}` : ""}${w.date ? ` · ${esc(w.date.slice(0, 4))}` : ""}</p>
+  ${w.abstract ? `<div class="prose"><h2>Abstract</h2><p>${esc(w.abstract)}</p></div>` : `<p class="post-dek">${esc(w.area)} research by ${AUTHOR}.${w.doi ? " The full paper is available at the DOI below." : " A completed study; contact the author for the full text."}</p>`}
+  ${w.audiences.length ? `<p class="meta">${w.audiences.map(a => `<span class="pill" style="--c:var(--cyan)">${esc(a)}</span>`).join(" ")}</p>` : ""}
+  <div class="hero-cta">${w.doi ? `<a class="btn" href="${doiUrl(w.doi)}" target="_blank" rel="noopener">Read the full paper</a>` : ""}<a class="btn ghost" href="mailto:${EMAIL}?subject=${encodeURIComponent("Research: " + w.title.slice(0, 80))}">Discuss with Viraj</a></div>
+  <div class="contact-block"><ul class="contact">
+    ${w.doi ? `<li><span>DOI</span><a href="${doiUrl(w.doi)}" target="_blank" rel="noopener">${esc(w.doi)}</a></li>` : ""}
+    <li><span>ORCID</span><a href="${ORCID}" rel="noopener" target="_blank">${ORCID.replace("https://orcid.org/", "")}</a></li>
+    <li><span>Cite</span>${esc(cite)}</li>
+  </ul></div>
+</main>` + foot(year);
+    }
+    return out;
   }
 
   function ideaCard(d) {
@@ -426,7 +496,9 @@
     }).sort((a, b) => (a.date === b.date ? (a.tx < b.tx ? 1 : -1) : a.date < b.date ? 1 : -1));
     const year = posts[0].date.slice(0, 4);
     const out = {};
-    const ideas = (assets.ideas || []).map((d, i) => [d, i]).sort((a, b) => (b[0].date || "").localeCompare(a[0].date || "") || b[1] - a[1]).map(x => x[0]), prof = assets.profile;
+    const ideas = (assets.ideas || []).map((d, i) => [d, i]).sort((a, b) => (b[0].date || "").localeCompare(a[0].date || "") || b[1] - a[1]).map(x => x[0]);
+    const works = researchWorks(assets.profile, assets.research), prof = { ...assets.profile, research: works };
+    Object.assign(out, renderResearch(works, year));
     out["index.html"] = renderIndex(posts, ideas, year);
     out["about/index.html"] = renderAbout(posts, ideas, prof, year);
     out["ideas/index.html"] = renderIdeas(ideas, year);
@@ -443,7 +515,7 @@
 <pubDate>${rfcDate(p.date)}</pubDate>
 <dc:creator>${AUTHOR}</dc:creator><category>${FIELDS[p.field].name}</category><description>${esc(p.dek)}</description></item>`).join("")}
 </channel></rss>`;
-    const urls = [["/", posts[0].date], ["/about/", posts[0].date], ["/ideas/", [posts[0].date].concat(ideas.map(d => d.date)).sort().pop()], ["/live/", posts[0].date], ["/viraj-lab/", posts[0].date], ["/subscribe/", posts[0].date]].concat(posts.map(p => [p.url, p.date]));
+    const urls = [["/", posts[0].date], ["/about/", posts[0].date], ["/ideas/", [posts[0].date].concat(ideas.map(d => d.date)).sort().pop()], ["/live/", posts[0].date], ["/viraj-lab/", posts[0].date], ["/subscribe/", posts[0].date], ["/research/", posts[0].date]].concat(works.map(w => [`/research/${w.slug}/`, /^\d{4}-\d{2}-\d{2}$/.test(w.date) ? w.date : posts[0].date])).concat(posts.map(p => [p.url, p.date]));
     out["sitemap.xml"] = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map(([u, d]) => `<url><loc>${SITE}${u}</loc><lastmod>${d}</lastmod></url>`).join("")}</urlset>`;
     out["robots.txt"] = `User-agent: *\nAllow: /\nDisallow: /_source/\nSitemap: ${SITE}/sitemap.xml\n`;
     out["404.html"] = head(`Signal lost | ${BRAND}`, "Page not found.", "/404") + `<main id="main" class="wrap-narrow about"><p class="kicker">Error 404</p><h1>Signal lost</h1><p class="post-dek">That page drifted out of range.</p><a class="btn" href="/">Return to the observatory</a></main>` + foot(year);
@@ -468,7 +540,7 @@
     const fs = require("fs"), path = require("path"), here = __dirname;
     const [postsPath = path.join(here, "../content/posts.json"), outDir = path.join(here, "../dist")] = process.argv.slice(2);
     const files = build(JSON.parse(fs.readFileSync(postsPath, "utf8")), {
-      style: fs.readFileSync(path.join(here, "style.css"), "utf8"), app: fs.readFileSync(path.join(here, "app.js"), "utf8"), profile: JSON.parse(fs.readFileSync(path.join(here, "../content/profile.json"), "utf8")), ideas: JSON.parse(fs.readFileSync(path.join(here, "../content/ideas.json"), "utf8")), virajLab: fs.readFileSync(path.join(here, "viraj-lab.html"), "utf8"),
+      style: fs.readFileSync(path.join(here, "style.css"), "utf8"), app: fs.readFileSync(path.join(here, "app.js"), "utf8"), profile: JSON.parse(fs.readFileSync(path.join(here, "../content/profile.json"), "utf8")), ideas: JSON.parse(fs.readFileSync(path.join(here, "../content/ideas.json"), "utf8")), research: fs.existsSync(path.join(here, "../content/research.json")) ? JSON.parse(fs.readFileSync(path.join(here, "../content/research.json"), "utf8")) : [], virajLab: fs.readFileSync(path.join(here, "viraj-lab.html"), "utf8"),
     });
     fs.rmSync(outDir, { recursive: true, force: true });
     for (const [rel, txt] of Object.entries(files)) { const p = path.join(outDir, rel); fs.mkdirSync(path.dirname(p), { recursive: true }); fs.writeFileSync(p, txt); }

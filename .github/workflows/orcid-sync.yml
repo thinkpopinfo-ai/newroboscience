@@ -1,0 +1,63 @@
+# Weekly ORCID sync -> content/research.json -> /research/ pages on newroboscience.
+# Runs Monday 7:20 AM New York time (12:20 UTC; 8:20 AM in summer), just before the
+# Mon 07:30-11:59 publish window in scripts/netlify-ignore.js, so new papers go live
+# with the regular Monday deploy and cost no extra Netlify credits.
+# It commits only when a paper was added or changed on ORCID.
+name: ORCID sync
+
+on:
+  schedule:
+    - cron: "20 12 * * 1"
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - scripts/orcid_sync.py
+      - .github/workflows/orcid-sync.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: orcid-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Read ORCID and write content/research.json
+        env:
+          ORCID_ID: "0009-0003-5123-7729"
+          ADS_TOKEN: ${{ secrets.ADS_TOKEN }}         # optional: enables the NASA ADS check
+          CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }} # optional: faster OpenAlex/Crossref API pool
+        run: python scripts/orcid_sync.py
+
+      - name: Coverage report and post drafts (run summary)
+        if: always()
+        run: |
+          cat reports/coverage_report.md >> "$GITHUB_STEP_SUMMARY" || true
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          cat reports/social_posts.md >> "$GITHUB_STEP_SUMMARY" || true
+
+      - name: Commit only if research changed
+        run: |
+          git config user.name  "orcid-sync-bot"
+          git config user.email "orcid-sync-bot@users.noreply.github.com"
+          git add content/research.json
+          if git diff --cached --quiet; then
+            echo "No new or changed papers on ORCID; nothing to commit."
+            exit 0
+          fi
+          git commit -m "Research: sync from ORCID"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep 10
+          done
+          exit 1
