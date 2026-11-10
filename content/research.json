@@ -1,0 +1,189 @@
+[
+ {
+  "title": "A Two Timescale Probabilistic State-Space Framework for Multimodal Affect Estimation and Uncertainty Aware Expressive Behavior in Humanoid Robots: A Monte Carlo Simulation Study",
+  "doi": "10.21203/rs.3.rs-11434494/v1",
+  "date": "2026-10-21",
+  "type": "preprint",
+  "venue": "Research Square preprint",
+  "authors": [
+   "Viraj Gajera"
+  ],
+  "url": "https://doi.org/10.21203/rs.3.rs-11434494/v1",
+  "abstract": "Abstract Humanoid robots intended for care, education and collaboration are expected to perceive human affect and respond appropriately, yet published systems often map momentary classifier outputs directly to robot expressions, discarding uncertainty, temporal structure and the asymmetric informativeness of sensing channels. This paper formulates affect transfer from human to robot as a Bayesian state-estimation and constrained-control problem. A six-dimensional latent state couples fast emotion and slow mood in pleasure–arousal–dominance (PAD) space; physiological, facial and vocal channels enter through modality-specific linear-Gaussian observation models; a sequential Kalman filter with a chi-square innovation gate fuses them under intermittent dropout and outliers; and an uncertainty-weighted, rate-limited mapping converts the posterior into robot display commands. The framework is evaluated entirely in synthetic Monte Carlo simulation (200 trials, 120 s each) under explicitly stated assumptions; no human-subject data are used. Under nominal conditions the gated fused filter reached an overall PAD RMSE of 0.151, against 0.257 for smoothed late fusion and 0.243 for a face-only filter. A 2 factorial study (R2 = 0.862) showed that gating helps only when outliers are present and slightly harms accuracy otherwise. Confidence scaling with λ = 2 cut display jitter by 81% and wrong-sign valence displays by 42% at a 32% tracking-error cost. The contribution is a reproducible, falsifiable baseline that must next be tested on recorded human data.",
+  "audiences": [
+   "Space robotics and autonomy",
+   "NASA JPL"
+  ]
+ },
+ {
+  "title": "Computational Multiphysics Modeling of Instability Staged Combustion Propulsion, Radiative Convective Ablative/TPS Interfacial Heat Transfer, Supersonic Retro Propulsive Landing Dynamics for Reusable Heavy Lift Architectures and Subcooled Liquid Management in High Pressure Rocket Engine and Booster Return Trajectories",
+  "doi": "10.21203/rs.3.rs-11332943/v1",
+  "date": "2026-10-13",
+  "type": "preprint",
+  "venue": "Research Square preprint",
+  "authors": [
+   "Viraj Gajera"
+  ],
+  "url": "https://doi.org/10.21203/rs.3.rs-11332943/v1",
+  "abstract": "Abstract This paper presents an original engineering analysis of four coupled challenge areas confronting SpaceX's Starship/Super Heavy launch system and its associated NASA Artemis Human Landing System (HLS) role: (1) full-flow staged-combustion (FFSC) engine dynamics and combustion/turbopump reliability in the Raptor engine family; (2) thermal protection system (TPS) durability under repeated hypersonic reentry heating; (3) tower-based (“Mechazilla”) booster catch dynamics for rapid reuse; and (4) in-space cryogenic propellant transfer and boil-off management required for lunar-bound refueling. For each area, the paper synthesizes current, publicly reported engineering challenges from the technical and trade literature, then develops original, physics-based reduced-order computational models — implemented in MATLAB and validated numerically in this manuscript — to explore candidate design mitigations: a quasi-one-dimensional isentropic nozzle sizing and Rao bell-contour generator; an implicit finite-volume transient thermal model of a multilayer TPS tile stack with radiative and convective boundary conditions; a lumped-parameter cryogenic boil-off model with multilayer insulation (MLI) sensitivity; and a single-degree-of-freedom spring damper model of booster catch-arm loads with genetic-algorithm-optimized cushioning stiffness. All numerical results reported herein are original computations performed for this paper using the stated governing equations and representative, literature-consistent input parameters; they are explicitly distinguished from the higher-fidelity ANSYS Mechanical/Fluent, SOLIDWORKS CAD, and physical test data that a complete industrial design cycle requires and which are identified as structured future work with defined methodologies. The paper is intended as a technically rigorous foundation for further validated simulation and experimental campaigns.",
+  "audiences": [
+   "Launch-vehicle propulsion",
+   "SpaceX",
+   "Blue Origin",
+   "Relativity Space",
+   "NASA Marshall",
+   "Additive manufacturing for space",
+   "Prognostics and health management",
+   "NASA Glenn",
+   "L3Harris Aerojet Rocketdyne",
+   "Rocket Lab",
+   "Thermal protection and cryogenics",
+   "NASA Ames",
+   "NASA Johnson"
+  ]
+ },
+ {
+  "title": "Physics-Informed Prognostics of Fatigue Failure in Additively Manufactured Rocket-Nozzle Cooling Channels: Sparse-Sensor Observability, Bayesian Calibration, and Uncertainty Quantification",
+  "doi": "10.21203/rs.3.rs-11269947/v1",
+  "date": "2026-10-06",
+  "type": "preprint",
+  "venue": "Research Square preprint",
+  "authors": [
+   "Viraj Gajera"
+  ],
+  "url": "https://doi.org/10.21203/rs.3.rs-11269947/v1",
+  "abstract": "Abstract Laser powder bed fusion (L-PBF) allows copper-alloy regeneratively cooled thrust chambers with complex internal channels, but it also introduces wall-thickness deviation, internal roughness and porosity that shorten thermomechanical fatigue life. Whether flight-like instrumentation can reveal these defects before failure has not been quantified. We formulate a physics-informed Bayesian digital twin that infers the manufacturing state of a nozzle-throat channel wall from two per-firing measurements, coolant temperature rise and pressure drop, and propagates that state through a low-cycle-fatigue and ratchet-thinning model to a posterior distribution of firings to failure. The twin is evaluated in silico against a higher-fidelity generator (2-D finite-volume conduction with grid-converged error of 0.02%) on three 300-part fleets: in-distribution, a rougher process and a porous powder lot. It is benchmarked against Gaussian-process and quantile-gradient-boosting regressors trained on 300 run-to-failure parts. Under in-distribution conditions all sensor-based methods reduce the continuous ranked probability score (CRPS) of log 10 life from 0.086 to 0.075–0.077 dex and identify out-of-specification parts with ROC AUC 0.94 after three firings. Yet they recover only about one-third of the gap to an oracle that knows every defect. Local thinning and porosity are unobservable from these sensors. When roughness shifts outside the training range, the twin keeps calibrated 90% intervals (coverage 0.91), whereas the regressors degrade (CRPS +0.017 to +0.025 dex, 95% bootstrap intervals excluding zero). For a porous lot every method fails (coverage ≤0.48) unless a CT pore measurement is added, which restores twin coverage to 0.88. A model-discrepancy term is required for calibrated parameter posteriors. Results are simulation-based and await validation with hot-fire data.",
+  "audiences": [
+   "Launch-vehicle propulsion",
+   "SpaceX",
+   "Blue Origin",
+   "Relativity Space",
+   "NASA Marshall",
+   "Additive manufacturing for space",
+   "Prognostics and health management",
+   "NASA Glenn",
+   "L3Harris Aerojet Rocketdyne",
+   "Rocket Lab",
+   "Space hardware manufacturing quality",
+   "NASA Safety and Mission Assurance",
+   "Satellite manufacturers"
+  ]
+ },
+ {
+  "title": "Autonomous Quality Intelligence (AQI)",
+  "doi": "10.21203/rs.3.rs-9467279/v1",
+  "date": "2026-04-21",
+  "type": "preprint",
+  "venue": "Research Square preprint",
+  "authors": [
+   "Viraj Gajera"
+  ],
+  "url": "https://doi.org/10.21203/rs.3.rs-9467279/v1",
+  "abstract": "Abstract Quality management systems in modern manufacturing are at a critical inflection point. Traditional Design Control frameworks including Design Development Plans (DDP), Design History Files (DHF), Verification and Validation (V&V), Design Inputs and Outputs, and Design Control Plans (DCP) are largely document-centric, reactive, and siloed from real-time production intelligence. While ISO 9001:2015 and regulatory standards such as FDA 21 CFR Part 820 provide robust compliance architectures, their implementation remains labor-intensive, error-prone, and disconnected from emerging digital manufacturing ecosystems. This paper introduces the Autonomous Quality Intelligence (AQI) Framework, a novel, first-of-its-kind architecture that unifies Generative Artificial Intelligence (GenAI), Industrial Digital Twin (IDT) technology, and real-time compliance orchestration engines into a single, self-adaptive Design Control system. AQI redefines how organizations manage Design Inputs, Design Outputs, DDP, DHF, V&V cycles, and DCP transforming static documentation into living, AI-governed, sensorsynchronized quality artifacts. The framework introduces three original constructs: (1) the Compliance Generative Layer (CGL) for automated, regulation-aware documentation synthesis; (2) the Dynamic Verification Engine (DVE) for continuous, twin-based validation; and (3) the Predictive Risk Intelligence Module (PRIM) for AI-augmented FMEA and risk scoring aligned with ISO 14971 and ISO 9001 Clause 6.1. A case study from a transit infrastructure manufacturing environment (Aventura Corporation, MTA New York) demonstrates AQI implementation outcomes: 40% reduction in design-related nonconformances, 97% first-pass verification success rate, 100% regulatory submission acceptance, and a 35% decrease in quality-related costs. The AQI Framework is proposed as a universal, cross-industry standard applicable to medical devices, aerospace, automotive, and high-tech manufacturing sectors, with direct alignment to ISO 9001:2015, ISO 13485:2016, and FDA 21 CFR 820.30 requirements. 1",
+  "audiences": [
+   "Space hardware manufacturing quality",
+   "NASA Safety and Mission Assurance",
+   "Satellite manufacturers",
+   "Space robotics and autonomy",
+   "NASA JPL"
+  ]
+ },
+ {
+  "title": "Capability Envelope of Single-Phase Direct-to-Chip Cold Plates for 1-3 kW AI Accelerators: A Verified Open Design Framework with Pressure-Integrity Constraints",
+  "doi": "10.2139/ssrn.7655918",
+  "date": "2026",
+  "type": "preprint",
+  "venue": "Elsevier BV",
+  "authors": [
+   "Viraj Gajera"
+  ],
+  "url": "https://doi.org/10.2139/ssrn.7655918",
+  "abstract": "AI accelerators now reach 1.4-2.3 kW per package, and industry analyses place the practical limit of single-phase direct-tochip cooling near 1.5-2.0 kW, yet the geometry-level reasons for that limit, and how far a well-designed cold plate can move it, are not available in open form. This paper develops a reduced-order thermal-hydraulic-structural model of a split-flow, straight-fin copper cold plate cooled by PG25. It couples developing laminar channel flow, fin conduction, an exact three-dimensional spreadingresistance series, and clamped-plate cover mechanics with burst and fin-tip-bypass checks. Five finite-difference and finite-volume solutions verify the model to within 0.9 %. All results are computational; no physical testing was performed. A grid optimiser constrained by Open Compute Project flow and test conventions reduces the hot-spot resistance of a 1.4 kW, 30 × 30 mm heater from 19.48 to 10.46 mK/W (-46 %) at 16.1 kPa. The optimum is bounded by manufacturing limits rather than pressure drop, and spreading contributes 56 % of the remaining resistance. The resulting capability envelope gives 2.59 kW for a 30 × 30 mm source and 1.20 kW for 20 × 20 mm at a 25 K base-to-inlet budget, which locates the single-phase limit primarily in heat flux. A browser calculator implementing the identical model is released for engineering use.",
+  "audiences": [
+   "Space hardware manufacturing quality",
+   "NASA Safety and Mission Assurance",
+   "Satellite manufacturers"
+  ]
+ },
+ {
+  "title": "Self-Healing Polymer Composites for Smart Manufacturing",
+  "doi": "10.5281/zenodo.19597240",
+  "date": "",
+  "type": "other",
+  "venue": "Zenodo",
+  "authors": [
+   "Gajera, Viraj"
+  ],
+  "url": "https://doi.org/10.5281/zenodo.19597240",
+  "abstract": "",
+  "audiences": [
+   "Space hardware manufacturing quality",
+   "NASA Safety and Mission Assurance",
+   "Satellite manufacturers",
+   "Spacecraft materials",
+   "NASA Langley"
+  ]
+ },
+ {
+  "title": "Design Optimization and Multiphysics Analysis of Additively Manufactured Rocket Nozzles Using Advanced Computational Engineering",
+  "doi": "10.20944/preprints202610.2207.v1",
+  "date": "",
+  "type": "working-paper",
+  "venue": "MDPI AG",
+  "authors": [
+   "Viraj C. Gajera"
+  ],
+  "url": "https://doi.org/10.20944/preprints202610.2207.v1",
+  "abstract": "—Metal additive manufacturing (AM) has become an established route for fabricating regeneratively cooled rocket engine combustion chambers and nozzles, replacing multi-part brazed or machined assemblies with fewer, topologically integrated components. NASA, industry, and university teams have demonstrated laser powder bed fusion (LPBF) and directed energy deposition (DED) nozzle liners in Inconel 625, Inconel 718, GRCop-84, and GRCop-42, several of which have completed hot-fire testing. Despite this progress, the published literature contains a persistent gap: design methodologies for AM nozzles are typically developed and validated for a single physics domain (thermal, structural, or manufacturing-process) in isolation, and closed loop, simulation-driven optimization that couples topology optimization, conjugate heat transfer, structural fatigue, and AM process-induced residual stress within one traceable workflow is rarely reported for a specific nozzle design. This paper reviews the state of the art in AM rocket nozzle design, materials, and cooling architectures, identifies this integration gap, and proposes an original, technically justified multiphysics design and optimization framework intended for future implementation and hot-fire validation. The paper defines the complete computational workflow CAD parameterization, topology optimization, ANSYS Mechanical/Fluent conjugate heat transfer and structural analysis, Impetus AFEA explicit-dynamics thermal shock assessment, and MATLAB-based multi-objective optimization together with the governing equations, mesh and boundary-condition strategy, and a validation plan referenced against published benchmark data.",
+  "audiences": [
+   "Launch-vehicle propulsion",
+   "SpaceX",
+   "Blue Origin",
+   "Relativity Space",
+   "NASA Marshall",
+   "Additive manufacturing for space",
+   "Prognostics and health management",
+   "NASA Glenn",
+   "L3Harris Aerojet Rocketdyne",
+   "Rocket Lab",
+   "Space hardware manufacturing quality",
+   "NASA Safety and Mission Assurance",
+   "Satellite manufacturers"
+  ]
+ },
+ {
+  "title": "Closed Loop Neuroadaptive Systems for Neuroplastic Modulation A Multimodal Analysis of Wearable Biofeedback and Meditation Induced State Transitions",
+  "doi": "10.5281/zenodo.19502369",
+  "date": "",
+  "type": "other",
+  "venue": "Zenodo",
+  "authors": [
+   "Gajera, Viraj"
+  ],
+  "url": "https://doi.org/10.5281/zenodo.19502369",
+  "abstract": "This paper presents a novel framework for understanding rapid neuroplastic changes through closed-loop neuroadaptive systems integrating wearable biofeedback and mindfulness meditation. Leveraging EEG data from 247 participants, the study identifies a critical neurological tipping point at approximately seven minutes of focused attention meditation. At this threshold, significant increases in alpha and theta brainwave activity are observed, alongside reductions in high-beta stress-related signals. The proposed Rapid Neurological Coherence Model (RNCM) explains this transition as a phase shift in attentional network dynamics, enabling stable and self-reinforcing cognitive states. Building on this insight, the research introduces the 7-Minute Brain Shift (7MBS) Protocol, a practical, technology-assisted intervention using low-cost consumer EEG devices and real-time biofeedback. Results demonstrate that even novice users can achieve measurable neurological benefits comparable to long-term meditators within minutes. The integration of wearable neurotechnology enhances user engagement and adherence, addressing longstanding barriers to meditation adoption. This work bridges neuroscience, engineering, and digital health, offering a scalable, accessible solution for improving mental well-being and cognitive performance. The findings have significant implications for public health, workplace productivity, and next-generation neuroadaptive systems.",
+  "audiences": [
+   "Human spaceflight health",
+   "NASA Human Research Program"
+  ]
+ },
+ {
+  "title": "Autonomous Quality Intelligence (AQI)",
+  "doi": "10.5281/zenodo.19490743",
+  "date": "",
+  "type": "other",
+  "venue": "Zenodo",
+  "authors": [
+   "Gajera, Viraj"
+  ],
+  "url": "https://doi.org/10.5281/zenodo.19490743",
+  "abstract": "",
+  "audiences": [
+   "Space hardware manufacturing quality",
+   "NASA Safety and Mission Assurance",
+   "Satellite manufacturers",
+   "Space robotics and autonomy",
+   "NASA JPL"
+  ]
+ }
+]
