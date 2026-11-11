@@ -1344,5 +1344,32 @@
         "https://behindtheblack.com/behind-the-black/points-of-information/scientists-release-heras-first-close-up-images-of-didymos-and-dimorphos/"
       ]
     ]
+  },
+  {
+    "slug": "crispr-ctx310-angptl3-severe-hypertriglyceridemia-phase-1b-aha",
+    "field": "biotech",
+    "date": "2026-11-11",
+    "title": "One Infusion, 63% Less Blood Fat: A CRISPR Edit Takes On Severe Triglycerides",
+    "dek": "In a small early trial presented at the American Heart Association meeting, a single dose of CRISPR Therapeutics' gene-editing therapy CTX310 cut triglycerides by an average of 63% in people with dangerously high levels.",
+    "tags": ["CRISPR", "Gene editing", "Triglycerides", "Cardiology", "ANGPTL3"],
+    "body": [
+      ["p", "Triglycerides are the fats that circulate in your blood after a meal. For most people they stay in a healthy range, but in severe hypertriglyceridemia they climb far above normal, raising the risk of acute pancreatitis, a painful and sometimes life-threatening inflammation of the pancreas, as well as heart disease. Treatment usually means diet changes and daily or monthly medicines. On November 9, at the American Heart Association's Scientific Sessions 2026, researchers reported early results from a different idea: a one-time gene edit meant to lower these fats for good."],
+      ["h2", "Switching off a brake on fat clearance"],
+      ["p", "The therapy, called CTX310, is being developed by CRISPR Therapeutics. It is delivered by intravenous infusion inside lipid nanoparticles, tiny fat bubbles that travel mainly to the liver. There, the CRISPR-Cas9 editing machinery disables the gene for ANGPTL3, a protein the liver releases into the blood. ANGPTL3 acts like a brake on enzymes that clear fat particles from the bloodstream, so turning it down should let the body clear triglycerides faster. Because the change is made in the liver cells' DNA, the hope is that a single treatment keeps working without repeat doses."],
+      ["h2", "What the new cohort showed"],
+      ["p", "The Phase 1b results, presented by Cleveland Clinic preventive cardiologist Ashish Sarraju, came from 10 adults whose fasting triglycerides were above 500 mg/dL; the group's median was over 1,000 mg/dL. All of them had diabetes, three had a past episode of pancreatitis, and two had established cardiovascular disease. Each received one infusion at a fixed dose of 40 or 50 mg depending on body weight, at sites in New Zealand, Australia, the UK and the US."],
+      ["p", "Thirty days later, the company reports, blood levels of ANGPTL3 had dropped by an average of 65% and triglycerides by 63%. Non-HDL cholesterol, a broad measure of harmful cholesterol, fell 51%, and apolipoprotein B fell 23%. In the seven participants followed for at least 90 days, the reductions held. Sarraju called the results \"promising\" and said they \"represent a new pathway for lipid management.\""],
+      ["p", "On safety, the team reported no serious side effects linked to the treatment and no meaningful rise in liver enzymes, which researchers watch closely with liver-targeted gene editing. One person had a moderate infusion reaction that resolved, and no one developed pancreatitis during the study."],
+      ["h2", "Big caveats, small numbers"],
+      ["p", "This is a 10-person, open-label study with no placebo group and only about a month of headline follow-up, so it says more about whether the approach is safe and active than about long-term benefit. It builds on an earlier Phase 1 study in people with mixed high cholesterol and triglycerides, led by Cleveland Clinic and published in the New England Journal of Medicine, whose one-year follow-up was reported this summer. The results here have been shared as a conference presentation and press releases, not yet as a full peer-reviewed paper. A gene edit is also, by design, hard to undo, which is why regulators require long follow-up for these therapies."],
+      ["take", "Viraj's perspective: Gene editing is quietly moving from rare inherited diseases toward common conditions like high blood fats, where the payoff of a one-and-done treatment could be enormous. What I'll be watching is durability past a year, whether the drops in triglycerides actually translate into fewer pancreatitis attacks and heart events, and how a permanent edit stacks up against newer injectable drugs that already lower triglycerides with a few shots a year."]
+    ],
+    "credit": "Research by CRISPR Therapeutics and clinical investigators including Ashish Sarraju, M.D., of Cleveland Clinic, who presented the Phase 1b data at the American Heart Association Scientific Sessions 2026. Coverage via Cleveland Clinic Newsroom, CRISPR Therapeutics and Tech Times.",
+    "sources": [
+      ["CRISPR Therapeutics: Phase 1b data for CTX310 in severe hypertriglyceridemia at AHA Scientific Sessions 2026", "https://ir.crisprtx.com/news-releases/news-release-details/crispr-therapeutics-presents-phase-1b-data-ctx310r-demonstrating"],
+      ["Cleveland Clinic Newsroom: Gene editing therapy trial dramatically lowers dangerous blood fat levels", "https://newsroom.clevelandclinic.org/2026/11/09/gene-editing-therapy-trial-dramatically-lowers-dangerous-blood-fat-levels"],
+      ["CRISPR Therapeutics: Late-breaking data to be presented at AHA Scientific Sessions 2026", "https://crisprtx.gcs-web.com/news-releases/news-release-details/crispr-therapeutics-present-late-breaking-data-american-heart-0"],
+      ["Tech Times: One-shot gene therapy cuts dangerous triglycerides 63%", "https://www.techtimes.com/articles/330312/20261109/one-shot-gene-therapy-cuts-dangerous-triglycerides-63-permanent-edit-needs-no-refills.htm"]
+    ]
   }
 ]
