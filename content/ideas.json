@@ -313,5 +313,33 @@
         "https://www.theregister.com/offbeat/2026/10/28/please-state-the-nature-of-the-medical-emergency-google-is-building-a-robot-medic-for-nasa/5306130"
       ]
     ]
+  },
+  {
+    "slug": "turning-one-asteroid-crash-test-into-a-deflection-rule",
+    "date": "2026-11-12",
+    "field": "aerospace",
+    "title": "Turning One Asteroid Crash Test Into a Deflection Rule",
+    "summary": "DART moved Dimorphos more than simulations predicted. A Bayesian model tuned on Hera's measurements could forecast how hard an unfamiliar asteroid would push back, and which scouting data matter most.",
+    "post": "esa-hera-reaches-didymos-dimorphos-dart-crash-site",
+    "concept": [
+      "In September 2022, NASA's DART spacecraft struck Dimorphos, the roughly 151-meter moonlet of the asteroid Didymos, and shortened its orbit by about 33 minutes. As reported in ESA's release on ScienceDaily, the moonlet shifted more than computer simulations had predicted, most likely because debris thrown off by the impact pushed back like rocket exhaust, and the size of that effect depends on Dimorphos's mass and inner structure, which nobody has measured. ESA's Hera spacecraft has now reached the pair. According to ESA, it will weigh Dimorphos, map its surface and search for DART's crater, while its two CubeSats study the surface (Milani) and probe the interior with low-frequency radar (Juventas), with the first detailed images of Dimorphos due on November 25. Hera team members also report that the face of Didymos seen in its first close-up is more boulder-strewn than expected, and are weighing whether some of that rubble came from Dimorphos. Hera will explain one impact on one asteroid. The open problem is how to turn that single, well-documented crash test into a reliable forecast for a different asteroid that humanity might one day need to move, likely with far less time to study it.",
+      "The proposal is a hierarchical Bayesian 'deflection response' model. Its core would be a set of impact simulations, spanning continuum hydrocode and discrete-element models of rubble piles, run across the properties that are thought to control how much ejecta adds to the push: bulk density, porosity, cohesion, boulder size distribution and internal layering. Fast surrogate models trained on those runs would link each set of properties to the quantities Hera and its CubeSats can actually observe, such as the moonlet's mass, the presence, shape or absence of a crater, the surface boulder population, the radar-derived interior structure and even how much debris could have crossed to Didymos. Hera's data would then calibrate the model at Dimorphos, including a learned term for systematic simulation error rather than assuming the codes are right. The key step is generalisation: the model would be written so that, for a new asteroid, it takes only what telescopes or a short reconnaissance flyby could measure and returns a predicted deflection per unit of impactor momentum with a credible interval. A value-of-information analysis on the same model would rank which reconnaissance measurements, for example mass, surface boulders or interior radar, would shrink that interval the most, linking the computational multiphysics and Bayesian uncertainty quantification Viraj works on for propulsion hardware to planetary defense planning.",
+      "A first test needs no new spacecraft: before Hera's key results are released, the model's predictions for Dimorphos's mass range and crater appearance could be posted publicly, then scored against what ESA reports, so the calibration is judged on genuine forecasts rather than fitted after the fact. Because there is only one full-scale impact, transferability would have to be stress-tested in other ways, for instance by checking whether the model reproduces laboratory impacts into granular targets at different scales and strengths, and by holding out parts of the Hera dataset to see whether the remaining observations predict them. Calibration would be the central check: across held-out cases, outcomes should fall inside the stated intervals about as often as claimed. If it works, the result would be a planning tool that tells mission designers how much impactor, how early, and how much prior reconnaissance a given threat would require, and that is honest about how much of that answer rests on a single experiment at Dimorphos."
+    ],
+    "questions": [
+      "Which properties that can be measured remotely, such as bulk density, surface boulder population or rotation, actually carry over from Dimorphos to predicting the ejecta push on a different rubble-pile asteroid?",
+      "How should a model calibrated on a single full-scale impact express the extra uncertainty of applying it to an asteroid of different size, shape or composition, rather than reporting falsely narrow error bars?",
+      "If Dimorphos turns out to have been reshaped globally rather than cratered, can the same simulation framework handle both outcomes, or does deflection planning need a separate model for each regime?"
+    ],
+    "sources": [
+      [
+        "ScienceDaily (ESA release): NASA smashed into an asteroid. Now Hera is closing in to see what happened",
+        "https://www.sciencedaily.com/releases/2026/11/261103003154.htm"
+      ],
+      [
+        "Tech Times: ESA Hera Reaches Asteroid Didymos: First Close Image Shows Side DART Never Photographed",
+        "https://www.techtimes.com/articles/330121/20261105/esa-hera-reaches-asteroid-didymos-first-close-image-shows-side-dart-never-photographed.htm"
+      ]
+    ]
   }
 ]
