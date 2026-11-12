@@ -1,7 +1,7 @@
 [build]
   command = "node src/build.js"
   publish = "dist"
-  # Publish in batches (Mon/Thu morning) to stay within 300 credits/month; see scripts/netlify-ignore.js
+  # Credit budget: at most 9 deploys (135 credits) per billing cycle; see scripts/netlify-ignore.js
   ignore = "node scripts/netlify-ignore.js"
 
 [[headers]]

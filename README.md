@@ -8,4 +8,4 @@ Source for https://newroboscience.netlify.app — research explainers, Ideas Lab
 - `content/research.json` — written weekly from ORCID by `scripts/orcid_sync.py` (GitHub Action `ORCID sync`, Mondays 7:20 AM New York); merged with `profile.json` research to build `/research/` pages with Google Scholar citation tags. Don't edit by hand; edit ORCID instead.
 - `src/build.js` — static site generator (`node src/build.js` writes `dist/`)
 
-Netlify publishes `main` in batches to stay within the Free plan's 300 credits/month (15 credits per production deploy): production builds run only on Mon and Thu between 07:30 and 11:59 New York time, and pushes at other times go live with the next window. Add `[publish]` to a commit message to deploy immediately. See `scripts/netlify-ignore.js`.
+Netlify publishes `main` within a budget of 135 credits per billing cycle (cycle restarts on the 11th; 15 credits per production deploy): up to 8 scheduled publishes on Mon/Thu between 07:30 and 08:59 New York time (one per day), plus one `[publish]` commit per cycle. Everything else waits for the next allowed publish. See `scripts/netlify-ignore.js`.
