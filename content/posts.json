@@ -1371,5 +1371,68 @@
       ["CRISPR Therapeutics: Late-breaking data to be presented at AHA Scientific Sessions 2026", "https://crisprtx.gcs-web.com/news-releases/news-release-details/crispr-therapeutics-present-late-breaking-data-american-heart-0"],
       ["Tech Times: One-shot gene therapy cuts dangerous triglycerides 63%", "https://www.techtimes.com/articles/330312/20261109/one-shot-gene-therapy-cuts-dangerous-triglycerides-63-permanent-edit-needs-no-refills.htm"]
     ]
+  },
+  {
+    "slug": "deepmind-gemini-robotics-2-5-dexterity-mercedes-kitting",
+    "field": "robotics",
+    "date": "2026-11-13",
+    "title": "Gemini Robotics 2.5: Google DeepMind's Robot Brain Gets More Nimble Hands",
+    "dek": "Google DeepMind's new vision-language-action model, Gemini Robotics 2.5, reportedly handles fiddly tasks more reliably and faster than its predecessor, and sorted car parts with 96% success in a Mercedes-Benz pilot.",
+    "tags": [
+      "Gemini Robotics",
+      "Humanoid robots",
+      "Dexterity",
+      "Robot safety",
+      "Google DeepMind"
+    ],
+    "body": [
+      [
+        "p",
+        "Teaching a robot to pick up one kind of object is a solved problem. Teaching the same robot to close a toolbox lid, pack pastries with tongs and sort metal brackets on a factory line, all from the same software, is not. On November 10, Google DeepMind announced Gemini Robotics 2.5, which the company calls its most capable vision-language-action model so far. The announcement, written by Carolina Parada of Google DeepMind, focuses on three things: dexterity, reliability and safety."
+      ],
+      [
+        "h2",
+        "One model, many bodies"
+      ],
+      [
+        "p",
+        "A vision-language-action model is a single AI system that looks at the world through cameras, understands instructions in ordinary language, and outputs the motor commands a robot needs to act. DeepMind says the new version was tested on more than 200 distinct tasks. It ran on two quite different machines: Apptronik's Apollo 2 humanoid, fitted with a five-fingered hand that has 22 degrees of freedom, and a Franka Duo setup that uses simple two-fingered grippers. Running well on both is the point, since the long-term goal is software that works across many robot designs instead of being rebuilt for each one."
+      ],
+      [
+        "p",
+        "Compared with its predecessor, Gemini Robotics 2, DeepMind reports success rates between 30% and 100% higher depending on the type of task, and task completion that is 20% to 30% faster. The company also says its newest general model, Gemini 4 Argon, helped speed up the research by acting as a kind of simulation engine. These figures come from DeepMind's own comparisons; the announcement does not include trial counts or an independent evaluation."
+      ],
+      [
+        "h2",
+        "A factory test with Mercedes-Benz"
+      ],
+      [
+        "p",
+        "The most concrete result is a proof-of-concept with Mercedes-Benz. An Apollo 2 humanoid performed automotive kitting, the job of sorting metal brackets into sequencing containers so parts reach the assembly line in the right order. DeepMind says the robot reached a 96% success rate, a figure also reported by SiliconANGLE. In that setup, a separate DeepMind model, Gemini Robotics ER, handled tracking, while Gemini Robotics 2.5 controlled the robot's movements. Apptronik co-founder and CEO Jeff Cardenas is quoted in the announcement, and the model is being rolled out to DeepMind's robotics partners rather than released publicly."
+      ],
+      [
+        "h2",
+        "Testing whether robots can be tricked"
+      ],
+      [
+        "p",
+        "Alongside the model, DeepMind released ASIMOV-Jailbreak, an open-source benchmark with hundreds of prompts that disguise unsafe requests across dozens of scenes. A jailbreak is an attempt to talk an AI into doing something it should refuse, and for a robot the stakes are physical. DeepMind reports that Gemini 4 Argon resisted 99.5% of these attempts, compared with 82% for an earlier robotics reasoning model. The company also says added reasoning guidance at run time improved safe task completion around obstacles and around nearby people."
+      ],
+      [
+        "take",
+        "Viraj's perspective: The 96% kitting number is impressive, but on a real production line the remaining 4% decides whether a robot helps or slows everyone down, so I'd want to see how failures are caught and recovered. The bigger story is one model driving both a dexterous humanoid hand and plain grippers. What I'll be watching is independent testing beyond vendor-reported comparisons, how the pilots move past proof-of-concept, and whether open safety benchmarks like ASIMOV-Jailbreak get adopted by other robot makers."
+      ]
+    ],
+    "credit": "Research by the Google DeepMind robotics team (announcement by Carolina Parada), with partners Apptronik and Mercedes-Benz. Coverage via Google DeepMind and SiliconANGLE.",
+    "sources": [
+      [
+        "Google DeepMind: Gemini Robotics 2.5 accelerates real-world general dexterity",
+        "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
+      ],
+      [
+        "SiliconANGLE: Google DeepMind releases new advanced robotics AI model and next-generation gene prediction model",
+        "https://siliconangle.com/2026/11/11/google-deepmind-releases-new-advanced-robotics-ai-model-and-next-generation-gene-prediction-model"
+      ]
+    ]
   }
 ]
