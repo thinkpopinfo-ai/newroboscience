@@ -1434,5 +1434,76 @@
         "https://siliconangle.com/2026/11/11/google-deepmind-releases-new-advanced-robotics-ai-model-and-next-generation-gene-prediction-model"
       ]
     ]
+  },
+  {
+    "slug": "spacex-starship-flight-15-first-ship-tower-catch",
+    "field": "aerospace",
+    "date": "2026-11-15",
+    "title": "SpaceX Catches a Starship Coming Home From Orbit",
+    "dek": "On Starship's 15th test flight, SpaceX caught the vehicle's upper stage with its launch tower's mechanical arms after 14 orbits of Earth, a first for any orbital spacecraft, even as the booster skipped its own landing.",
+    "tags": [
+      "Starship",
+      "SpaceX",
+      "Reusable rockets",
+      "Artemis",
+      "Starlink"
+    ],
+    "body": [
+      [
+        "p",
+        "For as long as people have been launching rockets, the part that reaches orbit has either burned up, been thrown away or splashed down in the ocean. On November 14, SpaceX changed that. At the end of Starship's 15th integrated test flight, the company's launch tower in Starbase, Texas reached out with its two giant mechanical arms, nicknamed the chopsticks, and caught the Starship upper stage as it came home from orbit. According to SpacePolicyOnline and Space.com, it is the first time a Starship upper stage has been recovered this way after an orbital mission."
+      ],
+      [
+        "h2",
+        "A day in orbit, then a catch"
+      ],
+      [
+        "p",
+        "The flight lifted off from Starbase at 5:47 p.m. Eastern time on November 13, using Booster 22 and Ship 42, according to SpacePolicyOnline. Once in orbit, the ship released 26 of SpaceX's larger third-generation Starlink satellites, the same number it deployed on Flight 14, the first Starship mission to reach orbit, in late September. Space.com reports that cameras on those satellites and on the ground were used to look over the ship's heat shield, which appeared to be in good condition."
+      ],
+      [
+        "p",
+        "The ship then circled Earth 14 times before reentering and returning to Texas. The catch came at 4:20 p.m. Eastern on November 14, roughly 22.5 hours after launch. On the SpaceX webcast, SpaceX's Dan Huot summed up the mood: \"We caught a Starship, and now everything changes.\""
+      ],
+      [
+        "h2",
+        "The booster sat this one out"
+      ],
+      [
+        "p",
+        "The mission was planned as a double catch, with the Super Heavy booster also returning to the tower minutes after launch. That part did not happen. The booster was instead diverted to a splashdown in the Gulf of Mexico. The two outlets describe the trigger differently: SpacePolicyOnline says the guidance system judged the booster to be out of position, while Space.com points to a low-fuel alarm. SpaceX is still investigating. The company has caught Super Heavy boosters on three earlier flights, so the new milestone here is the ship, not the booster."
+      ],
+      [
+        "h2",
+        "Why the ship matters most"
+      ],
+      [
+        "p",
+        "Catching boosters already saves the biggest and most expensive piece of hardware. But SpaceX's goal is a rocket that can be flown again and again with both stages intact, the way an airliner is refueled and turned around. The upper stage is harder to recover because it comes back from orbital speed and must survive the full heat of reentry. Bringing one back whole, and onto the same tower that launched it, is a necessary step toward that kind of reuse."
+      ],
+      [
+        "p",
+        "It also matters for NASA. A version of Starship is under contract to serve as the Human Landing System that will carry astronauts to the Moon's surface, with landings planned starting in 2028. SpacePolicyOnline notes that the lander depends on refueling in orbit, which SpaceX has not yet demonstrated, and that next year's Artemis III mission is set to test Orion docking with a Starship in Earth orbit."
+      ],
+      [
+        "take",
+        "Viraj's perspective: Recovering an upper stage intact is the piece of rocket reuse that has resisted engineers for decades, so this catch deserves the attention. But one success is a data point, not a routine. The things to watch now are whether SpaceX can repeat it, whether a caught ship can actually be refurbished and flown again quickly, and whether the booster problem is understood before the next attempt at a full double catch. For the Moon program, the bigger open question is still in-orbit refueling, which no catch can substitute for."
+      ]
+    ],
+    "credit": "Research and flight test by SpaceX's Starship team at Starbase, Texas. Coverage via SpacePolicyOnline (Marcia Smith) and Space.com (Mike Wall).",
+    "sources": [
+      [
+        "SpacePolicyOnline: SpaceX Catches a Starship",
+        "https://spacepolicyonline.com/news/spacex-catches-a-starship/"
+      ],
+      [
+        "Space.com: 'Now everything changes': SpaceX catches Starship upper stage for 1st time ever",
+        "https://www.space.com/space-exploration/launches-spacecraft/spacex-chopsticks-catch-starship-upper-stage-flight-14"
+      ],
+      [
+        "Space.com: Watch SpaceX attempt a historic Starship launch and double-catch landing today (Nov. 13)",
+        "https://www.space.com/space-exploration/launches-spacecraft/spacex-launching-historic-double-catch-starship-test-flight-today-watch-it-live"
+      ]
+    ]
   }
 ]
