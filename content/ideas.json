@@ -341,5 +341,33 @@
         "https://www.techtimes.com/articles/330121/20261105/esa-hera-reaches-asteroid-didymos-first-close-image-shows-side-dart-never-photographed.htm"
       ]
     ]
+  },
+  {
+    "slug": "judging-a-triglyceride-gene-edit-by-its-spikes-not-its-average",
+    "date": "2026-11-16",
+    "field": "biotech",
+    "title": "Judging a Triglyceride Gene Edit by Its Spikes, Not Its Average",
+    "summary": "CTX310 cut average triglycerides by 63% in an early trial. A patient-level risk model built on frequent home readings could ask the harder question: how much less time each person spends in the danger zone.",
+    "post": "crispr-ctx310-angptl3-severe-hypertriglyceridemia-phase-1b-aha",
+    "concept": [
+      "At the American Heart Association's Scientific Sessions 2026, Cleveland Clinic preventive cardiologist Ashish Sarraju presented Phase 1b results for CTX310, CRISPR Therapeutics' one-time, liver-targeted gene edit that switches off ANGPTL3, a protein that slows the clearance of fat particles from the blood. According to CRISPR Therapeutics and Cleveland Clinic, the 10 adults treated all had fasting triglycerides above 500 mg/dL, with a group median above 1,000 mg/dL; all had diabetes and three had a past episode of pancreatitis. Thirty days after a single infusion, average ANGPTL3 had fallen 65% and triglycerides 63%, the reductions held in the seven people followed for at least 90 days, and no one developed pancreatitis during the study. These are encouraging averages from a small, open-label study without a placebo group. But the danger in severe hypertriglyceridemia is the risk of acute pancreatitis, and an average fasting value says little about how often an individual still climbs to very high levels, for example after meals or during poor glucose control. Events like pancreatitis are also too rare to count reliably in trials of this size.",
+      "The proposal is to judge a treatment like CTX310 by a patient-level 'excursion risk' rather than by the mean alone, borrowing the logic engineers use to predict failure from load spikes instead of average stress. Each participant would provide frequent triglyceride readings, for instance from home finger-stick or dried-blood-spot sampling timed around meals, alongside glucose data that people with diabetes often already collect. A compact physiological model would describe triglyceride level as a baseline plus meal-driven surges that rise and decay, with a clearance rate that the edit is expected to speed up and that glucose control and other factors can modulate. Bayesian calibration would estimate each person's clearance rate and surge size before and after treatment, with credible intervals, and turn them into the quantity that matters clinically: the expected fraction of time, and the expected number of episodes per year, spent above a chosen high-risk threshold. That threshold would be an explicit, adjustable input rather than a fixed claim, so the analysis can be redone as the evidence linking specific levels to pancreatitis risk is refined. The approach connects the physics-informed prognostics and Bayesian uncertainty quantification Viraj works on, and the wearable-sensing thread in his research, to the question that a single average cannot answer.",
+      "A first test could run alongside follow-up of existing or future cohorts of CTX310 or other triglyceride-lowering therapies: add a short block of frequent sampling before and after treatment, fit the model, and check whether it predicts held-out readings, including the highest values, within its stated intervals. Agreement between the model's predicted time-above-threshold and directly observed exceedances in that block would show whether the model is calibrated before anyone relies on its extrapolations. Over longer follow-up, the same framework could flag individuals whose clearance rate drifts back toward baseline, a practical early signal for a permanent edit whose effect is, by design, hard to undo. If it works, trials of one-time and repeat-dose therapies could be compared on a shared risk metric, small studies could say more about who benefits most, and the gap between a laboratory number and the clinical outcome patients care about would be measured rather than assumed."
+    ],
+    "questions": [
+      "How frequently, and at what times relative to meals, would triglycerides need to be measured for a model to estimate each person's exposure to very high levels with useful precision?",
+      "Which triglyceride threshold, or combination of level and duration, best tracks acute pancreatitis risk, and how much does that relationship vary between people with and without diabetes?",
+      "Can a patient's early post-edit change in clearance rate predict whether the benefit will hold over years, earlier than waiting for the average to drift?"
+    ],
+    "sources": [
+      [
+        "CRISPR Therapeutics: Phase 1b data for CTX310 in severe hypertriglyceridemia at AHA Scientific Sessions 2026",
+        "https://ir.crisprtx.com/news-releases/news-release-details/crispr-therapeutics-presents-phase-1b-data-ctx310r-demonstrating"
+      ],
+      [
+        "Cleveland Clinic Newsroom: Gene editing therapy trial dramatically lowers dangerous blood fat levels",
+        "https://newsroom.clevelandclinic.org/2026/11/09/gene-editing-therapy-trial-dramatically-lowers-dangerous-blood-fat-levels"
+      ]
+    ]
   }
 ]
