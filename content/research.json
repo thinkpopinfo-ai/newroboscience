@@ -86,6 +86,22 @@
   ]
  },
  {
+  "title": "Multiscale Biomechanics of Idiopathic Normal Pressure Hydrocephalus: Poroelastic Brain Mechanics, Cerebrospinal Fluid Structure Interaction and Shunt Hydrodynamics",
+  "doi": "10.2139/ssrn.7683626",
+  "date": "2026",
+  "type": "preprint",
+  "venue": "Elsevier BV",
+  "authors": [
+   "Viraj Gajera"
+  ],
+  "url": "https://doi.org/10.2139/ssrn.7683626",
+  "abstract": "Idiopathic normal pressure hydrocephalus (iNPH) is clinically defined by gait, cognitive and urinary dysfunction with ventriculomegaly, but its mechanical basis is poorly resolved [1, 2]. This paper is a critical review of the biomechanical challenges that limit understanding, diagnosis and treatment of iNPH, supplemented by four computational case studies. Drawing on recent peer-reviewed literature retrieved from PubMed, eight challenges are identified: (B1) constitutive characterisation of ageing brain tissue; (B2) whether ventricular expansion produces injurious white-matter strain [3, 4]; (B3) pulsatility, windkessel behaviour and compliance [5]; (B4) multiphysics coupling and its validation [6, 7]; (B5) inconsistent in vivo measurement of mechanical properties by MR elastography [8, 9]; (B6) shunt mechanics, including overdrainage, catheter obstruction and airlock [10, 11, 12]; (B7) uncertainty in patient-specific digital-twin modelling; and (B8) the missing link between mechanics and clearance biology [13, 14]. Four illustrative numerical models were computed by the author in Python/SciPy: Womersley flow in an aqueduct-scale tube (α = 4.4), a Marmarou-type infusion-test model, an axisymmetric elastic model of ventricular expansion verified by an independent finite-element convergence study, and a hydrostatic shunt-siphoning model. These use generic parameters, are not patient data and are not ANSYS solver output; an ANSYS execution plan is provided. Eight author-supplied preprints are cited as non-peer-reviewed methodological precedents. The paper offers no medical advice.",
+  "audiences": [
+   "Human spaceflight health",
+   "NASA Human Research Program"
+  ]
+ },
+ {
   "title": "Capability Envelope of Single-Phase Direct-to-Chip Cold Plates for 1-3 kW AI Accelerators: A Verified Open Design Framework with Pressure-Integrity Constraints",
   "doi": "10.2139/ssrn.7655918",
   "date": "2026",
