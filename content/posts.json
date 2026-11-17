@@ -1505,5 +1505,32 @@
         "https://www.space.com/space-exploration/launches-spacecraft/spacex-launching-historic-double-catch-starship-test-flight-today-watch-it-live"
       ]
     ]
+  },
+  {
+    "slug": "arrowhead-aro-dimer-pa-dual-pcsk9-apoc3-sirna-aha-2026",
+    "field": "biotech",
+    "date": "2026-11-17",
+    "title": "One Molecule, Two Targets: An RNA Drug Lowers Cholesterol and Triglycerides Together",
+    "dek": "In a first-in-human trial presented at the American Heart Association's 2026 meeting, Arrowhead Pharmaceuticals' ARO-DIMER-PA silenced two liver genes at once, cutting both LDL cholesterol and triglycerides after a single injection.",
+    "tags": ["RNA interference", "Cholesterol", "Triglycerides", "Cardiology", "Clinical trials"],
+    "body": [
+      ["p", "Many people with heart disease risk have more than one kind of bad fat in their blood. In a condition called mixed hyperlipidemia, LDL cholesterol (the \"bad\" cholesterol) and triglycerides are both too high, and doctors often need two or more medicines to bring them down. On November 7, at the American Heart Association's Scientific Sessions 2026 in Chicago, a team led by cardiologist Luke Laffin of Cleveland Clinic reported early results for a drug designed to tackle both problems with a single molecule. The drug, ARO-DIMER-PA, was developed by Arrowhead Pharmaceuticals, which also funded the study."],
+      ["h2", "Silencing two genes with one injection"],
+      ["p", "ARO-DIMER-PA is a small interfering RNA, or siRNA. Drugs of this kind travel to the liver and switch off a chosen gene by destroying the messages the cell uses to build a protein. Existing siRNA medicines for blood fats each go after one target. This one is built to hit two: PCSK9, a protein that keeps LDL cholesterol circulating in the blood, and APOC3, a protein that slows the clearance of triglycerides. According to Arrowhead, the two-in-one design is built on its TRiM platform for delivering RNA drugs to liver cells."],
+      ["p", "Laffin described the result as showing for the first time that \"one drug can successfully block two separate disease pathways in the liver at once.\""],
+      ["h2", "What the first trial found"],
+      ["p", "The data come from the single-dose part of a randomized, double-blind, placebo-controlled study in adults with mixed hyperlipidemia, registered as ARO-DIMER-PA-1001. According to Cleveland Clinic, 31 participants received either a placebo or one of five doses ranging from 25 to 400 milligrams. Depending on the dose, a single injection lowered PCSK9 by 50% to 89% and APOC3 by 43% to 95%. LDL cholesterol fell by 26% to 65% and triglycerides by 56% to 78%. ApoB, a marker that counts the particles carrying cholesterol, and remnant cholesterol also dropped."],
+      ["p", "Those figures line up with the interim results Arrowhead released in September, when the company reported average maximum reductions of 54% for LDL cholesterol and 73% for triglycerides across the single doses tested through 400 milligrams. The drug was generally well tolerated. The most common side effect was redness or other reactions at the injection site, and the highest dose caused more side effects than the lower ones. Arrowhead reported no drug-related serious adverse events in this part of the study."],
+      ["h2", "The fine print"],
+      ["p", "This is an early, small trial, and the results so far come from a conference presentation and press releases rather than a peer-reviewed paper. It measured blood fats, not heart attacks or strokes, and it did not report how long a single dose keeps working. A second part of the same study is now testing repeated doses, which Cleveland Clinic says will help pick a dose for a larger, pivotal trial. Long-term safety, durability and effects on cardiovascular events all remain to be shown."],
+      ["take", "Viraj's perspective: Last week this blog covered a one-time CRISPR edit aimed at triglycerides. ARO-DIMER-PA takes a different route: it does not change DNA, it quiets two genes temporarily, and it does so with a single molecule instead of two drugs. If that holds up with repeat dosing, it could simplify treatment for people who now juggle several pills or injections. The numbers to watch are how long each dose lasts, whether the higher doses stay tolerable over months, and, eventually, whether lower blood fats translate into fewer heart attacks."]
+    ],
+    "credit": "Research by Luke Laffin and colleagues at Cleveland Clinic and Arrowhead Pharmaceuticals, which developed and funded the ARO-DIMER-PA trial. Coverage via the Cleveland Clinic Newsroom, Business Wire and HCPLive.",
+    "sources": [
+      ["Cleveland Clinic Newsroom: First-in-Human Trial Shows Gene-Silencing Therapy for High Cholesterol to Be Safe and Effective", "https://newsroom.clevelandclinic.org/2026/11/07/cleveland-clinic-first-in-human-trial-shows-gene-silencing-therapy-for-high-cholesterol-to-be-safe-and-effective"],
+      ["Business Wire (via Finviz): Arrowhead Pharmaceuticals to Present Important Clinical Data at the American Heart Association Scientific Sessions 2026", "https://finviz.com/news/413072/arrowhead-pharmaceuticals-to-present-important-clinical-data-at-the-american-heart-association-scientific-sessions-2026"],
+      ["HCPLive: ARO-DIMER-PA Silences PCSK9, APOC3 in Mixed Hyperlipidemia", "https://www.hcplive.com/view/aro-dimer-pa-silences-pcsk9-apoc3-in-mixed-hyperlipidemia"],
+      ["ClinicalTrials.gov: NCT07223658 (ARO-DIMER-PA-1001)", "https://clinicaltrials.gov/study/NCT07223658"]
+    ]
   }
 ]
