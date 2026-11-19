@@ -1532,5 +1532,31 @@
       ["HCPLive: ARO-DIMER-PA Silences PCSK9, APOC3 in Mixed Hyperlipidemia", "https://www.hcplive.com/view/aro-dimer-pa-silences-pcsk9-apoc3-in-mixed-hyperlipidemia"],
       ["ClinicalTrials.gov: NCT07223658 (ARO-DIMER-PA-1001)", "https://clinicaltrials.gov/study/NCT07223658"]
     ]
+  },
+  {
+    "slug": "ucsd-electronics-free-soft-robot-runs-4-7-meters-per-second",
+    "field": "robotics",
+    "date": "2026-11-19",
+    "title": "A Soft Robot With No Electronics Learns to Sprint",
+    "dek": "UC San Diego engineers 3D-printed a six-legged, air-powered soft robot in a single piece that reaches up to 4.72 meters per second, more than 100 times faster than the team's earlier walker.",
+    "tags": ["Soft robotics", "3D printing", "Pneumatics", "Legged robots", "Science Robotics"],
+    "body": [
+      ["p", "Soft robots are made of flexible materials instead of metal and motors, which makes them safe to bump into and hard to break. Their weakness has usually been speed: most of them crawl. A study published on November 18 in Science Robotics shows that this does not have to be the case. Yichen Zhai and Professor Michael T. Tolley of the Bioinspired Robotics and Design Laboratory at the University of California San Diego report a six-legged soft robot that runs at up to 4.72 meters per second while carrying no electronics at all."],
+      ["h2", "Printed in one piece, driven by air"],
+      ["p", "The robot comes off a desktop 3D printer as a single part made from a single material. Everything it needs to move is printed into its body: hollow chambers, tubes and valves that act as its control system. When pressurized air flows in, those built-in valves switch on and off in a rhythm that makes the legs push and recover, so the robot runs without a chip, a battery or a wire telling it what to do."],
+      ["p", "The same lab showed a printed, electronics-free walking robot in 2022, but it managed only about 4 centimeters per second. The new design is more than 100 times faster. Zhai summed up the starting point plainly: the first walker proved the idea, \"but it was too slow.\""],
+      ["h2", "Borrowing a trick from steam engines"],
+      ["p", "Pushing more air through a soft robot makes it faster, but high pressure also wastes a lot of energy. The team's answer came from the compound steam engine, which reuses steam in a second, lower-pressure stage instead of venting it after one stroke. In the robot, air passes through twice. It first drives small, high-pressure chambers that run the valves, and then flows on to larger, low-pressure chambers that move the legs. Getting that two-stage cycle to work inside a soft body that is printed all at once was the main engineering challenge, according to UC San Diego."],
+      ["p", "The researchers ran the robot over concrete, gravel, grass, mulch and sand, sent it down a flight of stairs, and showed it could swim and keep working underwater. Coverage of the paper by 3DPrinting.com adds that the robot can also be driven by tap water instead of air."],
+      ["h2", "Still on a leash"],
+      ["p", "There is an important catch. For now, the robot only runs while tethered by a hose to a compressed-air supply such as an air compressor. The team's next goals are designs that use less air, so the robot could carry its own small source like a compressed-air cartridge, and more complex movements for steering and handling objects. Because it has no electronics, the researchers see it as a candidate for places where circuits fail, such as areas with strong radiation or magnetic fields, as well as disaster response and space exploration. The work was funded by the U.S. National Science Foundation."],
+      ["take", "Viraj's perspective: What I like here is that the speed comes from smarter plumbing, not more power. Reusing the same air in two stages is an old idea from steam engineering, and it fits soft robots well because their control logic is already made of air channels. The real test is the tether. A sprinting robot attached to a compressor is a lab demo; one that carries its own air cartridge across rubble or into a high-radiation zone would be a useful tool. Watch how far the team can cut air use, and whether the one-piece printing approach holds up once steering and gripping are added."]
+    ],
+    "credit": "Research by Yichen Zhai and Michael T. Tolley of the Bioinspired Robotics and Design Laboratory at the UC San Diego Jacobs School of Engineering, funded by the U.S. National Science Foundation. Coverage via UC San Diego Today and 3DPrinting.com.",
+    "sources": [
+      ["UC San Diego Today: The Fastest Soft Robot Ever Built Doesn't Need Electronics to Function", "https://today.ucsd.edu/story/the-fastest-soft-robot-ever-built-doesnt-need-electronics-to-function"],
+      ["3DPrinting.com: UC San Diego 3D prints a soft six-legged robot in one piece that runs without electronics", "https://3dprinting.com/news/uc-san-diego-3d-prints-a-soft-six-legged-robot-in-one-piece-that-runs-without-electronics/"],
+      ["Science Robotics: Printing Powerful Soft Robotics on a Desktop (Zhai and Tolley, 2026)", "https://doi.org/10.1126/scirobotics.aei1264"]
+    ]
   }
 ]
