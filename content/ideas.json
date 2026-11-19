@@ -369,5 +369,33 @@
         "https://newsroom.clevelandclinic.org/2026/11/09/gene-editing-therapy-trial-dramatically-lowers-dangerous-blood-fat-levels"
       ]
     ]
+  },
+  {
+    "slug": "untethering-a-sprinting-soft-robot-with-rocket-blowdown-logic",
+    "date": "2026-11-19",
+    "field": "robotics",
+    "title": "Untethering a Sprinting Soft Robot With Rocket Blowdown Logic",
+    "summary": "UC San Diego's printed soft robot sprints with no electronics but still runs on an air hose. Design rules from rocket blowdown tanks could size an onboard cartridge and keep its gait steady as pressure falls.",
+    "post": "ucsd-electronics-free-soft-robot-runs-4-7-meters-per-second",
+    "concept": [
+      "In a study published on November 18 in Science Robotics, Yichen Zhai and Michael T. Tolley of UC San Diego's Bioinspired Robotics and Design Laboratory reported a six-legged soft robot, 3D-printed in one piece from a single material, that runs at up to 4.72 meters per second with no electronics. Its control system is printed into its body as chambers, tubes and valves, and its speed comes from a two-stage air cycle borrowed from the compound steam engine: air first drives small high-pressure chambers that run the valves, then flows on to larger low-pressure chambers that move the legs. According to UC San Diego, the robot crossed concrete, gravel, grass, mulch and sand, went down stairs and kept working underwater. The catch, as the team notes, is that it only runs while tethered by a hose to a compressed-air supply, and its next goal is a design that uses less air so it could carry its own small source, such as a compressed-air cartridge. That step changes the problem. A compressor delivers a roughly steady pressure, while a sealed cartridge does not: its pressure falls as it empties, and the gas cools as it expands. A valve network tuned for a steady hose may slow down, weaken or stall partway through a cartridge.",
+      "The proposal is to treat the onboard air supply the way rocket engineers treat a blowdown pressurization system, where a fixed charge of gas pushes propellant with a pressure that decays over the burn and the hardware is designed to perform across that whole decay, not at one operating point. For the soft robot, this would mean a lumped-parameter thermofluid model of the full circuit: the cartridge as a draining, cooling gas volume; the printed channels as flow restrictions; the high-pressure valve chambers and low-pressure leg chambers as compliant volumes whose soft walls inflate with pressure; and the built-in valves as switches that open and close at pressure thresholds set by their printed geometry. Coupling the fluid flow to the deformation of the soft walls is a fluid-structure interaction problem of the kind Viraj models, and sizing a gas charge across a falling pressure draws on the propellant and pressurant management side of his aerospace work. The model would be used for design, not just prediction: choosing chamber volumes, channel sizes and the pressure split between the two stages so that gait frequency and leg force stay within a useful band from a full cartridge to a nearly empty one, possibly with a printed pressure-regulating stage in front of the valves. The figure of merit would be distance travelled per unit of stored gas, a single number that makes the team's 'use less air' goal measurable.",
+      "Validation could start on the bench while the robot is still tethered. Feeding it through a regulator stepped across the pressure range a cartridge would pass through, and recording gait frequency, speed and gas flow at each step, would map how the existing design responds to falling supply pressure and calibrate the model's restrictions, compliances and valve thresholds. A second test would replace the compressor with a fixed-volume tank on a hose, so the supply blows down exactly as an onboard cartridge would, and compare the measured run distance and gait drift with the model's forecast before anything is mounted on the robot. Because every printed unit can differ slightly, repeating the calibration across several prints would show how much of the design margin is consumed by manufacturing variation. If the approach works, it would turn untethering from trial and error into a sizing exercise, and bring an electronics-free runner closer to the places its builders have in mind, such as areas with strong radiation or magnetic fields, disaster sites and space exploration, where a hose to a compressor is not an option."
+    ],
+    "questions": [
+      "Can a pressure-regulating valve be printed in the same single piece and material as the robot, and hold a steady downstream pressure as the cartridge empties without consuming more gas than it saves?",
+      "How much does the cooling of rapidly expanding gas change the stiffness of the printed material and the switching timing of the built-in valves over the course of one cartridge?",
+      "Which gives more distance per unit of stored gas: cutting leakage and dead volume in the printed channels, or retuning the pressure split between the valve stage and the leg stage?"
+    ],
+    "sources": [
+      [
+        "UC San Diego Today: The Fastest Soft Robot Ever Built Doesn't Need Electronics to Function",
+        "https://today.ucsd.edu/story/the-fastest-soft-robot-ever-built-doesnt-need-electronics-to-function"
+      ],
+      [
+        "Science Robotics: Printing Powerful Soft Robotics on a Desktop (Zhai and Tolley, 2026)",
+        "https://doi.org/10.1126/scirobotics.aei1264"
+      ]
+    ]
   }
 ]
