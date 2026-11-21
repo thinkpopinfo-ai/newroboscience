@@ -1558,5 +1558,88 @@
       ["3DPrinting.com: UC San Diego 3D prints a soft six-legged robot in one piece that runs without electronics", "https://3dprinting.com/news/uc-san-diego-3d-prints-a-soft-six-legged-robot-in-one-piece-that-runs-without-electronics/"],
       ["Science Robotics: Printing Powerful Soft Robotics on a Desktop (Zhai and Tolley, 2026)", "https://doi.org/10.1126/scirobotics.aei1264"]
     ]
+  },
+  {
+    "slug": "voyager-1-reaches-one-light-day-from-earth",
+    "field": "aerospace",
+    "date": "2026-11-21",
+    "title": "Voyager 1 Is Now One Light-Day From Earth",
+    "dek": "Forty-nine years after launch, NASA's Voyager 1 crossed the point where its signals take a full 24 hours to reach home, even as engineers chase a fresh glitch that has stopped its data stream.",
+    "tags": [
+      "Voyager 1",
+      "Interstellar space",
+      "NASA JPL",
+      "Deep Space Network",
+      "Space history"
+    ],
+    "body": [
+      [
+        "p",
+        "On Wednesday, November 18, 2026, at 10:16:07 UTC (5:16:07 a.m. Eastern), NASA's Voyager 1 spacecraft passed a distance no human-made object had reached before: one light-day from Earth. That is about 16.1 billion miles, or roughly 25.9 billion kilometers. A radio signal, moving at the speed of light, now needs a full day to travel between the probe and the giant antennas of NASA's Deep Space Network. The mission is run by NASA's Jet Propulsion Laboratory in Southern California."
+      ],
+      [
+        "h2",
+        "What a light-day really means"
+      ],
+      [
+        "p",
+        "Astronomers measure huge distances by how long light takes to cross them. Sunlight reaches Earth in about eight minutes. Voyager 1 is so far away that light needs 24 hours, which is what NASA means by a light-day. That makes the mission a slow conversation: a command sent from Earth arrives a day later, and the earliest possible reply takes another day to come back."
+      ],
+      [
+        "p",
+        "Voyager 1 launched on September 5, 1977, and it took 49 years, two months and 11 days to get here, travelling at nearly 38,000 miles per hour. Along the way it flew past Jupiter in 1979 and Saturn in 1980, took the famous Pale Blue Dot portrait of Earth in 1990, and in 2012 became the first spacecraft to leave the heliosphere, the bubble of particles blown out by the Sun, and enter interstellar space. It runs on heat from decaying plutonium, a supply that weakens every year, so the team has gradually switched off systems to keep it alive."
+      ],
+      [
+        "h2",
+        "Confirming a milestone in the middle of a glitch"
+      ],
+      [
+        "p",
+        "The celebration came with a complication. According to the Associated Press and the science site Starlust, the spacecraft's stream of science and engineering data stopped over the weekend of November 14. Ground stations still picked up Voyager 1's carrier signal, a basic radio tone that shows the probe is alive and pointing its antenna at Earth, but no data was riding on it. A similar problem in 2023 was traced to one of the onboard computers and took months to fix. NASA has said that working out the cause this time could take weeks or longer."
+      ],
+      [
+        "p",
+        "Even without data, that carrier signal was enough to mark the moment. The AP reported that a reply from the spacecraft reached the Deep Space Network station near Madrid exactly 24 hours after the command went out, confirming the one-light-day distance. NASA science chief Nicky Fox and JPL controllers watched the confirmation, and deputy project scientist Jamie Rankin of Princeton University sent the probe off with: \"Shine on, Voyager, shine on.\""
+      ],
+      [
+        "h2",
+        "Where Voyager goes next"
+      ],
+      [
+        "p",
+        "Voyager 1 is not aimed at any planet or star system. NASA says it will pass about 1.7 light-years from a faint star called Gliese 445 in roughly 40,000 years. Its twin, Voyager 2, is following a different path and is expected to reach its own one-light-day mark in November 2035."
+      ],
+      [
+        "take",
+        "Viraj's perspective: What moves me most is not the distance but the uptime. Hardware designed with 1970s technology is still answering commands from a day away, and the team keeps it running by carefully choosing what to switch off. The thing to watch now is the data dropout. If JPL can diagnose and fix a computer fault across a 48-hour round trip, as it did in 2023, Voyager 1 may keep sending back measurements from interstellar space for a few more years. If it cannot, this milestone may be one of the last big headlines from a mission that defined how far we can reach."
+      ]
+    ],
+    "credit": "The Voyager mission is managed by NASA's Jet Propulsion Laboratory (Caltech) for NASA's Science Mission Directorate, with tracking by NASA's Deep Space Network. Coverage via NASA Science, NASA Scientific Visualization Studio, the Associated Press (via ITV News), EarthSky, Starlust and BBC Sky at Night Magazine.",
+    "sources": [
+      [
+        "NASA Science: Voyager 1: What Is a Light-Day",
+        "https://science.nasa.gov/mission/voyager/voyager-1/voyager-1-what-is-a-light-day/"
+      ],
+      [
+        "NASA SVS: How Far Away Is Voyager 1? One Light-Day, Explained",
+        "https://svs.gsfc.nasa.gov/15120"
+      ],
+      [
+        "ITV News (AP): NASA's Voyager 1 phones home from an awe-inspiring one light-day away",
+        "https://www.itv.com/news/2026-11-19/nasas-voyager-1-phones-home-from-one-light-day-away"
+      ],
+      [
+        "EarthSky: Voyager 1 reaches 1 light-day from Earth!",
+        "https://earthsky.org/space/voyager-1-1-light-day-from-earth-november-17-18-2026/"
+      ],
+      [
+        "Starlust: Voyager 1 has crossed the one light-day milestone, but a data issue is playing spoilsport",
+        "https://starlust.org/voyager-1-has-crossed-the-one-light-day-milestone-but-a-data-issue-is-playing-spoilsport/"
+      ],
+      [
+        "BBC Sky at Night Magazine: NASA's Voyager 1 probe is about to reach a distance of 1 light-day from Earth",
+        "https://www.skyatnightmagazine.com/news/nasa-voyager-1-light-day-milestone"
+      ]
+    ]
   }
 ]
