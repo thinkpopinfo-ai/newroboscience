@@ -397,5 +397,37 @@
         "https://doi.org/10.1126/scirobotics.aei1264"
       ]
     ]
+  },
+  {
+    "slug": "planning-the-fault-hunt-for-a-probe-one-light-day-away",
+    "date": "2026-11-23",
+    "field": "aerospace",
+    "title": "Planning the Fault Hunt for a Probe One Light-Day Away",
+    "summary": "Voyager 1's data stream has stopped, but its carrier tone still arrives a day later. A Bayesian planner that picks each command for the most information per round trip could shorten the hunt for the fault.",
+    "post": "voyager-1-reaches-one-light-day-from-earth",
+    "concept": [
+      "On November 18, 2026, NASA's Voyager 1 became the first human-made object to reach one light-day from Earth, about 16.1 billion miles away, so that any command now takes a day to arrive and the earliest reply another day to return. The milestone came in the middle of a fault. According to the Associated Press and Starlust, the probe's stream of science and engineering data stopped over the weekend of November 14, while NASA's Deep Space Network kept receiving its carrier signal, the plain radio tone that shows the spacecraft is alive and pointed at Earth. The AP reported that a reply to a command reached the Deep Space Network station near Madrid exactly 24 hours after the command went out, which confirmed the distance without any data on the signal. A similar problem in 2023 was traced to one of the onboard computers and took months to fix, and NASA has said finding the cause this time could take weeks or longer. Meanwhile the spacecraft's plutonium power supply weakens every year, and the team has been switching systems off to keep it running. In that situation every question engineers ask the spacecraft costs at least two days, and the answer may be little more than whether the tone changes.",
+      "The proposal is to treat the diagnosis as a sequential experiment and plan it with a Bayesian model. The model would hold a set of competing fault hypotheses, for example a fault in one of the onboard computers, in the circuits that format and send data, or in how power is shared among the remaining systems, each with a prior probability drawn from the mission's own anomaly history and from what is known about how aging parts behave at the probe's shrinking power margin. For every command the team could safely send, each hypothesis would predict what the ground should see in return: the carrier unchanged, a change in its strength or frequency, a brief return of data, or silence. Given those predictions and the noise of real reception, the planner would rank candidate commands, or short sequences sent in one uplink, by how much they are expected to narrow down the cause per round trip, while ruling out any step that risks the probe's power or its pointing toward Earth. After each reply, the probabilities would be updated and the next step chosen. This builds directly on the sparse-sensor observability and Bayesian calibration questions in Viraj's prognostics work: here the sensor could hardly be sparser, and the first job is to establish which faults the carrier alone can and cannot tell apart. The planner would support the engineers' judgment, not replace it, by making the value and risk of each option explicit.",
+      "The approach could be tested without touching Voyager. A retrospective study could take the 2023 recovery as a benchmark: using only what was known at each step, would the planner have proposed commands that isolated the computer fault in fewer round trips than were actually needed? A second test would use fault injection on a software model of a spacecraft's command and data systems, adding artificial signal delays of a day or more and recording how often, and how quickly, the planner identifies the injected fault compared with a fixed troubleshooting checklist. The larger payoff may be in design. Running the same observability analysis on a future deep-space or interstellar probe before launch would reveal which failures would leave no visible trace on a bare carrier, so that designers could add simple, last-resort ways for the spacecraft to signal its state when the data link is gone. With Voyager 2 expected to reach its own one-light-day mark in November 2035, and future probes heading farther still, planning fault hunts around very long delays is likely to matter more over time, not less."
+    ],
+    "questions": [
+      "Which fault classes in a deep-space probe are fundamentally indistinguishable when the only observable is a carrier signal, and what is the smallest onboard change that would make them distinguishable?",
+      "How should a diagnostic planner weigh expected information gain against the risk that a test command itself pushes an aging, power-limited spacecraft into a worse state?",
+      "Can priors built from one mission's handful of anomalies, years apart, be trusted, or should they be pooled across spacecraft that share hardware heritage?"
+    ],
+    "sources": [
+      [
+        "ITV News (AP): NASA's Voyager 1 phones home from an awe-inspiring one light-day away",
+        "https://www.itv.com/news/2026-11-19/nasas-voyager-1-phones-home-from-one-light-day-away"
+      ],
+      [
+        "Starlust: Voyager 1 has crossed the one light-day milestone, but a data issue is playing spoilsport",
+        "https://starlust.org/voyager-1-has-crossed-the-one-light-day-milestone-but-a-data-issue-is-playing-spoilsport/"
+      ],
+      [
+        "NASA Science: Voyager 1: What Is a Light-Day",
+        "https://science.nasa.gov/mission/voyager/voyager-1/voyager-1-what-is-a-light-day/"
+      ]
+    ]
   }
 ]
