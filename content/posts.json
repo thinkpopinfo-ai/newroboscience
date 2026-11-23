@@ -1641,5 +1641,40 @@
         "https://www.skyatnightmagazine.com/news/nasa-voyager-1-light-day-milestone"
       ]
     ]
+  },
+  {
+    "slug": "regeneron-livsayis-cemdisiran-sirna-myasthenia-gravis-fda-approval",
+    "field": "biotech",
+    "date": "2026-11-23",
+    "title": "Four Shots a Year: The First RNA-Silencing Drug for Myasthenia Gravis Wins FDA Approval",
+    "dek": "The FDA has approved Regeneron's Livsayis (cemdisiran), a gene-silencing medicine that switches off production of an immune protein behind muscle weakness in generalized myasthenia gravis, with just one injection every three months.",
+    "tags": ["Myasthenia gravis", "siRNA", "Complement C5", "FDA approval", "Regeneron"],
+    "body": [
+      ["p", "On November 18, 2026, the US Food and Drug Administration approved Livsayis (cemdisiran), a medicine from Regeneron for adults with generalized myasthenia gravis (gMG) who test positive for antibodies against the acetylcholine receptor, the most common form of the disease. It is the first approved treatment for gMG that works by small interfering RNA (siRNA), a way of silencing a gene's message before the body can turn it into protein. It is also given far less often than its rivals: one injection under the skin every three months."],
+      ["h2", "Why muscles tire in this disease"],
+      ["p", "Myasthenia gravis is an autoimmune disorder. In its most common form, the immune system makes antibodies that attack the receptors muscles use to hear signals from nerves. Those antibodies switch on the complement system, a cascade of blood proteins that normally helps fight infection. One of them, called C5, drives damage at the junction where nerve meets muscle. The result is weakness that can affect the eyes, face, swallowing, breathing and limbs. Around 85,000 people in the United States have the antibody-positive form."],
+      ["p", "Earlier complement drugs, such as eculizumab and ravulizumab, are antibodies that grab C5 already circulating in the blood. Cemdisiran acts one step earlier. It carries a short strand of RNA that finds and destroys the messenger RNA the liver uses to make C5, so less of the protein is produced in the first place. Regeneron licenses the drug from Alnylam Pharmaceuticals, whose RNA interference platform it is built on."],
+      ["h2", "What the NIMBLE trial showed"],
+      ["p", "The approval rests on NIMBLE, a randomized, double-blind, placebo-controlled Phase 3 trial run at 86 centers in 13 countries, led globally by neurologist Tuan Vu of the University of South Florida. The main measure was MG-ADL, a 24-point patient-reported score of how the disease affects daily tasks. After 24 weeks, people on cemdisiran improved by an average of 4.5 points, compared with 2.2 points on placebo. About 77% of treated patients reached a clinically meaningful gain of at least 3 points, versus 44% on placebo."],
+      ["p", "A doctor-rated strength test told the same story: a 4.2-point improvement against 1.5 for placebo, with 48% of treated patients improving by at least 5 points compared with 19%. Benefits appeared as early as two weeks after the first dose. Adding a second C5-blocking antibody, pozelimab, did not improve results, which is why the drug is approved on its own. Results were published in The Lancet."],
+      ["h2", "The fine print on safety"],
+      ["p", "Side effects reported more often than with placebo included injection-site reactions, viral infections and urinary tract infections. Like every C5 blocker, Livsayis carries a boxed warning for serious meningococcal infections, because C5 helps the body fight those bacteria. Patients must be vaccinated beforehand, and the drug is available only through a restricted safety program. During the open-label extension, one patient with serious other illnesses died of pneumonia while also taking immune-suppressing drugs. The drug has not been tested in children."],
+      ["take", "Viraj's perspective: This is a quiet but important shift in how we treat autoimmune disease. Instead of mopping up a harmful protein with frequent infusions, an RNA drug turns down the factory that makes it, and four shots a year is a real gift to patients who are already exhausted. It arrived just two days after another C5 drug, Klygefa, so gMG patients now have more complement options than ever. What I will watch: long-term infection safety, how the price compares, and whether this silence-the-source approach spreads to other complement-driven diseases."]
+    ],
+    "credit": "Research by the NIMBLE Phase 3 trial investigators, led globally by Tuan Vu, MD (University of South Florida Morsani College of Medicine), with Regeneron Pharmaceuticals; RNAi platform licensed from Alnylam Pharmaceuticals. Coverage via NeurologyLive, PharmExec and the Muscular Dystrophy Association.",
+    "sources": [
+      [
+        "NeurologyLive: FDA Approves Cemdisiran as New Treatment for Generalized Myasthenia Gravis",
+        "https://www.neurologylive.com/view/fda-approves-cemdisiran-as-new-treatment-generalized-myasthenia-gravis"
+      ],
+      [
+        "PharmExec: FDA Approves Livsayis, Regeneron's First siRNA Therapy for Myasthenia Gravis",
+        "https://www.pharmexec.com/view/fda-approves-livsayis-first-sirna-therapy-myasthenia-gravis"
+      ],
+      [
+        "Muscular Dystrophy Association (GlobeNewswire): FDA Approves Livsayis (cemdisiran) for Adults Living with Generalized Myasthenia Gravis",
+        "https://www.globenewswire.com/news-release/2026/11/19/3406254/0/en/fda-approves-livsayis-cemdisiran-for-adults-living-with-generalized-myasthenia-gravis.html"
+      ]
+    ]
   }
 ]
