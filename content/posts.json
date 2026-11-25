@@ -1676,5 +1676,31 @@
         "https://www.globenewswire.com/news-release/2026/11/19/3406254/0/en/fda-approves-livsayis-cemdisiran-for-adults-living-with-generalized-myasthenia-gravis.html"
       ]
     ]
+  },
+  {
+    "slug": "mit-insect-scale-flapping-wing-robot-onboard-sensing-science-robotics",
+    "field": "robotics",
+    "date": "2026-11-25",
+    "title": "An Insect-Sized Robot Learns to Fly by Its Own Senses",
+    "dek": "MIT engineers have packed sensors and a tiny computer onto a flapping-wing microrobot lighter than a paperclip, letting it hover and follow paths without the lab camera systems such robots have always depended on.",
+    "tags": ["Microrobots", "Flapping-wing flight", "Onboard sensing", "Science Robotics", "MIT"],
+    "body": [
+      ["p", "Tiny flying robots have a dirty secret. In videos they dart and hover like insects, but behind the scenes most of them are being steered by a room full of motion-capture cameras that track them and tell an outside computer where they are. Take the cameras away and the robot is effectively blind. A team at MIT, working with a collaborator at Cornell University, has now shown an insect-scale flapping-wing robot that senses its own motion and does its own calculations on board. The work was published in Science Robotics on November 18, 2026."],
+      ["h2", "What the team built"],
+      ["p", "The robot comes from Kevin Chen's Soft and Micro Robotics Laboratory at MIT. It is roughly the size and shape of a microcassette and weighs less than a paperclip. Four wings flap, each driven by soft artificial muscles. To carry extra weight, the researchers made those muscles about 50 percent larger, which raised the robot's net lift by 46 percent and gave it a lift-to-weight ratio of 1.9, enough to haul a payload."],
+      ["p", "That payload is a 244-milligram electronics package on a fiberglass board chosen to resist the constant buzz of the wings. It holds three sensors: an inertial measurement unit that tracks the robot's tilt and rotation, an optical flow sensor that estimates sideways speed and position by watching the ground slide past, and a time-of-flight sensor that measures height. A small microcontroller fuses those readings to work out where the robot is and how it is moving. The team, led by graduate students Yi-Hsuan (Nemo) Hsiao, Quang Phuc Kieu and Zhongtao Guan, with MIT aerospace professor Jonathan How and Cornell's Elizabeth Farrell Helbling, found that quick, continuous position estimates kept the robot steadier than slower but more precise ones."],
+      ["h2", "What it can do so far"],
+      ["p", "Freed from the camera rig, the robot hovered at different heights and flew point-to-point paths with position errors of only a few centimeters. In one demonstration, an operator used a joystick to send simple position goals while the robot handled its own balance, weaving among several plants before settling onto a sunflower. Chen described the result as \"the first demonstration of an aerial microrobot that is sensory and compute autonomous.\" Notably, the electronics use only about 6 percent of the robot's power; the rest still goes to the wings."],
+      ["h2", "What it can't do yet"],
+      ["p", "This is not yet a free-roaming robot bee. It still draws power through a tether, a person chooses where it goes, and it has no camera, so it cannot recognize objects or dodge obstacles on its own. The team plans to add an onboard camera next and eventually batteries and power electronics for untethered outdoor flight. They point to uses such as pollinating almond and blueberry blossoms, checking crop health and searching collapsed buildings. The research was funded in part by the U.S. National Science Foundation, the Office of Naval Research and the Air Force Office of Scientific Research."],
+      ["take", "Viraj's perspective: For years, the most impressive insect-scale flight demos have quietly relied on external cameras, so this result matters more than its modest flight paths suggest. Moving sensing and computing on board is the step that turns a lab curiosity into something that could one day leave the lab. The next milestones are the hard ones: carrying its own battery and seeing the world with a camera. Watch for whether the team can add both without blowing through that slim lift margin, because every milligram counts at this scale."]
+    ],
+    "credit": "Research by Kevin Chen, Yi-Hsuan (Nemo) Hsiao, Quang Phuc Kieu, Zhongtao Guan and Jonathan P. How (MIT) and Elizabeth Farrell Helbling (Cornell University). Coverage via MIT News, EurekAlert and TechEBlog.",
+    "sources": [
+      ["MIT News: This featherweight, flying robot carries its own sensors and computers", "https://news.mit.edu/2026/featherweight-flying-robot-carries-its-own-sensors-and-computers-1118"],
+      ["Science Robotics: Controlled Flight of an Insect-Scale Flapping-Wing Robot via Integrated Onboard Sensing and Computation", "https://www.science.org/doi/10.1126/scirobotics.aeg6618"],
+      ["EurekAlert: MIT news release", "https://www.eurekalert.org/news-releases/1151846"],
+      ["TechEBlog: MIT flying microrobot carries its own computers", "https://www.techeblog.com/?p=263773"]
+    ]
   }
 ]
