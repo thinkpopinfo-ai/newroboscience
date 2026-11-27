@@ -1702,5 +1702,34 @@
       ["EurekAlert: MIT news release", "https://www.eurekalert.org/news-releases/1151846"],
       ["TechEBlog: MIT flying microrobot carries its own computers", "https://www.techeblog.com/?p=263773"]
     ]
+  },
+  {
+    "slug": "shenzhou-24-first-international-astronaut-tiangong-pakistan",
+    "field": "aerospace",
+    "date": "2026-11-27",
+    "title": "Tiangong Gets Its First Foreign Visitor as Shenzhou-24 Docks",
+    "dek": "China's Shenzhou-24 mission has delivered Pakistani payload specialist Muhammad Zeeshan Ali to the Tiangong space station, the first time an astronaut from another country has flown aboard China's orbiting laboratory.",
+    "tags": ["Tiangong", "Shenzhou-24", "Human spaceflight", "China Manned Space Agency", "International cooperation"],
+    "body": [
+      ["p", "For its first few years, China's Tiangong space station has been crewed only by Chinese astronauts. That changed this week. A Long March 2F rocket lifted off from the Jiuquan Satellite Launch Center in northwest China at 8:18 a.m. Beijing time on November 25, 2026 (7:18 p.m. Eastern on November 24), carrying the Shenzhou-24 spacecraft and three people. One of them, Muhammad Zeeshan Ali, is from Pakistan, and he has become the first astronaut from outside China to board the station. The mission is run by the China Manned Space Agency (CMSA)."],
+      ["h2", "A fast trip and a full house"],
+      ["p", "The spacecraft separated from its rocket about ten minutes after launch and docked at the forward port of Tiangong's Tianhe core module at 11:56 a.m. Beijing time, roughly three and a half hours after liftoff, according to CMSA figures reported by Caixin and Pakistan's APP news agency. Later that afternoon the crew already aboard, from the Shenzhou-23 mission, opened the hatch and welcomed the newcomers."],
+      ["p", "The Shenzhou-24 crew is led by commander Tang Hongbo, who previously flew on Shenzhou-12 in 2021 and Shenzhou-17 in 2023; Xinhua says this makes him the first person to visit Tiangong three times. He is joined by flight engineer Wu Yi, on his first flight, and by Ali, a payload specialist and former pilot in Pakistan's armed forces. Space.com notes that Ali is the first Pakistani to reach orbit."],
+      ["h2", "How the partnership came together"],
+      ["p", "China and Pakistan signed an agreement on astronaut selection, training and flight in February 2025. Two Pakistani candidates, Ali and Khurram Daud, were chosen and spent months training at the China Astronaut Research and Training Center in Beijing; one would fly and the other would serve as backup. CMSA spokesperson Zhang Jingbo called the joint flight a \"landmark achievement\" for the two countries, according to Xinhua."],
+      ["p", "Ali's stay is short, about a week by Space.com's account. He will return to Earth aboard the Shenzhou-23 capsule with two of that mission's crew. Tang and Wu are expected to remain on the station for about six months, while Shenzhou-23 crew member Zhu Yangzhu stays behind to continue a planned year-long stay."],
+      ["h2", "Science on board"],
+      ["p", "According to CMSA, as reported by Xinhua, the Shenzhou-24 mission plans more than 90 experiments and technology tests spanning life sciences, materials science, microgravity fluid physics and combustion, fundamental physics and space medicine. Four of them are China-Pakistan projects in biotechnology and materials, and Ali is set to work with photosynthetic cyanobacteria, microbes that turn light and carbon dioxide into oxygen and biomass and are of interest for life-support systems on long missions."],
+      ["take", "Viraj's perspective: For years the International Space Station was the main way smaller spacefaring nations got their astronauts into orbit. Shenzhou-24 shows Tiangong now playing that role too, and opening it to foreign crew is a practical test of training, communication and shared operations across agencies. The flight itself is brief, so the real signals to watch are what comes next: whether the cyanobacteria and materials results get published openly, how smoothly Ali's return on Shenzhou-23 goes, and whether CMSA follows through with more international visitors as the ISS approaches retirement."]
+    ],
+    "credit": "Mission conducted by the China Manned Space Agency (CMSA) in partnership with Pakistan, with crew Tang Hongbo, Wu Yi and Muhammad Zeeshan Ali. Coverage via Space.com, Caixin Global, Daily Tribune (Xinhua), Aaj English TV (APP), Al Jazeera and CGTN.",
+    "sources": [
+      ["Space.com: China launches Pakistani astronaut to Tiangong space station, its 1st international visitor, alongside Shenzhou-24 crew", "https://www.space.com/space-exploration/human-spaceflight/china-shenzhou-24-first-international-astronaut-launch-tiangong-space-station"],
+      ["Caixin Global: China's Tiangong Space Station Welcomes Its First Foreign Astronaut", "https://www.caixinglobal.com/2026-11-26/chinas-tiangong-space-station-welcomes-its-first-foreign-astronaut-102508774.html"],
+      ["Daily Tribune: China spaceship carries first foreign astronaut", "https://tribune.net.ph/2026/11/26/china-spaceship-carries-first-foreign-astronaut"],
+      ["Aaj English TV: Historic handshake as Pakistani astronaut enters space station", "https://english.aaj.tv/news/330482213/historic-handshake-as-pakistani-astronaut-enters-space-station"],
+      ["Al Jazeera: Pakistani astronaut to join China's next space station mission", "https://aljazeera.com/news/2026/11/7/pakistani-astronaut-to-join-chinas-next-space-station-mission"],
+      ["CGTN: First foreign astronaut set to visit China's space station", "https://news.cgtn.com/news/2026-11-07/First-foreign-astronaut-set-to-visit-China-s-space-station-1RS6aTZm5he/p.html"]
+    ]
   }
 ]
